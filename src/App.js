@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {SectionsContainer, Section, Header, Footer} from 'react-fullpage';
 import logo from './logo.svg';
 import './App.css';
 
 import MainMenu from './components/MainMenu/MainMenu'
 
-class App extends Component {
+class App extends React.Component {
   render() {
     let options = {
       sectionClassName:     'section',
