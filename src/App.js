@@ -3,6 +3,8 @@ import {SectionsContainer, Section, Header, Footer} from 'react-fullpage';
 import logo from './logo.svg';
 import './App.css';
 
+import MainMenu from './components/MainMenu/MainMenu'
+
 class App extends Component {
   render() {
     let options = {
@@ -18,9 +20,7 @@ class App extends Component {
     return (
       <div>
         <Header>
-          <a href="#sectionOne">Section One</a>
-          <a href="#sectionTwo">Section Two</a>
-          <a href="#sectionThree">Section Three</a>
+            <MainMenu />
         </Header>
         <Footer>
           <a href="">Dcoumentation</a>
