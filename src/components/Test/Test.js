@@ -2,14 +2,18 @@ import React from 'react'
 
 class Test extends React.Component {
 	render(){
+		const currentIndex = this.props.test.current
+		const questions = this.props.test.questions
+		const currentQuestion = questions[currentIndex]
+
 		return(
 			<div>
 				<h2>Test</h2>
-				<p>{this.props.test.questions[0].text}</p>
+				<p>{currentQuestion.text} ({currentIndex})</p>
 				<ul>
-					{this.props.test.questions[0].answers.map((answer, i) => {
+					{currentQuestion.answers.map((answer, i) => {
 						return(
-							<li key={i}>{answer.text}</li>
+							<li key={i} onClick={(e) => this.props.getAnswer(e, i)}>{answer.text}</li>
 						)
 					})}
 				</ul>

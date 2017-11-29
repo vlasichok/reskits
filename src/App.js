@@ -34,13 +34,23 @@ class App extends React.Component {
       }
     }
     this.chooseItem = this.chooseItem.bind(this)
+    this.getAnswer = this.getAnswer.bind(this)
   }
 
+  // slider methods
   chooseItem(e, i){
     let catalog = {...this.state.catalog}
     catalog.currentIndex = i
-
     this.setState({catalog})
+  }
+
+  // test methods
+  getAnswer(e, answerIndex){
+    console.log(answerIndex)
+
+    let test = {...this.state.test}
+    test.current++
+    this.setState({test})
   }
 
   render() {
@@ -69,7 +79,7 @@ class App extends React.Component {
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
           <Section verticalAlign="true">
-            <Test test={test} />
+            <Test test={test} getAnswer={this.getAnswer} />
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>
