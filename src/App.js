@@ -23,18 +23,20 @@ class App extends React.Component {
       },
       test: {
         questions: [
-          {text: 'What?', answers: [{text: 'sdavds', link: 1}, {text: 'adsgdsag', link: 1}, {text: 'sdgdsgsg', link: 0}, {text: 'asdgdsgsdg', link: 2}], linking: [0, 1, 2, 3]},
+          {text: 'What?', answers: [{text: 'sdavds', link: 1}, {text: 'adsgdsag', link: 1}, {text: '33sdgdsgsg', link: 3}, {text: 'asdgdsgsdg', link: 2}], linking: [0, 1, 2, 3]},
           {text: 'Why?', answers: [{text: 'sdsdfhs', link: 3}, {text: '4345436ag', link: 2}, {text: 'sd435345sg', link: 1}, {text: '345342gsdg', link: 0}], linking: [0, 1, 2, 3]}
         ],
         results: [
-          {name: 'habvfd43453b', descr: 'dsfhdfhdfh fds hkdf kdsf', itemIndex: 0},
-          {name: '23532ewwetew', descr: 'dsfhdfhdfh fds hkdf kjnk j j biudsf', itemIndex: 1},
+          {name: 'habvfd43453b', descr: 'dsfhdfhdfh fds hkdf kdsf', itemIndex: 0, count: 0},
+          {name: '23532ewwetew', descr: 'dsfhdfhdfh fds hkdf kjnk j j biudsf', itemIndex: 1, count: 0},
+          {name: '2532ew', descr: 'dsfhdfhdfh fds hkkjnk j j biudsf', itemIndex: 2, count: 0},
+          {name: '23532eew', descr: 'dsfhdfhdfh  j j biudsf', itemIndex: 3, count: 0},
         ],
         current: 0
       }
     }
     this.chooseItem = this.chooseItem.bind(this)
-    this.getAnswer = this.getAnswer.bind(this)
+    this.addAnswer = this.addAnswer.bind(this)
   }
 
   // slider methods
@@ -45,12 +47,17 @@ class App extends React.Component {
   }
 
   // test methods
-  getAnswer(e, answerIndex){
-    console.log(answerIndex)
-
+  addAnswer(e, answerIndex){
     let test = {...this.state.test}
-    test.current++
-    this.setState({test})
+
+    if(test.current < test.questions.length-1) {
+      // adding points to apropriate result
+      test.results[answerIndex].count++
+    
+      // going to the next question
+      test.current++
+      this.setState({test})
+    }
   }
 
   render() {
@@ -79,7 +86,9 @@ class App extends React.Component {
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
           <Section verticalAlign="true">
-            <Test test={test} getAnswer={this.getAnswer} />
+            {JSON.stringify(test.results)}
+            <Test test={test} addAnswer={this.addAnswer} />
+            }
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>

@@ -13,7 +13,7 @@ class Test extends React.Component {
 				<ul>
 					{currentQuestion.answers.map((answer, i) => {
 						return(
-							<li key={i} onClick={(e) => this.props.getAnswer(e, i)}>{answer.text}</li>
+							<li key={i} onClick={(e) => this.props.addAnswer(e, answer.link)}>{answer.text}</li>
 						)
 					})}
 				</ul>
