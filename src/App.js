@@ -5,6 +5,7 @@ import './App.css';
 
 import MainMenu from './components/MainMenu/MainMenu'
 import Slider from './components/Slider/Slider'
+import Test from './components/Test/Test'
 
 class App extends React.Component {
   constructor(props){
@@ -56,7 +57,9 @@ class App extends React.Component {
           <Section verticalAlign="true">
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
-          <Section verticalAlign="true">Test</Section>
+          <Section verticalAlign="true">
+            <Test />
+          </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>
       </div>
