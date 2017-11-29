@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import MainMenu from './components/MainMenu/MainMenu'
+import Slider from './components/Slider/Slider'
 
 class App extends React.Component {
   render() {
@@ -27,7 +28,9 @@ class App extends React.Component {
         </Footer>
         <SectionsContainer className="container" {...options}>
           <Section className="custom-section" verticalAlign="true" color="#69D2E7">Page 1</Section>
-          <Section color="#A7DBD8">Page 2</Section>
+          <Section color="#A7DBD8">
+            <Slider />
+          </Section>
           <Section color="#E0E4CC">Page 3</Section>
         </SectionsContainer>
       </div>
