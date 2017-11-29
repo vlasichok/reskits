@@ -23,9 +23,7 @@ class App extends React.Component {
             <MainMenu />
         </Header>
         <Footer>
-          <a href="">Dcoumentation</a>
-          <a href="">Example Source</a>
-          <a href="">About</a>
+          <a href="">Next</a>
         </Footer>
         <SectionsContainer className="container" {...options}>
           <Section className="custom-section" verticalAlign="true" color="#69D2E7">Page 1</Section>
