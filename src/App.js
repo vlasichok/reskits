@@ -39,9 +39,7 @@ class App extends React.Component {
       navigation:           true,
       verticalAlign:        false,
       arrowNavigation:      true,
-      scrollingSpeed:       400,
-      sectionPaddingTop:    '50px'
-      // sectionPaddingBottom: '50px'
+      scrollingSpeed:       400
     };
     const {catalog} = this.state
 
