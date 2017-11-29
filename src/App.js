@@ -20,6 +20,17 @@ class App extends React.Component {
           {name: 'EEE'}
         ],
         currentIndex: 0
+      },
+      test: {
+        questions: [
+          {text: 'What?', answers: [{text: 'sdavds', link: 1}, {text: 'adsgdsag', link: 1}, {text: 'sdgdsgsg', link: 0}, {text: 'asdgdsgsdg', link: 2}], linking: [0, 1, 2, 3]},
+          {text: 'Why?', answers: [{text: 'sdsdfhs', link: 3}, {text: '4345436ag', link: 2}, {text: 'sd435345sg', link: 1}, {text: '345342gsdg', link: 0}], linking: [0, 1, 2, 3]}
+        ],
+        results: [
+          {name: 'habvfd43453b', descr: 'dsfhdfhdfh fds hkdf kdsf', itemIndex: 0},
+          {name: '23532ewwetew', descr: 'dsfhdfhdfh fds hkdf kjnk j j biudsf', itemIndex: 1},
+        ],
+        current: 0
       }
     }
     this.chooseItem = this.chooseItem.bind(this)
@@ -42,7 +53,7 @@ class App extends React.Component {
       arrowNavigation:      true,
       scrollingSpeed:       400
     };
-    const {catalog} = this.state
+    const {catalog, test} = this.state
 
     return (
       <div>
@@ -58,7 +69,7 @@ class App extends React.Component {
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
           <Section verticalAlign="true">
-            <Test />
+            <Test test={test} />
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>
