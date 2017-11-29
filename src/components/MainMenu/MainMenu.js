@@ -4,9 +4,10 @@ import './MainMenu.css';
 const MainMenu = () => {
 	return (
 		<ul className="main-menu">
-			<li><a href="#sectionOne">Section One</a></li>
-			<li><a href="#sectionTwo">Section Two</a></li>
-			<li><a href="#sectionThree">Section Three</a></li>
+			<li><a href="#main">Main</a></li>
+			<li><a href="#catalog">Catalog</a></li>
+			<li><a href="#test">Test</a></li>
+			<li><a href="#about">About</a></li>
 		</ul>
 	)
 }

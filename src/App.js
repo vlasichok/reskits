@@ -34,12 +34,14 @@ class App extends React.Component {
   render() {
     let options = {
       sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree'],
+      anchors:              ['main', 'catalog', 'test', 'about'],
       scrollBar:            false,
       navigation:           true,
       verticalAlign:        false,
       arrowNavigation:      true,
-      scrollingSpeed: 400
+      scrollingSpeed:       400,
+      sectionPaddingTop:    '50px'
+      // sectionPaddingBottom: '50px'
     };
     const {catalog} = this.state
 
@@ -52,11 +54,12 @@ class App extends React.Component {
           <a href="">Next</a>
         </Footer>
         <SectionsContainer className="container" {...options}>
-          <Section className="custom-section" verticalAlign="true" color="#69D2E7">Page 1</Section>
-          <Section color="#A7DBD8">
+          <Section verticalAlign="true" color="#69D2E7">Main</Section>
+          <Section verticalAlign="true" color="#A7DBD8">
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
-          <Section color="#E0E4CC">Page 3</Section>
+          <Section verticalAlign="true" color="#E0E4CC">Test</Section>
+          <Section verticalAlign="true" color="#E0E4CC">About</Section>
         </SectionsContainer>
       </div>
     );
