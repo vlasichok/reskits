@@ -52,12 +52,12 @@ class App extends React.Component {
           <a href="">Next</a>
         </Footer>
         <SectionsContainer className="container" {...options}>
-          <Section verticalAlign="true" color="#69D2E7">Main</Section>
-          <Section verticalAlign="true" color="#A7DBD8">
+          <Section verticalAlign="true">Main</Section>
+          <Section verticalAlign="true">
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
-          <Section verticalAlign="true" color="#E0E4CC">Test</Section>
-          <Section verticalAlign="true" color="#E0E4CC">About</Section>
+          <Section verticalAlign="true">Test</Section>
+          <Section verticalAlign="true">About</Section>
         </SectionsContainer>
       </div>
     );
