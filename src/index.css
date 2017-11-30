@@ -2,4 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: #E7DCD2;
+  background-color: #425351;
+}
+
+a {
+  color: #E7DCD2;
 }
