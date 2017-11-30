@@ -132,7 +132,7 @@ class App extends React.Component {
   giveAnswer(e, answer){
     let test = {...this.state.test}
 
-    if(answer.resultIndex){ // if this queue level have result
+    if(answer.resultIndex !== undefined){ // if this queue level have result
       test.winnerIndex = answer.resultIndex // then finishing
       test.finished = true
     } else {
