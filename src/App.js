@@ -145,6 +145,7 @@ class App extends React.Component {
     let test = {...this.state.test}
     test.queue = initialState.test.queue
     test.finished = false
+    console.log(test)
     this.setState({test})
   }
 
@@ -159,6 +160,9 @@ class App extends React.Component {
       scrollingSpeed:       400
     };
     const {catalog, cart, test} = this.state
+
+    // fix for react-fullpage onload bug
+    window.location.hash = ''
 
     return (
       <div>
