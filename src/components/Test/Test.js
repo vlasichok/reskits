@@ -2,9 +2,9 @@ import React from 'react'
 
 class Test extends React.Component {
 	render(){
-		const {questions, results, finished, currentIndex} = this.props.test,
-		      currentQuestion = questions[currentIndex],
-		      winner = this.props.findWinner(results)
+		const {queue, queueIndex, winnerIndex, results, finished} = this.props.test,
+		      currentQuestion = queue,
+		      winner = results[winnerIndex]
 
 		return(
 			<div>
@@ -16,11 +16,11 @@ class Test extends React.Component {
 					</div>
 				) : (
 					<div>
-						<p>{currentQuestion.text} ({currentIndex+1} из {questions.length})</p>
+						<p>{currentQuestion.questionText} ({queueIndex.length})</p>
 						<ul>
 							{currentQuestion.answers.map((answer, i) => {
 								return(
-									<li key={i} onClick={(e) => this.props.addAnswer(e, answer.link)}>{answer.text}</li>
+									<li key={i} onClick={(e) => this.props.giveAnswer(e, answer)}>{answer.answerText}</li>
 								)
 							})}
 						</ul>

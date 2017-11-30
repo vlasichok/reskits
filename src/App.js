@@ -23,17 +23,32 @@ const initialState = {
         items: []
       },
       test: {
-        questions: [
-          {text: 'What?', answers: [{text: 'sdavds', link: 1}, {text: 'adsgdsag', link: 1}, {text: '33sdgdsgsg', link: 3}, {text: 'asdgdsgsdg', link: 2}], linking: [0, 1, 2, 3]},
-          {text: 'Why?', answers: [{text: 'sdsdfhs', link: 3}, {text: '4345436ag', link: 2}, {text: 'sd435345sg', link: 1}, {text: '345342gsdg', link: 0}], linking: [0, 1, 2, 3]}
-        ],
+        queue: {questionText: 'What?', answers: [
+            {answerText: 'sdavwfds', questionText: 'What?', answers: [
+              {answerText: 'sdav wvw s', questionText: 'What?', resultIndex: 3},
+              {answerText: 'sdavds', questionText: 'What?', resultIndex: 3}
+            ]}, 
+            {answerText: 'sdaewfvd. s', questionText: 'Wha st?', answers: [
+              {answerText: 'sc fdvdavds', questionText: 'Whatds ', resultIndex: 3},
+              {answerText: 'sda cdvdw ccvds', questionText: 'Wds hat?', resultIndex: 3}
+            ]}, 
+            {answerText: 'sda svd3434 s', questionText: 'Whads t?', answers: [
+              {answerText: 'sda cdvds', questionText: 'What sd?', resultIndex: 3},
+              {answerText: 'sddscavds', questionText: 'Whads t?', resultIndex: 3}
+            ]}, 
+            {answerText: 'sdawefe 34 34vds', questionText: 'What?', answers: [
+              {answerText: 'sdadsvvds', questionText: 'What?', resultIndex: 3},
+              {answerText: 'sdav svds', questionText: 'What?', resultIndex: 3}
+            ]}, 
+        ]},
+        queueIndex: [],
         results: [
-          {name: 'habvfd43453b', descr: 'dsfhdfhdfh fds hkdf kdsf', itemIndex: 0, count: 0},
-          {name: '23532ewwetew', descr: 'dsfhdfhdfh fds hkdf kjnk j j biudsf', itemIndex: 1, count: 0},
-          {name: '2532ew', descr: 'dsfhdfhdfh fds hkkjnk j j biudsf', itemIndex: 2, count: 0},
-          {name: '23532eew', descr: 'dsfhdfhdfh  j j biudsf', itemIndex: 3, count: 0},
+          {name: 'habvfd43453b', descr: 'dsfhdfhdfh fds hkdf kdsf', itemIndex: 0},
+          {name: '23532ewwetew', descr: 'dsfhdfhdfh fds hkdf kjnk j j biudsf', itemIndex: 1},
+          {name: '2532ew', descr: 'dsfhdfhdfh fds hkkjnk j j biudsf', itemIndex: 2},
+          {name: '23532eew', descr: 'dsfhdfhdfh  j j biudsf', itemIndex: 3},
         ],
-        currentIndex: 0,
+        winnerIndex: null,
         finished: false
       }
     }
@@ -44,7 +59,7 @@ class App extends React.Component {
     this.state = initialState
     this.chooseItem = this.chooseItem.bind(this)
     this.addItem = this.addItem.bind(this)
-    this.addAnswer = this.addAnswer.bind(this)
+    this.giveAnswer = this.giveAnswer.bind(this)
   }
 
   // slider methods
@@ -62,19 +77,17 @@ class App extends React.Component {
   }
 
   // test methods
-  addAnswer(e, answerIndex){
+  giveAnswer(e, answer){
     let test = {...this.state.test}
 
-    // adding points to apropriate result
-    if(test.currentIndex <= test.questions.length-1) test.results[answerIndex].count++
-    
-    // going to the next question / finishing
-    (test.currentIndex < test.questions.length-1) ? test.currentIndex++ : test.finished = true
+    if(answer.resultIndex){ // if this queue level have result
+      test.winnerIndex = answer.resultIndex // then finishing
+      test.finished = true
+    } else {
+      test.queue = answer // or getting to next queue level
+    }
 
     this.setState({test})
-  }
-  findWinner(results){
-    return _.maxBy(results, 'count')
   }
 
   render() {
@@ -104,7 +117,7 @@ class App extends React.Component {
             <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
           </Section>
           <Section verticalAlign="true">
-            <Test test={test} addAnswer={this.addAnswer} findWinner={this.findWinner} />
+            <Test test={test} giveAnswer={this.giveAnswer} />
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>
