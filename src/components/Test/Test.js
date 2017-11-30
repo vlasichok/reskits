@@ -2,12 +2,9 @@ import React from 'react'
 
 class Test extends React.Component {
 	render(){
-		const currentIndex = this.props.test.current
-		const questions = this.props.test.questions
-		const results = this.props.test.results
-		const currentQuestion = questions[currentIndex]
-		const finished = this.props.test.finished
-		const winner = this.props.findWinner(results)
+		const {questions, results, finished, currentIndex} = this.props.test,
+		      currentQuestion = questions[currentIndex],
+		      winner = this.props.findWinner(results)
 
 		return(
 			<div>
@@ -19,7 +16,7 @@ class Test extends React.Component {
 					</div>
 				) : (
 					<div>
-						<p>{currentQuestion.text} ({currentIndex})</p>
+						<p>{currentQuestion.text} ({currentIndex+1} из {questions.length})</p>
 						<ul>
 							{currentQuestion.answers.map((answer, i) => {
 								return(

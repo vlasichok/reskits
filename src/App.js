@@ -29,7 +29,7 @@ const initialState = {
           {name: '2532ew', descr: 'dsfhdfhdfh fds hkkjnk j j biudsf', itemIndex: 2, count: 0},
           {name: '23532eew', descr: 'dsfhdfhdfh  j j biudsf', itemIndex: 3, count: 0},
         ],
-        current: 0,
+        currentIndex: 0,
         finished: false
       }
     }
@@ -54,10 +54,10 @@ class App extends React.Component {
     let test = {...this.state.test}
 
     // adding points to apropriate result
-    if(test.current <= test.questions.length-1) test.results[answerIndex].count++
+    if(test.currentIndex <= test.questions.length-1) test.results[answerIndex].count++
     
     // going to the next question / finishing
-    (test.current < test.questions.length-1) ? test.current++ : test.finished = true
+    (test.currentIndex < test.questions.length-1) ? test.currentIndex++ : test.finished = true
 
     this.setState({test})
   }
