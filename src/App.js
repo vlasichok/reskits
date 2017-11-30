@@ -28,72 +28,77 @@ const initialState = {
               {answerText: 'аптечка была со мной в рюкзаке', questionText: 'По городу или в горы?', answers: [
                 {answerText: 'По городу', questionText: 'Умеешь пользоваться турникетом/жгутом?', answers: [
                   {answerText: 'Да', questionText: 'Аптечка должна быть экономной?', answers: [
-                    {answerText: 'Да', resultIndex: 3},
-                    {answerText: 'Нет', resultIndex: 3}
+                    {answerText: 'Да', resultIndex: 1},
+                    {answerText: 'Нет', resultIndex: 2}
                   ]},
-                  {answerText: 'Нет', resultIndex: 3}
+                  {answerText: 'Нет', resultIndex: 0}
                 ]},
-                {answerText: 'В горы', resultIndex: 3},
+                {answerText: 'В горы', resultIndex: 6},
               ]},
               {answerText: 'аптечка ездила со мной в машине', questionText: 'В ней должно быть все самое лучшее, верно?', answers: [
-                {answerText: 'Конечно', resultIndex: 3},
-                {answerText: 'Главное, чтобы работало', resultIndex: 3}
+                {answerText: 'Конечно', resultIndex: 5},
+                {answerText: 'Главное, чтобы работало', resultIndex: 4}
               ]},
               {answerText: 'аптечка находилась дома/в офисе', questionText: 'Полный комплект или попроще?', answers: [
-                {answerText: 'Полный', resultIndex: 3},
+                {answerText: 'Полный', resultIndex: 7},
                 {answerText: 'Попроще', resultIndex: 3}
               ]}
             ]}, 
             {answerText: 'другу', questionText: 'Я рассчитываю потратить до ...', answers: [
-              {answerText: '100 грн.', resultIndex: 3},
+              {answerText: '100 грн.', resultIndex: 5},
               {answerText: 'меньше 1500 грн.', questionText: 'Для меня важно ...', answers: [
-                {answerText: 'внимание', resultIndex: 3},
-                {answerText: 'чтобы просто, функционально и недорого', resultIndex: 3},
+                {answerText: 'внимание', resultIndex: 0},
+                {answerText: 'чтобы просто, функционально и недорого', resultIndex: 2},
                 {answerText: 'чтобы просто, функционально и очень качественно', resultIndex: 3}
               ]},
               {answerText: 'больше 1500 грн.', questionText: 'Друг водит машину?', answers: [
                 {answerText: 'Да', questionText: 'У нас есть аптечка за ХХХХ гривен', answers: [
-                  {answerText: 'Давайте поскромнее', resultIndex: 3},
-                  {answerText: 'Для друга не жалко', resultIndex: 3}
+                  {answerText: 'Давайте поскромнее', resultIndex: 4},
+                  {answerText: 'Для друга не жалко', resultIndex: 5}
                 ]},
                 {answerText: 'Нет', questionText: 'А в походы ходит?', answers: [
-                  {answerText: 'Да', resultIndex: 3},
+                  {answerText: 'Да', resultIndex: 6},
                   {answerText: 'Нет', questionText: 'Он городской супергерой?', answers: [
                     {answerText: 'Да', resultIndex: 3},
-                    {answerText: 'Нет, он домашний супергерой', resultIndex: 3}
+                    {answerText: 'Нет, он домашний супергерой', resultIndex: 7}
                   ]}
                 ]}
               ]}
             ]}, 
             {answerText: 'в компанию', questionText: 'Whads t?', answers: [
               {answerText: 'Для безопасности, конечно', questionText: 'Безопасности чего?', answers: [
-                {answerText: 'Безопасности на дороге', questionText: 'Безопасности чего?', answers: [
-                  {answerText: 'Как всегда...', questionText: 'Безопасности чего?', resultIndex: 3},
-                  {answerText: 'Нормально', resultIndex: 3},
+                {answerText: 'Безопасности на дороге', questionText: 'Как у вас с бюджетом?', answers: [
+                  {answerText: 'Как всегда...', resultIndex: 4},
+                  {answerText: 'Нормально', resultIndex: 5},
                 ]},
-                {answerText: 'Безопасности офиса', resultIndex: 3},
-                {answerText: 'Безопасности производства', resultIndex: 3}
+                {answerText: 'Безопасности офиса', resultIndex: 7},
+                {answerText: 'Безопасности производства', resultIndex: 7}
               ]},
               {answerText: 'Для эмоций, конечно', questionText: 'У кого и какие эмоции должна вызывать?', answers: [
                 {answerText: 'У многих коллег, подарим небольшие наборы', questionText: 'Как у нас с бюджетом?', answers: [
-                  {answerText: 'Как всегда...', resultIndex: 3},
-                  {answerText: 'Нормально', resultIndex: 3},
-                  {answerText: 'Фантастика!', resultIndex: 3}
+                  {answerText: 'Как всегда...', resultIndex: 0},
+                  {answerText: 'Нормально', resultIndex: 1},
+                  {answerText: 'Фантастика!', resultIndex: 2}
                 ]},
-                {answerText: 'Гордость у топ-менеджмента', resultIndex: 3},
+                {answerText: 'Гордость у топ-менеджмента', resultIndex: 7},
                 {answerText: 'Спокойствие и безопасности у босса', questionText: 'Как у нас с бюджетом?', answers: [
                   {answerText: 'Как всегда...', resultIndex: 3},
-                  {answerText: 'Нормально!', resultIndex: 3}
+                  {answerText: 'Нормально!', resultIndex: 7}
                 ]}
               ]}
             ]}
         ]},
         queueIndex: [],
         results: [
-          {name: 'habvfd43453b', descr: 'dsfhdfhdfh fds hkdf kdsf', itemIndex: 0},
-          {name: '23532ewwetew', descr: 'dsfhdfhdfh fds hkdf kjnk j j biudsf', itemIndex: 1},
-          {name: '2532ew', descr: 'dsfhdfhdfh fds hkkjnk j j biudsf', itemIndex: 2},
-          {name: '23532eew', descr: 'dsfhdfhdfh  j j biudsf', itemIndex: 3},
+          {name: 'Urban Kit 1', itemIndex: 0},
+          {name: 'Urban Kit 2', itemIndex: 1},
+          {name: 'Urban Kit 2+', itemIndex: 2},
+          {name: 'Urban Full', itemIndex: 3},
+          {name: 'MVA Kit', itemIndex: 3},
+          {name: 'MVA+'},
+          {name: 'Mountain kit'},
+          {name: 'Any mission'},
+          {name: '¯\_(ツ)_/¯ Лучше купить шоколадку'}
         ],
         winnerIndex: null,
         finished: false
