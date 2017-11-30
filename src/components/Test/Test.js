@@ -5,6 +5,7 @@ class Test extends React.Component {
 		const currentIndex = this.props.test.current
 		const questions = this.props.test.questions
 		const currentQuestion = questions[currentIndex]
+		const finished = this.props.test.finished
 
 		return(
 			<div>
@@ -17,6 +18,7 @@ class Test extends React.Component {
 						)
 					})}
 				</ul>
+				<p>{finished.toString()}</p>
 			</div>
 		)
 	}

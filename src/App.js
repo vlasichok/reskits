@@ -32,7 +32,8 @@ class App extends React.Component {
           {name: '2532ew', descr: 'dsfhdfhdfh fds hkkjnk j j biudsf', itemIndex: 2, count: 0},
           {name: '23532eew', descr: 'dsfhdfhdfh  j j biudsf', itemIndex: 3, count: 0},
         ],
-        current: 0
+        current: 0,
+        finished: false
       }
     }
     this.chooseItem = this.chooseItem.bind(this)
@@ -50,14 +51,13 @@ class App extends React.Component {
   addAnswer(e, answerIndex){
     let test = {...this.state.test}
 
-    if(test.current < test.questions.length-1) {
-      // adding points to apropriate result
-      test.results[answerIndex].count++
+    // adding points to apropriate result
+    if(test.current <= test.questions.length-1) test.results[answerIndex].count++
     
-      // going to the next question
-      test.current++
-      this.setState({test})
-    }
+    // going to the next question / finishing
+    (test.current < test.questions.length-1) ? test.current++ : test.finished = true
+
+    this.setState({test})
   }
 
   render() {
@@ -88,7 +88,6 @@ class App extends React.Component {
           <Section verticalAlign="true">
             {JSON.stringify(test.results)}
             <Test test={test} addAnswer={this.addAnswer} />
-            }
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>
