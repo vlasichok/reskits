@@ -23,23 +23,70 @@ const initialState = {
         items: []
       },
       test: {
-        queue: {questionText: 'What?', answers: [
-            {answerText: 'sdavwfds', questionText: 'What?', answers: [
-              {answerText: 'sdav wvw s', questionText: 'What?', resultIndex: 3},
-              {answerText: 'sdavds', questionText: 'What?', resultIndex: 3}
+        queue: {questionText: 'Я выбираю аптечку ...', answers: [
+            {answerText: 'себе', questionText: 'Я хочу чтобы ...', answers: [
+              {answerText: 'аптечка была со мной в рюкзаке', questionText: 'По городу или в горы?', answers: [
+                {answerText: 'По городу', questionText: 'Умеешь пользоваться турникетом/жгутом?', answers: [
+                  {answerText: 'Да', questionText: 'Аптечка должна быть экономной?', answers: [
+                    {answerText: 'Да', resultIndex: 3},
+                    {answerText: 'Нет', resultIndex: 3}
+                  ]},
+                  {answerText: 'Нет', resultIndex: 3}
+                ]},
+                {answerText: 'В горы', resultIndex: 3},
+              ]},
+              {answerText: 'аптечка ездила со мной в машине', questionText: 'В ней должно быть все самое лучшее, верно?', answers: [
+                {answerText: 'Конечно', resultIndex: 3},
+                {answerText: 'Главное, чтобы работало', resultIndex: 3}
+              ]},
+              {answerText: 'аптечка находилась дома/в офисе', questionText: 'Полный комплект или попроще?', answers: [
+                {answerText: 'Полный', resultIndex: 3},
+                {answerText: 'Попроще', resultIndex: 3}
+              ]}
             ]}, 
-            {answerText: 'sdaewfvd. s', questionText: 'Wha st?', answers: [
-              {answerText: 'sc fdvdavds', questionText: 'Whatds ', resultIndex: 3},
-              {answerText: 'sda cdvdw ccvds', questionText: 'Wds hat?', resultIndex: 3}
+            {answerText: 'другу', questionText: 'Я рассчитываю потратить до ...', answers: [
+              {answerText: '100 грн.', resultIndex: 3},
+              {answerText: 'меньше 1500 грн.', questionText: 'Для меня важно ...', answers: [
+                {answerText: 'внимание', resultIndex: 3},
+                {answerText: 'чтобы просто, функционально и недорого', resultIndex: 3},
+                {answerText: 'чтобы просто, функционально и очень качественно', resultIndex: 3}
+              ]},
+              {answerText: 'больше 1500 грн.', questionText: 'Друг водит машину?', answers: [
+                {answerText: 'Да', questionText: 'У нас есть аптечка за ХХХХ гривен', answers: [
+                  {answerText: 'Давайте поскромнее', resultIndex: 3},
+                  {answerText: 'Для друга не жалко', resultIndex: 3}
+                ]},
+                {answerText: 'Нет', questionText: 'А в походы ходит?', answers: [
+                  {answerText: 'Да', resultIndex: 3},
+                  {answerText: 'Нет', questionText: 'Он городской супергерой?', answers: [
+                    {answerText: 'Да', resultIndex: 3},
+                    {answerText: 'Нет, он домашний супергерой', resultIndex: 3}
+                  ]}
+                ]}
+              ]}
             ]}, 
-            {answerText: 'sda svd3434 s', questionText: 'Whads t?', answers: [
-              {answerText: 'sda cdvds', questionText: 'What sd?', resultIndex: 3},
-              {answerText: 'sddscavds', questionText: 'Whads t?', resultIndex: 3}
-            ]}, 
-            {answerText: 'sdawefe 34 34vds', questionText: 'What?', answers: [
-              {answerText: 'sdadsvvds', questionText: 'What?', resultIndex: 3},
-              {answerText: 'sdav svds', questionText: 'What?', resultIndex: 3}
-            ]}, 
+            {answerText: 'в компанию', questionText: 'Whads t?', answers: [
+              {answerText: 'Для безопасности, конечно', questionText: 'Безопасности чего?', answers: [
+                {answerText: 'Безопасности на дороге', questionText: 'Безопасности чего?', answers: [
+                  {answerText: 'Как всегда...', questionText: 'Безопасности чего?', resultIndex: 3},
+                  {answerText: 'Нормально', resultIndex: 3},
+                ]},
+                {answerText: 'Безопасности офиса', resultIndex: 3},
+                {answerText: 'Безопасности производства', resultIndex: 3}
+              ]},
+              {answerText: 'Для эмоций, конечно', questionText: 'У кого и какие эмоции должна вызывать?', answers: [
+                {answerText: 'У многих коллег, подарим небольшие наборы', questionText: 'Как у нас с бюджетом?', answers: [
+                  {answerText: 'Как всегда...', resultIndex: 3},
+                  {answerText: 'Нормально', resultIndex: 3},
+                  {answerText: 'Фантастика!', resultIndex: 3}
+                ]},
+                {answerText: 'Гордость у топ-менеджмента', resultIndex: 3},
+                {answerText: 'Спокойствие и безопасности у босса', questionText: 'Как у нас с бюджетом?', answers: [
+                  {answerText: 'Как всегда...', resultIndex: 3},
+                  {answerText: 'Нормально!', resultIndex: 3}
+                ]}
+              ]}
+            ]}
         ]},
         queueIndex: [],
         results: [
