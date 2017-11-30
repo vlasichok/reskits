@@ -1,6 +1,6 @@
 import React from 'react';
 import {SectionsContainer, Section, Header, Footer} from 'react-fullpage';
-import logo from './logo.svg';
+import _ from 'lodash'
 import './App.css';
 
 import MainMenu from './components/MainMenu/MainMenu'
@@ -59,6 +59,9 @@ class App extends React.Component {
 
     this.setState({test})
   }
+  findWinner(results){
+    return _.maxBy(results, 'count')
+  }
 
   render() {
     let options = {
@@ -86,8 +89,7 @@ class App extends React.Component {
             <Slider catalog={catalog} chooseItem={this.chooseItem} />
           </Section>
           <Section verticalAlign="true">
-            {JSON.stringify(test.results)}
-            <Test test={test} addAnswer={this.addAnswer} />
+            <Test test={test} addAnswer={this.addAnswer} findWinner={this.findWinner} />
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>
