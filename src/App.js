@@ -7,10 +7,7 @@ import MainMenu from './components/MainMenu/MainMenu'
 import Slider from './components/Slider/Slider'
 import Test from './components/Test/Test'
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
+const initialState = {
       catalog: {
         items: [
           {name: 'AAAAAA'},
@@ -36,6 +33,11 @@ class App extends React.Component {
         finished: false
       }
     }
+
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = initialState
     this.chooseItem = this.chooseItem.bind(this)
     this.addAnswer = this.addAnswer.bind(this)
   }
