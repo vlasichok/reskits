@@ -8,7 +8,7 @@ class Slider extends React.Component {
 		return(
 			<div>
 				<h2>Slider</h2>
-				<h4>{JSON.stringify(current)}</h4>
+				<h4>{JSON.stringify(current)} <button onClick={(e) => this.props.addItem(e, current)}>Add</button></h4>
 				<ul>
 					{this.props.catalog.items.map((item, i)=>{
 						return(

@@ -43,6 +43,7 @@ class App extends React.Component {
     super(props)
     this.state = initialState
     this.chooseItem = this.chooseItem.bind(this)
+    this.addItem = this.addItem.bind(this)
     this.addAnswer = this.addAnswer.bind(this)
   }
 
@@ -51,6 +52,13 @@ class App extends React.Component {
     let catalog = {...this.state.catalog}
     catalog.currentIndex = i
     this.setState({catalog})
+  }
+
+  // cart methods
+  addItem(e, item){
+    let cart = {...this.state.cart}
+    cart.items.push(item)
+    this.setState({cart})
   }
 
   // test methods
@@ -93,7 +101,7 @@ class App extends React.Component {
         <SectionsContainer className="container" {...options}>
           <Section verticalAlign="true">Main</Section>
           <Section verticalAlign="true">
-            <Slider catalog={catalog} chooseItem={this.chooseItem} />
+            <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
           </Section>
           <Section verticalAlign="true">
             <Test test={test} addAnswer={this.addAnswer} findWinner={this.findWinner} />
