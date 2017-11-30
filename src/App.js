@@ -19,6 +19,9 @@ const initialState = {
         ],
         currentIndex: 0
       },
+      cart: {
+        items: []
+      },
       test: {
         questions: [
           {text: 'What?', answers: [{text: 'sdavds', link: 1}, {text: 'adsgdsag', link: 1}, {text: '33sdgdsgsg', link: 3}, {text: 'asdgdsgsdg', link: 2}], linking: [0, 1, 2, 3]},
@@ -76,13 +79,13 @@ class App extends React.Component {
       arrowNavigation:      true,
       scrollingSpeed:       400
     };
-    const {catalog, test} = this.state
+    const {catalog, cart, test} = this.state
 
     return (
       <div>
         <Header>
             <MainMenu />
-            <Cart />
+            <Cart cart={cart} />
         </Header>
         <Footer>
           <a href="">Next</a>
