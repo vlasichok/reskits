@@ -11,11 +11,11 @@ import Test from './components/Test/Test'
 const initialState = {
       catalog: {
         items: [
-          {name: 'AAAAAA'},
-          {name: 'BB'},
-          {name: 'CCC'},
-          {name: 'DDDDD'},
-          {name: 'EEE'}
+          {name: 'Urban Kit 1', descr: ''},
+          {name: 'Urban Kit 2'},
+          {name: 'Urban Kit 2+'},
+          {name: 'Urban Full'},
+          {name: 'MVA Kit'}
         ],
         currentIndex: 0
       },
