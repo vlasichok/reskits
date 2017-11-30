@@ -45,7 +45,7 @@ const initialState = {
               ]}
             ]}, 
             {answerText: 'другу', questionText: 'Я рассчитываю потратить до ...', answers: [
-              {answerText: '100 грн.', resultIndex: 5},
+              {answerText: '100 грн.', resultIndex: 8},
               {answerText: 'меньше 1500 грн.', questionText: 'Для меня важно ...', answers: [
                 {answerText: 'внимание', resultIndex: 0},
                 {answerText: 'чтобы просто, функционально и недорого', resultIndex: 2},
@@ -65,7 +65,7 @@ const initialState = {
                 ]}
               ]}
             ]}, 
-            {answerText: 'в компанию', questionText: 'Whads t?', answers: [
+            {answerText: 'в компанию', questionText: 'Аптечка нужна для ...', answers: [
               {answerText: 'Для безопасности, конечно', questionText: 'Безопасности чего?', answers: [
                 {answerText: 'Безопасности на дороге', questionText: 'Как у вас с бюджетом?', answers: [
                   {answerText: 'Как всегда...', resultIndex: 4},
@@ -88,7 +88,6 @@ const initialState = {
               ]}
             ]}
         ]},
-        queueIndex: [],
         results: [
           {name: 'Urban Kit 1', itemIndex: 0},
           {name: 'Urban Kit 2', itemIndex: 1},
@@ -98,7 +97,7 @@ const initialState = {
           {name: 'MVA+'},
           {name: 'Mountain kit'},
           {name: 'Any mission'},
-          {name: '¯\_(ツ)_/¯ Лучше купить шоколадку'}
+          {name: '¯ _(ツ)_/¯ Лучше купить шоколадку'}
         ],
         winnerIndex: null,
         finished: false
@@ -108,10 +107,11 @@ const initialState = {
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state = initialState
+    this.state = _.clone(initialState)
     this.chooseItem = this.chooseItem.bind(this)
     this.addItem = this.addItem.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
+    this.restartTest = this.restartTest.bind(this)
   }
 
   // slider methods
@@ -139,6 +139,12 @@ class App extends React.Component {
       test.queue = answer // or getting to next queue level
     }
 
+    this.setState({test})
+  }
+  restartTest(e){
+    let test = {...this.state.test}
+    test.queue = initialState.test.queue
+    test.finished = false
     this.setState({test})
   }
 
@@ -169,7 +175,7 @@ class App extends React.Component {
             <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
           </Section>
           <Section verticalAlign="true">
-            <Test test={test} giveAnswer={this.giveAnswer} />
+            <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} />
           </Section>
           <Section verticalAlign="true">About</Section>
         </SectionsContainer>

@@ -2,7 +2,7 @@ import React from 'react'
 
 class Test extends React.Component {
 	render(){
-		const {queue, queueIndex, winnerIndex, results, finished} = this.props.test,
+		const {queue, winnerIndex, results, finished} = this.props.test,
 		      currentQuestion = queue,
 		      winner = results[winnerIndex]
 
@@ -16,7 +16,7 @@ class Test extends React.Component {
 					</div>
 				) : (
 					<div>
-						<p>{currentQuestion.questionText} ({queueIndex.length})</p>
+						<p>{currentQuestion.questionText}</p>
 						<ul>
 							{currentQuestion.answers.map((answer, i) => {
 								return(
@@ -26,6 +26,7 @@ class Test extends React.Component {
 						</ul>
 					</div>
 				)}
+				<button onClick={(e) => this.props.restartTest(e)}>Начать с начала</button>
 			</div>
 		)
 	}
