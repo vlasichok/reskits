@@ -4,6 +4,7 @@ import _ from 'lodash'
 import './App.css';
 
 import MainMenu from './components/MainMenu/MainMenu'
+import Cart from './components/Cart/Cart'
 import Slider from './components/Slider/Slider'
 import Test from './components/Test/Test'
 
@@ -81,6 +82,7 @@ class App extends React.Component {
       <div>
         <Header>
             <MainMenu />
+            <Cart />
         </Header>
         <Footer>
           <a href="">Next</a>
