@@ -5,7 +5,7 @@ class Cart extends React.Component {
 		const cart = this.props.cart
 
 		return(
-			<div class="text-right my-2 mx-4">
+			<div className="text-right my-2 mx-4">
 				<p>Cart: {JSON.stringify(cart)}</p>
 			</div>
 		)
