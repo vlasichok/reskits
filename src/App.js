@@ -97,7 +97,7 @@ const initialState = {
           {name: 'MVA+'},
           {name: 'Mountain kit'},
           {name: 'Any mission'},
-          {name: '¯ _(ツ)_/¯ Лучше купить шоколадку'}
+          {name: '¯_(ツ)_/¯ Лучше купить шоколадку'}
         ],
         winnerIndex: null,
         finished: false

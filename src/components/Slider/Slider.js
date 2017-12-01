@@ -7,10 +7,13 @@ class Slider extends React.Component {
 
 		return(
 			<div>
-				<h3>{current.name}</h3>
-				<div>{current.descr.split('\n').map(paragraph => <p>{paragraph}</p>)}
+				<h3>
+					{current.name}
+					<button className="mx-3" onClick={(e) => this.props.addItem(e, current)}>Add</button>
+				</h3>
+				<div>
+					{current.descr.split('\n').map(paragraph => <p>{paragraph}</p>)}
 		        </div>
-				<button onClick={(e) => this.props.addItem(e, current)}>Add</button>
 				<ul>
 					{this.props.catalog.items.map((item, i)=>{
 						return(
