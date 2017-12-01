@@ -110,6 +110,7 @@ class App extends React.Component {
     this.state = _.clone(initialState)
     this.chooseItem = this.chooseItem.bind(this)
     this.addItem = this.addItem.bind(this)
+    this.toggleCartModal = this.toggleCartModal.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
   }
@@ -125,6 +126,11 @@ class App extends React.Component {
   addItem(e, item){
     let cart = {...this.state.cart}
     cart.items.push(item)
+    this.setState({cart})
+  }
+  toggleCartModal(){
+    let cart = {...this.state.cart}
+    cart.opened = !cart.opened
     this.setState({cart})
   }
 
@@ -167,7 +173,7 @@ class App extends React.Component {
       <div>
         <Header>
             <MainMenu />
-            <Cart cart={cart} />
+            <Cart cart={cart} toggleCartModal={this.toggleCartModal} />
         </Header>
         <Footer>
           <a href="">Next</a>

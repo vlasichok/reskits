@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactModal from 'react-modal';
 
 class Cart extends React.Component {
 	render(){
@@ -6,7 +7,25 @@ class Cart extends React.Component {
 
 		return(
 			<div className="text-right my-2 mx-4">
-				<p>Корзина ({cart.items.length})</p>
+				<p><a onClick={this.props.toggleCartModal}>Корзина ({cart.items.length})</a></p>
+
+				<ReactModal 
+		           isOpen={cart.opened}
+		           contentLabel="Корзина"
+		        >
+		        	{cart.items.length>0 ? (
+			        	<ul>
+			        		{cart.items.map((item, i) => {
+			        			return(
+			        				<li>{item.name}</li>
+			        			)
+			        		})}
+			        	</ul>
+			        ) : (
+			        	<h2>Корзина пуста</h2>
+			        )}
+			        <button onClick={this.props.toggleCartModal}>Закрыть</button>
+        		</ReactModal>
 			</div>
 		)
 	}
