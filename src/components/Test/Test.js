@@ -8,7 +8,6 @@ class Test extends React.Component {
 
 		return(
 			<div>
-				<h2>Test</h2>
 				{finished ? (
 					<div>
 						<h4>{winner.name}</h4>
@@ -16,7 +15,7 @@ class Test extends React.Component {
 					</div>
 				) : (
 					<div>
-						<p>{currentQuestion.questionText}</p>
+						<h3>{currentQuestion.questionText}</h3>
 						<ul>
 							{currentQuestion.answers.map((answer, i) => {
 								return(

@@ -6,7 +6,7 @@ class Cart extends React.Component {
 
 		return(
 			<div className="text-right my-2 mx-4">
-				<p>Cart: {JSON.stringify(cart)}</p>
+				<p>Корзина ({cart.items.length})</p>
 			</div>
 		)
 	}
