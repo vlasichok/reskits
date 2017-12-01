@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactModal from 'react-modal';
 
+ReactModal.setAppElement('#root');
+
 class Cart extends React.Component {
 	render(){
 		const cart = this.props.cart
@@ -17,7 +19,7 @@ class Cart extends React.Component {
 			        	<ul>
 			        		{cart.items.map((item, i) => {
 			        			return(
-			        				<li>{item.name}</li>
+			        				<li key={i}>{item.name}</li>
 			        			)
 			        		})}
 			        	</ul>
