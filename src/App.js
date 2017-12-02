@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionsContainer, Section, Header, Footer} from 'react-fullpage';
+import {SectionsContainer, Section, Header} from 'react-fullpage';
 import _ from 'lodash'
 import './App.css';
 
@@ -177,9 +177,7 @@ class App extends React.Component {
             <MainMenu />
             <Cart cart={cart} toggleCartModal={this.toggleCartModal} />
         </Header>
-        <Footer>
-          <a href="">Next</a>
-        </Footer>
+
         <SectionsContainer className="container" {...options}>
           <Section verticalAlign="true">
             <Home />
