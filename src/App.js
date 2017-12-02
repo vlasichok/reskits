@@ -7,6 +7,7 @@ import MainMenu from './components/MainMenu/MainMenu'
 import Cart from './components/Cart/Cart'
 import Slider from './components/Slider/Slider'
 import Test from './components/Test/Test'
+import Details from './components/Details/Details'
 
 const initialState = {
       catalog: {
@@ -186,7 +187,9 @@ class App extends React.Component {
           <Section verticalAlign="true">
             <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} />
           </Section>
-          <Section verticalAlign="true">About</Section>
+          <Section verticalAlign="true">
+            <Details />
+          </Section>
         </SectionsContainer>
       </div>
     );
