@@ -157,11 +157,11 @@ class App extends React.Component {
   }
 
   render() {
-    let options = {
+    const options = {
       sectionClassName:     'section',
       anchors:              ['main', 'catalog', 'test', 'about'],
       scrollBar:            false,
-      navigation:           true,
+      navigation:           false,
       verticalAlign:        false,
       arrowNavigation:      true,
       scrollingSpeed:       400
