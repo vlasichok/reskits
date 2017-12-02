@@ -1,6 +1,9 @@
 import React from 'react'
+
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion'
 import 'react-accessible-accordion/dist/react-accessible-accordion.css'
+
+import {Icon} from 'react-fa'
 
 const Details = () => {
 	return( 
@@ -18,11 +21,13 @@ const Details = () => {
 		    <AccordionItem>
 		        <AccordionItemTitle>
 		            <h3>Доставка</h3>
-		            <div>Подробности доставки</div>
+		            <div>
+		            	<Icon name="rocket" />Подробности доставки
+		            </div>
 		        </AccordionItemTitle>
 		        <AccordionItemBody>
 		            <p>
-		                Много подробностей доставки
+		                <Icon spin name="spinner" /> Много подробностей доставки
 		            </p>
 		        </AccordionItemBody>
 		    </AccordionItem>
