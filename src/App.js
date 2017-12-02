@@ -135,7 +135,7 @@ class App extends React.Component {
     if(existingIndex !== -1){
       cart.items[existingIndex].quantity++
     } else {
-      item.qunatity = 1
+      item.quantity = 1
       cart.items.push(item)
     }
 
