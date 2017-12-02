@@ -130,7 +130,7 @@ class App extends React.Component {
     let cart = {...this.state.cart}
     let existingIndex = cart.items.findIndex(i => i.name === item.name)
 
-    if(existingIndex !== -1){
+    if(existingIndex !== -1){ // checking if such item already added
       cart.items[existingIndex].quantity++
     } else {
       item.quantity = 1
@@ -173,8 +173,8 @@ class App extends React.Component {
 
   componentDidMount(){
     document.title = "Reskits"
+    window.location.hash = ''
   }
-
   render() {
     const options = {
       sectionClassName:     'section',
@@ -186,9 +186,6 @@ class App extends React.Component {
       scrollingSpeed:       400
     };
     const {catalog, cart, test} = this.state
-
-    // fix for react-fullpage onload bug
-    window.location.hash = ''
 
     return (
       <div>
