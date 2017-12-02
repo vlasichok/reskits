@@ -125,9 +125,20 @@ class App extends React.Component {
   }
 
   // cart methods
+  findDuplicates(items, newItem){
+    return items.findIndex(i => i.name === newItem.name)
+  }
   addItem(e, item){
     let cart = {...this.state.cart}
-    cart.items.push(item)
+    let existingIndex = this.findDuplicates(cart.items, item)
+
+    if(existingIndex !== -1){
+      cart.items[existingIndex].quantity++
+    } else {
+      item.qunatity = 1
+      cart.items.push(item)
+    }
+
     this.setState({cart})
   }
   toggleCartModal(){
@@ -154,6 +165,10 @@ class App extends React.Component {
     test.queue = initialState.test.queue
     test.finished = false
     this.setState({test})
+  }
+
+  componentDidMount(){
+    document.title = "Reskits"
   }
 
   render() {
