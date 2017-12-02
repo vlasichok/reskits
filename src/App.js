@@ -112,6 +112,7 @@ class App extends React.Component {
     this.state = _.clone(initialState)
     this.chooseItem = this.chooseItem.bind(this)
     this.addItem = this.addItem.bind(this)
+    this.removeItem = this.removeItem.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
@@ -125,12 +126,9 @@ class App extends React.Component {
   }
 
   // cart methods
-  findDuplicates(items, newItem){
-    return items.findIndex(i => i.name === newItem.name)
-  }
   addItem(e, item){
     let cart = {...this.state.cart}
-    let existingIndex = this.findDuplicates(cart.items, item)
+    let existingIndex = cart.items.findIndex(i => i.name === item.name)
 
     if(existingIndex !== -1){
       cart.items[existingIndex].quantity++
@@ -140,6 +138,12 @@ class App extends React.Component {
     }
 
     this.setState({cart})
+  }
+  removeItem(e, index){
+    let cart = {...this.state.cart}
+    cart.items.splice(index, 1)
+    this.setState({cart})
+
   }
   toggleCartModal(){
     let cart = {...this.state.cart}
@@ -190,7 +194,7 @@ class App extends React.Component {
       <div>
         <Header>
             <MainMenu />
-            <Cart cart={cart} toggleCartModal={this.toggleCartModal} />
+            <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
         </Header>
 
         <SectionsContainer className="container" {...options}>

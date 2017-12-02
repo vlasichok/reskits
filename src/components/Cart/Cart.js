@@ -21,7 +21,10 @@ class Cart extends React.Component {
 			        	<ul>
 			        		{cart.items.map((item, i) => {
 			        			return(
-			        				<li key={i}>{item.name} - {item.quantity}</li>
+			        				<li key={i}>
+			        					{item.name} - {item.quantity} 
+			        					<a onClick={(e) => this.props.removeItem(e, i)}>X</a>
+			        				</li>
 			        			)
 			        		})}
 			        	</ul>
