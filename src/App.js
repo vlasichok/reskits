@@ -173,9 +173,10 @@ class App extends React.Component {
 
   componentDidMount(){
     document.title = "Reskits"
-    window.location.hash = ''
   }
   render() {
+    window.location.hash = ''
+    
     const options = {
       sectionClassName:     'section',
       anchors:              ['main', 'catalog', 'test', 'about'],
