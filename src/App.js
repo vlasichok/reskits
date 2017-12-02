@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart'
 import Slider from './components/Slider/Slider'
 import Test from './components/Test/Test'
 import Details from './components/Details/Details'
+import Home from './components/Home/Home'
 
 const initialState = {
       catalog: {
@@ -180,7 +181,9 @@ class App extends React.Component {
           <a href="">Next</a>
         </Footer>
         <SectionsContainer className="container" {...options}>
-          <Section verticalAlign="true">Main</Section>
+          <Section verticalAlign="true">
+            <Home />
+          </Section>
           <Section verticalAlign="true">
             <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
           </Section>
