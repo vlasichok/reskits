@@ -3,6 +3,7 @@ import ReactModal from 'react-modal'
 import _ from 'lodash'
 
 import './Cart.css';
+import {Icon} from 'react-fa'
 
 ReactModal.setAppElement('#root');
 
@@ -30,31 +31,37 @@ class Cart extends React.Component {
 		           contentLabel="Корзина"
 		           style={modalStyle}
 		        >
-		        	<div class="row">
-			        	<div className="col-md-6 col-sm-12">
-			        		
-			        	</div>
-			        	<div className="col-md-6 col-sm-12">
-				        	{cart.items.length>0 ? (
-				        		<div>
-						        	<ul>
-						        		{cart.items.map((item, i) => {
-						        			return(
-						        				<li key={i}>
-						        					{item.name} ({item.quantity} по {item.price} грн.) 
-						        					<a onClick={(e) => this.props.removeItem(e, i)}>X</a>
-						        				</li>
-						        			)
-						        		})}
-						        	</ul>
-						        	<h4>{total} грн.</h4>
-					        	</div>
-					        ) : (
-					        	<h2>Корзина пуста</h2>
-					        )}
-					    </div>
+		        	<div className="container">
+		        		<div className="row align-items-top">
+		        			<div className="col-sm-12 text-right">
+		        				<button onClick={this.props.toggleCartModal}><Icon name="times" /></button>
+		        			</div>
+		        		</div>
+			        	<div className="row align-items-center">
+				        	<div className="col-md-6 col-sm-12">
+				        		
+				        	</div>
+				        	<div className="col-md-6 col-sm-12 align-self-center">
+					        	{cart.items.length>0 ? (
+					        		<div>
+							        	<ul>
+							        		{cart.items.map((item, i) => {
+							        			return(
+							        				<li key={i}>
+							        					{item.name} ({item.quantity} по {item.price} грн.) 
+							        					<a onClick={(e) => this.props.removeItem(e, i)}>X</a>
+							        				</li>
+							        			)
+							        		})}
+							        	</ul>
+							        	<h4>{total} грн.</h4>
+						        	</div>
+						        ) : (
+						        	<h2>Корзина пуста</h2>
+						        )}
+						    </div>
+						</div>
 					</div>
-			        <button onClick={this.props.toggleCartModal}>Закрыть</button>
         		</ReactModal>
 			</div>
 		)
