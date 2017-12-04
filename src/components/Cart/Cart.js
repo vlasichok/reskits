@@ -24,7 +24,32 @@ class Cart extends React.Component {
 		          <ModalBody>
 		        	<div className="row">
 			        	<div className="col-md-6 col-sm-12">
-			        		
+			        		<form class="px-2">
+			        			<label for="name">ФИО</label>
+			        			<div className="form-group" name="name">
+			        				<input type="text" className="form-control" />
+			        			</div>
+
+			        			<label for="e-mail">E-mail</label>
+			        			<div className="form-group" name="e-mail">
+			        				<input type="e-mail" className="form-control" />
+			        			</div>
+
+			        			<label for="phone-number">Телефон</label>
+			        			<div className="form-group" name="phone-number">
+			        				<input type="text" className="form-control" />
+			        			</div>
+
+			        			<label for="shipping">Способ доставки</label>
+			        			<div className="form-group" name="shipping">
+			        				<input type="text" className="form-control" />
+			        			</div>
+
+			        			<label for="pay-type">Способ оплаты</label>
+			        			<div className="form-group" name="pay-type">
+			        				<input type="text" className="form-control" />
+			        			</div>
+			        		</form>
 			        	</div>
 			        	<div className="col-md-6 col-sm-12 align-self-center">
 				        	{cart.items.length>0 ? (
@@ -48,7 +73,7 @@ class Cart extends React.Component {
 					</div>
 		          </ModalBody>
 		          <ModalFooter>
-
+		          	<button className="btn btn-default">Отправить заказ</button>
 		          </ModalFooter>
 		        </Modal>
 			</div>

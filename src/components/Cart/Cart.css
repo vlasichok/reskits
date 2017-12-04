@@ -29,3 +29,10 @@
 .cart-link {
   cursor: pointer;
 }
+
+label {
+  margin-bottom: .1rem;
+}
+.form-group {
+  margin-bottom: .7rem;
+}
