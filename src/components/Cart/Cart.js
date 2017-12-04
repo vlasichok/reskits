@@ -12,8 +12,12 @@ class Cart extends React.Component {
 		const total = (cart.items.length) ? _.sumBy(cart.items, i => i.quantity*i.price) : 0
 
 		return(
-			<div className="text-right my-2 mx-4">
-				<p><a onClick={this.props.toggleCartModal}>Корзина ({counter})</a></p>
+			<div>
+				<div className="pull-right text-right mx-4 my-4">
+					<a className="cart-link" onClick={this.props.toggleCartModal}>
+						<Icon name="shopping-cart" size="2x" /> ({counter})
+					</a>
+				</div>
 
 				<Modal isOpen={cart.opened} size="lg" toggle={this.toggle} className={this.props.className}>
 		          <ModalHeader toggle={this.props.toggleCartModal}>Корзина</ModalHeader>

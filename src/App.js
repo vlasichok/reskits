@@ -191,8 +191,8 @@ class App extends React.Component {
     return (
       <div>
         <Header>
-            <MainMenu />
             <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
+            <MainMenu />
         </Header>
 
         <SectionsContainer className="container" {...options}>

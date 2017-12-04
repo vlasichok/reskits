@@ -25,3 +25,7 @@
 .modal-footer {
 	border-top: 1px solid #435451
 }
+
+.cart-link {
+  cursor: pointer;
+}
