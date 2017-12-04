@@ -10,6 +10,7 @@ body {
 
 a {
   color: #E7DCD2;
+  cursor: pointer;
 }
 
 h1, h2 {

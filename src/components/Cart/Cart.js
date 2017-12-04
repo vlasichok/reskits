@@ -52,28 +52,31 @@ class Cart extends React.Component {
 			        		</form>
 			        	</div>
 			        	<div className="col-md-6 col-sm-12 align-self-center">
-				        	{cart.items.length>0 ? (
-				        		<div>
-						        	<ul>
-						        		{cart.items.map((item, i) => {
-						        			return(
-						        				<li key={i}>
-						        					{item.name} ({item.quantity} по {item.price} грн.) 
-						        					<a onClick={(e) => this.props.removeItem(e, i)}>X</a>
-						        				</li>
-						        			)
-						        		})}
-						        	</ul>
-						        	<h4>{total} грн.</h4>
-					        	</div>
-					        ) : (
-					        	<h4 className="text-center mx-0 my-4 p-0">Корзина пуста</h4>
-					        )}
-					    </div>
+				        	<div className="mx-0 my-3 p-0">
+					        	{cart.items.length>0 ? (
+					        		<div className="mx-2 p-0">
+					        			<label>Ваш заказ:</label>
+							        	<ul>
+							        		{cart.items.map((item, i) => {
+							        			return(
+							        				<li key={i}>
+							        					<strong>{item.name}</strong> ({item.quantity} по {item.price} грн.) 
+							        					<a onClick={(e) => this.props.removeItem(e, i)} className="ml-2"><Icon name="times" /></a>
+							        				</li>
+							        			)
+							        		})}
+							        	</ul>
+							        	<h4 className="ml-1">Итого: {total} грн.</h4>
+						        	</div>
+						        ) : (
+						        	<h4 className="text-center my-2">Корзина пуста</h4>
+						        )}
+						    </div>
+						</div>
 					</div>
 		          </ModalBody>
 		          <ModalFooter>
-		          	<button className="btn btn-default">Отправить заказ</button>
+		          	<button className="btn btn-default" disabled={cart.items.length === 0}>Отправить заказ</button>
 		          </ModalFooter>
 		        </Modal>
 			</div>
