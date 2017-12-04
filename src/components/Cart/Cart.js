@@ -34,7 +34,7 @@ class Cart extends React.Component {
 		        	<div className="container">
 		        		<div className="row align-items-top">
 		        			<div className="col-sm-12 text-right">
-		        				<button onClick={this.props.toggleCartModal}><Icon name="times" /></button>
+		        				<a onClick={this.props.toggleCartModal}><Icon name="times" size="2x" /></a>
 		        			</div>
 		        		</div>
 			        	<div className="row align-items-center">
