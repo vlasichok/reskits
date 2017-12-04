@@ -67,7 +67,7 @@ class Cart extends React.Component {
 						        	<h4>{total} грн.</h4>
 					        	</div>
 					        ) : (
-					        	<h2>Корзина пуста</h2>
+					        	<h4 className="text-center mx-0 my-4 p-0">Корзина пуста</h4>
 					        )}
 					    </div>
 					</div>
