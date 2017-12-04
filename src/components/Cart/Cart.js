@@ -19,7 +19,7 @@ class Cart extends React.Component {
 					</a>
 				</div>
 
-				<Modal isOpen={cart.opened} size="lg" toggle={this.toggle} className={this.props.className}>
+				<Modal isOpen={cart.opened} size="lg" toggle={this.props.toggleCartModal} backdrop={true}>
 		          <ModalHeader toggle={this.props.toggleCartModal}>Корзина</ModalHeader>
 		          <ModalBody>
 		        	<div className="row">
