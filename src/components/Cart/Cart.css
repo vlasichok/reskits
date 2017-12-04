@@ -10,3 +10,18 @@
     min-height: calc(100vh - 20px);
   }
 }
+
+.modal-content {
+	background-color: #E7DCD2;
+	color: #425351;
+}
+
+.modal-header {
+	border-bottom: 1px solid #435451
+}
+  .modal-header .close {
+    padding: 20px;
+  }
+.modal-footer {
+	border-top: 1px solid #435451
+}

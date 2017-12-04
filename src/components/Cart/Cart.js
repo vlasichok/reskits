@@ -16,7 +16,7 @@ class Cart extends React.Component {
 				<p><a onClick={this.props.toggleCartModal}>Корзина ({counter})</a></p>
 
 				<Modal isOpen={cart.opened} size="lg" toggle={this.toggle} className={this.props.className}>
-		          <ModalHeader toggle={this.props.toggleCartModal}>Modal title</ModalHeader>
+		          <ModalHeader toggle={this.props.toggleCartModal}>Корзина</ModalHeader>
 		          <ModalBody>
 		        	<div className="row">
 			        	<div className="col-md-6 col-sm-12">
