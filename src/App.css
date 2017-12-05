@@ -1,5 +1,19 @@
 .fp-tableCell {
- display: flex;
- align-items: center;
- justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header, #footer{
+    position:fixed;
+    height: 70px;
+    display:block;
+    width: 100%;
+    z-index: 9;
+}
+#header{
+    top: 0px;
+}
+#footer{
+    bottom: 0px;
 }

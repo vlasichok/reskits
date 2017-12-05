@@ -178,7 +178,7 @@ class App extends React.Component {
   componentDidMount(){
     window.$(document).ready(function() {
         window.$('#fullpage').fullpage({
-          anchors:['main', 'catalog', 'test', 'details'],
+          anchors:['main', 'catalog', 'test', 'about'],
           scrollOverflow: true,
           verticalCentered: true
         });
@@ -188,12 +188,13 @@ class App extends React.Component {
     const {catalog, cart, test} = this.state
 
     return (
-      <div id="fullpage">
-
+      <div>
+          <div id="header">
             <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
             <MainMenu />
+          </div>
 
-
+          <div id="fullpage">
             <section className="section">
               <Home />
             </section>
@@ -206,7 +207,7 @@ class App extends React.Component {
             <section className="section">
               <Details />
             </section>
-
+          </div>
       </div>
     );
   }
