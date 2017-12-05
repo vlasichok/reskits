@@ -5,6 +5,7 @@ import 'fullpage.js'
 import './App.css'
 
 import MainMenu from './components/MainMenu/MainMenu'
+import OverlayMenu from 'react-overlay-menu'
 import Cart from './components/Cart/Cart'
 import Home from './components/Home/Home'
 import Slider from './components/Slider/Slider'
@@ -22,12 +23,18 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = _.clone(initialState)
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     this.chooseItem = this.chooseItem.bind(this)
     this.addItem = this.addItem.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
+  }
+
+  toggleMobileMenu(){
+    this.setState({mobileMenuOpened: !this.state.mobileMenuOpened})
   }
 
   // slider methods
@@ -99,7 +106,16 @@ class App extends React.Component {
       <div>
           <div id="header">
             <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
-            <MainMenu />
+            <MainMenu toggleMobileMenu={this.toggleMobileMenu} />
+
+            <OverlayMenu 
+              open={this.state.mobileMenuOpened} 
+              onClose={this.toggleMobileMenu}
+              right
+            >
+              <a onClick={this.toggleMobileMenu}>X</a><br />
+              <p className="m-5">Мобильное меню</p>
+            </OverlayMenu>
           </div>
 
           <div id="fullpage">

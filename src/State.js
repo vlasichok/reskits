@@ -91,7 +91,8 @@ const State = {
         ],
         winnerIndex: null,
         finished: false
-      }
+      },
+      mobileMenuOpened: false
     }
 
 export default State
