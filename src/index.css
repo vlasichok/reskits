@@ -12,6 +12,9 @@ a, a:hover {
   color: #E7DCD2;
   cursor: pointer;
 }
+  a:hover {
+    text-decoration: underline !important;
+  }
 
 button {
   cursor: pointer;

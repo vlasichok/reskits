@@ -1,4 +1,7 @@
 import React from 'react'
+import './Test.css'
+
+import {Icon} from 'react-fa'
 
 class Test extends React.Component {
 	render(){
@@ -7,25 +10,25 @@ class Test extends React.Component {
 		      winner = results[winnerIndex]
 
 		return(
-			<div>
+			<div className="test">
 				{finished ? (
 					<div>
 						<h4>{winner.name}</h4>
 						<p>{winner.descr}</p>
 					</div>
 				) : (
-					<div>
+					<div className="text-center">
 						<h3>{currentQuestion.questionText}</h3>
-						<ul>
+						<ul className="answers p-0">
 							{currentQuestion.answers.map((answer, i) => {
 								return(
-									<li key={i} onClick={(e) => this.props.giveAnswer(e, answer)}>{answer.answerText}</li>
+									<li><button className="btn btn-light m-2" key={i} onClick={(e) => this.props.giveAnswer(e, answer)}>{answer.answerText}</button></li>
 								)
 							})}
 						</ul>
 					</div>
 				)}
-				<button onClick={(e) => this.props.restartTest(e)}>Начать с начала</button>
+				<p className="text-center"><a onClick={(e) => this.props.restartTest(e)}><Icon name="refresh" /> Начать заново</a></p>
 			</div>
 		)
 	}
