@@ -1,7 +1,7 @@
-import React from 'react';
-import {SectionsContainer, Section, Header} from 'react-fullpage';
+import React from 'react'
 import _ from 'lodash'
-import './App.css';
+import 'fullpage.js'
+import './App.css'
 
 import MainMenu from './components/MainMenu/MainMenu'
 import Cart from './components/Cart/Cart'
@@ -9,6 +9,10 @@ import Slider from './components/Slider/Slider'
 import Test from './components/Test/Test'
 import Details from './components/Details/Details'
 import Home from './components/Home/Home'
+
+window.$ = window.jQuery = require('jquery');
+window.IScroll = require('iscroll');
+require('fullpage.js/vendors/scrolloverflow.min.js');
 
 const initialState = {
       catalog: {
@@ -172,43 +176,37 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    document.title = "Reskits"
+    window.$(document).ready(function() {
+        window.$('#fullpage').fullpage({
+          anchors:['main', 'catalog', 'test', 'details'],
+          scrollOverflow: true,
+          verticalCentered: true
+        });
+    });
   }
   render() {
-    window.location.hash = ''
-    
-    const options = {
-      sectionClassName:     'section',
-      anchors:              ['main', 'catalog', 'test', 'about'],
-      scrollBar:            false,
-      navigation:           false,
-      verticalAlign:        false,
-      arrowNavigation:      true,
-      scrollingSpeed:       400
-    };
     const {catalog, cart, test} = this.state
 
     return (
-      <div>
-        <Header>
+      <div id="fullpage">
+
             <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
             <MainMenu />
-        </Header>
 
-        <SectionsContainer className="container" {...options}>
-          <Section verticalAlign="true">
-            <Home />
-          </Section>
-          <Section verticalAlign="true">
-            <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
-          </Section>
-          <Section verticalAlign="true">
-            <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} />
-          </Section>
-          <Section verticalAlign="true">
-            <Details />
-          </Section>
-        </SectionsContainer>
+
+            <section className="section">
+              <Home />
+            </section>
+            <section className="section">
+              <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
+            </section>
+            <section className="section">
+              <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} />
+            </section>
+            <section className="section">
+              <Details />
+            </section>
+
       </div>
     );
   }
