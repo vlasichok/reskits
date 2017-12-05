@@ -1,0 +1,13 @@
+.slider .items {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+	.slider .items .item {
+		padding: 10px;
+		margin: 5px;
+		cursor: pointer;
+	}
+		.slider .items .item:hover .name {
+			text-decoration: underline;
+		}
