@@ -5,10 +5,11 @@ import './App.css'
 
 import MainMenu from './components/MainMenu/MainMenu'
 import Cart from './components/Cart/Cart'
+import Home from './components/Home/Home'
 import Slider from './components/Slider/Slider'
 import Test from './components/Test/Test'
 import Details from './components/Details/Details'
-import Home from './components/Home/Home'
+import About from './components/About/About'
 
 window.$ = window.jQuery = require('jquery');
 window.IScroll = require('iscroll');
@@ -178,7 +179,7 @@ class App extends React.Component {
   componentDidMount(){
     window.$(document).ready(function() {
         window.$('#fullpage').fullpage({
-          anchors:['main', 'catalog', 'test', 'about'],
+          anchors:['main', 'catalog', 'details', 'test', 'about'],
           scrollOverflow: true,
           verticalCentered: true
         });
@@ -202,10 +203,13 @@ class App extends React.Component {
               <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
             </section>
             <section className="section">
+              <Details />
+            </section>
+            <section className="section">
               <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} />
             </section>
             <section className="section">
-              <Details />
+              <About />
             </section>
           </div>
       </div>
