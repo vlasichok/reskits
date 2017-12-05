@@ -16,7 +16,7 @@ const Details = () => {
 			</div>
 			<div className="row points mt-3 ml-4">
 				<Accordion>
-				    <AccordionItem>
+				    <AccordionItem expanded>
 				        <AccordionItemTitle>
 				            <h3><Icon name="plus" /> Созданы для города</h3>
 				        </AccordionItemTitle>
