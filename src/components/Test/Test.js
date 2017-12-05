@@ -22,7 +22,7 @@ class Test extends React.Component {
 						<ul className="answers p-0">
 							{currentQuestion.answers.map((answer, i) => {
 								return(
-									<li><button className="btn btn-light m-2" key={i} onClick={(e) => this.props.giveAnswer(e, answer)}>{answer.answerText}</button></li>
+									<li><button className="btn btn-light m-1" key={i} onClick={(e) => this.props.giveAnswer(e, answer)}>{answer.answerText}</button></li>
 								)
 							})}
 						</ul>
