@@ -8,8 +8,12 @@ body {
   background-color: #425351;
 }
 
-a {
+a, a:hover {
   color: #E7DCD2;
+  cursor: pointer;
+}
+
+button {
   cursor: pointer;
 }
 
