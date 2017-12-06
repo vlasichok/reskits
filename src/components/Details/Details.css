@@ -1,6 +1,9 @@
-.accordion__title {
-	cursor: pointer;
+.accordion {
+	width: 100%;
 }
-	.accordion__title:focus {
-		outline: 0;
+	.accordion__title {
+		cursor: pointer;
 	}
+		.accordion__title:focus {
+			outline: 0;
+		}
