@@ -10,10 +10,10 @@ class Slider extends React.Component {
 		return(
 			<div className="container slider">
 				<div className="current-item row">
-					<div className="col-6">
+					<div className="col-lg-6 col-md-4 col-sm-3 col-xs-12">
 						<h1 className="text-right"><Icon name="medkit" size="2x" className="p-3 m-3" /></h1>
 					</div>
-					<div className="col-6">
+					<div className="col-lg-5 col-md-8 col-sm-9 col-xs-12">
 						<h3 className="name">
 							{current.name}
 							<button className="btn btn-light btn-sm mx-3" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
@@ -23,7 +23,7 @@ class Slider extends React.Component {
 				        </div>
 			        </div>
 		        </div>
-				<div className="items mt-2">
+				<div className="items mt-1">
 					{this.props.catalog.items.map((item, i)=>{
 						return(
 							<div className="item" key={i} onClick={(e) => this.props.chooseItem(e, i)}>

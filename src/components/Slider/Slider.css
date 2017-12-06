@@ -1,3 +1,7 @@
+.slider {
+	margin-bottom: -30px;
+}
+
 .slider .items {
 	display: flex;
 	align-items: center;
