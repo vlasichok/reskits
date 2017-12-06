@@ -2,6 +2,20 @@
 	margin-bottom: -30px;
 }
 
+.slider .current-item .image {
+	display: inline-block;
+	width: 90%;
+	max-width: 20rem;
+	margin: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	box-shadow: 0 1.2em 5rem -1rem rgba(0,0,0,0.7);
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+}
+.slider .current-item .image:hover {
+	transform: translateY(-0.5rem) scale(1.0125);
+}
+
 .slider .items {
 	display: flex;
 	align-items: center;
