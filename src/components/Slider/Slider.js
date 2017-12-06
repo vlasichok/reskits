@@ -27,7 +27,7 @@ class Slider extends React.Component {
 					{this.props.catalog.items.map((item, i)=>{
 						return(
 							<div className="item" key={i} onClick={(e) => this.props.chooseItem(e, i)}>
-								<p className="text-center m-0"><Icon name="medkit" size="2x" /></p>
+								<p className="text-center m-0"><Icon name={item.icon} size="2x" /></p>
 								<h5 className="name text-center">{item.name}</h5>
 							</div>
 						)
