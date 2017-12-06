@@ -106,7 +106,7 @@ class App extends React.Component {
     return (
       <div>
           <div id="header">
-            <div className="pull-left mt-4 pt-1 ml-5 pl-2">ЛОГО</div>
+            <div className="pull-left mt-4 pt-1 ml-5">ЛОГО</div>
 
             <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
             <MainMenu toggleMobileMenu={this.toggleMobileMenu} />

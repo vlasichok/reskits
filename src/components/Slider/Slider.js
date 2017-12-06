@@ -16,7 +16,7 @@ class Slider extends React.Component {
 					<div className="col-6">
 						<h3 className="name">
 							{current.name}
-							<button className="mx-3" onClick={(e) => this.props.addItem(e, current)}>Add</button>
+							<button className="btn btn-light btn-sm mx-3" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
 						</h3>
 						<div className="descr">
 							{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
@@ -28,7 +28,7 @@ class Slider extends React.Component {
 						return(
 							<div className="item" key={i} onClick={(e) => this.props.chooseItem(e, i)}>
 								<p className="text-center m-0"><Icon name="medkit" size="2x" /></p>
-								<h5 className="name">{item.name}</h5>
+								<h5 className="name text-center">{item.name}</h5>
 							</div>
 						)
 					})}
