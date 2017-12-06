@@ -20,7 +20,7 @@ const Details = () => {
 				        </AccordionItemTitle>
 				        <AccordionItemBody>
 				        	<div className="row">
-				            	<div className="descr col-10 offset-2 col-sm-8 offset-sm-3"><p>Reskits предназначены для использования в городской среде.</p></div>
+				            	<div className="descr col-9 offset-2 col-sm-7 offset-sm-3"><p>Reskits предназначены для использования в городской среде.</p></div>
 				        	</div>
 				        </AccordionItemBody>
 				    </AccordionItem>
@@ -33,7 +33,7 @@ const Details = () => {
 				        </AccordionItemTitle>
 				        <AccordionItemBody>
 				        	<div className="row">
-				            	<div className="descr col-10 offset-2 col-sm-8 offset-sm-3"><p>Reskits представлены в двух видах упаковки: в вакуумной и функциональных чехлах из Cordura 1000D.</p></div>
+				            	<div className="descr col-9 offset-2 col-sm-7 offset-sm-3"><p>Reskits представлены в двух видах упаковки: в вакуумной и функциональных чехлах из Cordura 1000D.</p></div>
 				        	</div>
 				        </AccordionItemBody>
 				    </AccordionItem>
@@ -46,7 +46,7 @@ const Details = () => {
 				        </AccordionItemTitle>
 				        <AccordionItemBody>
 				        	<div className="row">
-				            	<div className="descr col-10 offset-2 col-sm-8 offset-sm-3"><p>При выборе снаряжения использовались международные стандарты первой помощи и практический опыт спасения жизни.</p></div>
+				            	<div className="descr col-9 offset-2 col-sm-7 offset-sm-3"><p>При выборе снаряжения использовались международные стандарты первой помощи и практический опыт спасения жизни.</p></div>
 				        	</div>
 				        </AccordionItemBody>
 				    </AccordionItem>
@@ -59,7 +59,7 @@ const Details = () => {
 				        </AccordionItemTitle>
 				        <AccordionItemBody>
 				        	<div className="row">
-				            	<div className="descr col-10 offset-2 col-sm-8 offset-sm-3"><p>Мы верим, что подарить Reskits значит проявить заботу о жизни и здоровье близких людей и коллег.</p></div>
+				            	<div className="descr col-9 offset-2 col-sm-7 offset-sm-3"><p>Мы верим, что подарить Reskits значит проявить заботу о жизни и здоровье близких людей и коллег.</p></div>
 				        	</div>
 				        </AccordionItemBody>
 				    </AccordionItem>
