@@ -29,3 +29,7 @@ h1, h2 {
 	letter-spacing: 1px;
 	font-weight: 300;
 }
+
+section .container {
+  margin-bottom: -40px;
+}
