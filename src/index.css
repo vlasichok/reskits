@@ -7,6 +7,9 @@ body {
   color: #E7DCD2;
   background-color: #425351;
 }
+  body.modal-open {
+    overflow: hidden;
+  }
 
 a, a:hover {
   color: #E7DCD2;

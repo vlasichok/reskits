@@ -96,7 +96,8 @@ class App extends React.Component {
         window.$('#fullpage').fullpage({
           anchors:['main', 'catalog', 'details', 'test', 'about'],
           scrollOverflow: true,
-          verticalCentered: true
+          verticalCentered: true,
+          normalScrollElements: '.modal'
         });
     });
   }
