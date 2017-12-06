@@ -3,6 +3,7 @@ import State from './State'
 import _ from 'lodash'
 import 'fullpage.js'
 import './App.css'
+import {Icon} from 'react-fa'
 
 import MainMenu from './components/MainMenu/MainMenu'
 import OverlayMenu from 'react-overlay-menu'
@@ -113,8 +114,18 @@ class App extends React.Component {
               onClose={this.toggleMobileMenu}
               right
             >
-              <a onClick={this.toggleMobileMenu}>X</a><br />
-              <p className="m-5">Мобильное меню</p>
+              <div className="text-center my-3">
+                <a onClick={this.toggleMobileMenu}>
+                  <Icon name="times" size="2x" />
+                </a>
+              </div>
+              <ul className="mx-5">
+                <li><a href="#main">Главная</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#details">FAQ</a></li>
+                <li><a href="#test">Подобрать</a></li>
+                <li><a href="#about">О нас</a></li>
+              </ul>
             </OverlayMenu>
           </div>
 
