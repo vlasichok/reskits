@@ -94,7 +94,7 @@ class App extends React.Component {
   componentDidMount(){
     window.$(document).ready(function() {
         window.$('#fullpage').fullpage({
-          anchors:['main', 'catalog', 'details', 'test', 'about'],
+          anchors: ['main', 'catalog', 'details', 'test', 'about'],
           scrollOverflow: true,
           verticalCentered: true,
           normalScrollElements: '.modal'

@@ -4,10 +4,3 @@
 	.accordion__title:focus {
 		outline: 0;
 	}
-
-.about p {
-	text-indent: 32px;
-}
-.points p {
-	margin-left: 32px;
-}
