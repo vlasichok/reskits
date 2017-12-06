@@ -14,7 +14,7 @@ const Details = () => {
 				    <AccordionItem expanded>
 				        <AccordionItemTitle>
 				        	<div className="row mt-2">
-				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="plus" size="2x" /></div>
+				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="building" size="2x" /></div>
 				            	<div className="title col-10 col-sm-11"><h3>Созданы для города</h3></div>
 				        	</div>
 				        </AccordionItemTitle>
@@ -27,7 +27,7 @@ const Details = () => {
 				    <AccordionItem>
 				        <AccordionItemTitle>
 				        	<div className="row mt-2">
-				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="plus" size="2x" /></div>
+				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="medkit" size="2x" /></div>
 				            	<div className="title col-10 col-sm-11"><h4>Удобно хранить и транспортировать</h4></div>
 				        	</div>
 				        </AccordionItemTitle>
@@ -40,7 +40,7 @@ const Details = () => {
 				    <AccordionItem>
 				        <AccordionItemTitle>
 				        	<div className="row mt-2">
-				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="plus" size="2x" /></div>
+				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="thumbs-o-up" size="2x" /></div>
 				            	<div className="title col-10 col-sm-11"><h3>Правильное наполнение</h3></div>
 				        	</div>
 				        </AccordionItemTitle>
@@ -53,7 +53,7 @@ const Details = () => {
 				    <AccordionItem>
 				        <AccordionItemTitle>
 				        	<div className="row mt-2">
-				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="plus" size="2x" /></div>
+				            	<div className="icon col-2 col-sm-1 text-center"><Icon name="heart" size="2x" /></div>
 				            	<div className="title col-10 col-sm-11"><h3>Жизненно-важный подарок</h3></div>
 				        	</div>
 				        </AccordionItemTitle>
