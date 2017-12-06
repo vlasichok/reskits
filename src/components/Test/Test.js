@@ -10,7 +10,7 @@ class Test extends React.Component {
 		      winner = results[winnerIndex]
 
 		return(
-			<div className="test">
+			<div className="container test">
 				{finished ? (
 					<div>
 						<h4>{winner.name}</h4>
