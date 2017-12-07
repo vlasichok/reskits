@@ -15,7 +15,7 @@ class Cart extends React.Component {
 			<div>
 				<div className="pull-right text-right mx-4 my-4">
 					<a className="cart-link" onClick={this.props.toggleCartModal}>
-						<Icon name="shopping-cart" size="2x"><span class="counter text-center">{counter}</span></Icon>
+						<Icon name="shopping-cart" size="2x"><span className="counter text-center">{counter}</span></Icon>
 					</a>
 				</div>
 
@@ -24,28 +24,28 @@ class Cart extends React.Component {
 		          <ModalBody>
 		        	<div className="row">
 			        	<div className="col-md-6 col-sm-12">
-			        		<form class="px-2">
-			        			<label for="name">ФИО</label>
+			        		<form className="px-2">
+			        			<label>ФИО</label>
 			        			<div className="form-group" name="name">
 			        				<input type="text" className="form-control" />
 			        			</div>
 
-			        			<label for="e-mail">E-mail</label>
+			        			<label>E-mail</label>
 			        			<div className="form-group" name="e-mail">
 			        				<input type="e-mail" className="form-control" />
 			        			</div>
 
-			        			<label for="phone-number">Телефон</label>
+			        			<label>Телефон</label>
 			        			<div className="form-group" name="phone-number">
 			        				<input type="text" className="form-control" />
 			        			</div>
 
-			        			<label for="shipping">Способ доставки</label>
+			        			<label>Способ доставки</label>
 			        			<div className="form-group" name="shipping">
 			        				<input type="text" className="form-control" />
 			        			</div>
 
-			        			<label for="pay-type">Способ оплаты</label>
+			        			<label>Способ оплаты</label>
 			        			<div className="form-group" name="pay-type">
 			        				<input type="text" className="form-control" />
 			        			</div>

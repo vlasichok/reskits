@@ -69,6 +69,8 @@ class App extends React.Component {
     let cart = {...this.state.cart}
     cart.opened = !cart.opened
     this.setState({cart})
+
+    window.$.fn.fullpage.setAllowScrolling(!cart.opened) // toggling scroll type
   }
 
   // test methods
@@ -97,7 +99,7 @@ class App extends React.Component {
           anchors: ['main', 'catalog', 'details', 'test', 'about'],
           scrollOverflow: true,
           verticalCentered: true,
-          normalScrollElements: '.modal'
+          normalScrollElement: '.modal'
         });
     });
   }
