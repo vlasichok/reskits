@@ -12,14 +12,14 @@ class Slider extends React.Component {
 		return(
 			<div>
 				<div className="container slider">
-					<div className="current-item row mb-lg-4">
+					<div className="current-item row mb-3 mb-lg-4">
 						<div className="col-lg-3 offset-lg-2 col-md-4 col-sm-3 col-xs-12">
-							<img className="image" src="/img/UK1.jpg" />
+							<img className="image d-none d-sm-block" src="/img/UK1.jpg" />
 						</div>
 						<div className="col-lg-6 col-md-8 col-sm-9 col-xs-12">
 							<h3 className="name">
 								{current.name}
-								<button className="btn btn-light btn-sm mx-3" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
+								<button className="btn btn-light btn-sm mx-3 pull-right" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
 							</h3>
 							<div className="descr">
 								{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
@@ -32,7 +32,7 @@ class Slider extends React.Component {
 					<div className="items mt-1">
 						{catalog.items.map((item, i)=>{
 							return(
-								<div className="item" key={i} onClick={(e) => this.props.chooseItem(e, i)}>
+								<div className="item m-1 m-sm-3" key={i} onClick={(e) => this.props.chooseItem(e, i)}>
 									<p className="text-center m-0"><Icon name={item.icon} size="2x" /></p>
 									<h5 className="name text-center">{item.name}</h5>
 								</div>
