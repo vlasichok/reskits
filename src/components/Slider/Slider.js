@@ -12,19 +12,19 @@ class Slider extends React.Component {
 		return(
 			<div>
 				<div className="container slider">
-					<div className="current-item row mb-3 mb-lg-4">
-						<div className="col-lg-3 offset-lg-2 col-md-4 col-sm-3 col-xs-12">
+					<div className="current-item row mb-3 mb-md-4 mb-xl-5">
+						<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3 col-xs-12">
 							<img className="image d-none d-sm-block" src="/img/UK1.jpg" />
 						</div>
-						<div className="col-lg-6 col-md-8 col-sm-9 col-xs-12">
-							<h3 className="name">
+						<div className="col-xl-7 col-lg-8 col-md-8 col-sm-9 col-xs-12">
+							<h3 className="name mb-md-3">
 								{current.name}
-								<button className="btn btn-light btn-sm mx-3 pull-right" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
+								<button className="btn btn-light btn-sm mx-3" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
 							</h3>
 							<div className="descr">
 								{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 					        </div>
-					        <div className="text-center">
+					        <div className="pl-4">
 					        	<a onClick={this.props.toggleInfoModal}>Узнать больше...</a>
 					        </div>
 				        </div>

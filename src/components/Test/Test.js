@@ -12,8 +12,8 @@ class Test extends React.Component {
 		return(
 			<div className="container test">
 				{finished ? (
-					<div>
-						<h4>{winner.name}</h4>
+					<div className="text-center">
+						<h4>Вам подойдет {winner.name}</h4>
 						<p>{winner.descr}</p>
 					</div>
 				) : (
