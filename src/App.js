@@ -33,6 +33,7 @@ class App extends React.Component {
     this.toggleCartModal = this.toggleCartModal.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
+    this.goToResult = this.goToResult.bind(this)
   }
 
   toggleMobileMenu(){
@@ -100,6 +101,10 @@ class App extends React.Component {
     test.finished = false
     this.setState({test})
   }
+  goToResult(e, index){
+    window.location.hash = 'catalog'
+    this.chooseItem(e, index)
+  }
 
   componentDidMount(){
     window.$(document).ready(function() {
@@ -153,7 +158,7 @@ class App extends React.Component {
               <Details />
             </section>
             <section className="section">
-              <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} />
+              <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} goToResult={this.goToResult} />
             </section>
             <section className="section">
               <About />

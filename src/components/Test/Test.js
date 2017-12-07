@@ -12,9 +12,12 @@ class Test extends React.Component {
 		return(
 			<div className="container test">
 				{finished ? (
-					<div className="text-center">
+					<div className="text-center mb-2">
 						<h4>Вам подойдет {winner.name}</h4>
 						<p>{winner.descr}</p>
+						{ winner.itemIndex !== undefined &&
+							<button className="btn btn-light m-1" onClick={(e)=> this.props.goToResult(e, winner.itemIndex)}>Узнать подробнее</button>
+						}
 					</div>
 				) : (
 					<div className="text-center">

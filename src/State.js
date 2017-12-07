@@ -190,7 +190,7 @@ const State = {
           {name: 'Urban Kit 2', itemIndex: 1},
           {name: 'Urban Kit 2+', itemIndex: 2},
           {name: 'Urban Full', itemIndex: 3},
-          {name: 'MVA Kit', itemIndex: 3},
+          {name: 'MVA Kit', itemIndex: 4},
           {name: 'MVA+'},
           {name: 'Mountain kit'},
           {name: 'Any mission'},
