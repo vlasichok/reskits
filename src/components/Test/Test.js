@@ -28,7 +28,7 @@ class Test extends React.Component {
 						</ul>
 					</div>
 				)}
-				<p className="text-center"><a onClick={(e) => this.props.restartTest(e)}><Icon name="refresh" /> Начать заново</a></p>
+				<p className="text-center"><Icon name="refresh" /><a onClick={(e) => this.props.restartTest(e)} className="ml-2">Начать заново</a></p>
 			</div>
 		)
 	}

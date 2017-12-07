@@ -14,7 +14,7 @@ class Cart extends React.Component {
 		return(
 			<div>
 				<div className="pull-right text-right mx-4 my-4">
-					<a className="cart-link" onClick={this.props.toggleCartModal}>
+					<a className="cart-link no-decoration" onClick={this.props.toggleCartModal}>
 						<Icon name="shopping-cart" size="2x"><span className="counter text-center">{counter}</span></Icon>
 					</a>
 				</div>

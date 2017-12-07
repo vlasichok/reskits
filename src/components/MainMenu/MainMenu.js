@@ -13,7 +13,7 @@ const MainMenu = (props) => {
 				<li><a href="#test">Подобрать</a></li>
 				<li><a href="#about">О нас</a></li>
 			</ul>
-			<a className="d-block d-md-none" onClick={props.toggleMobileMenu}><Icon name="bars" size="2x" /></a>
+			<a className="d-block d-md-none no-decoration" onClick={props.toggleMobileMenu}><Icon name="bars" size="2x" /></a>
 		</div>
 	)
 }

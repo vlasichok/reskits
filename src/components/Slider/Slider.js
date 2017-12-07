@@ -25,7 +25,7 @@ class Slider extends React.Component {
 								{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 					        </div>
 					        <div className="text-center">
-					        	<a onClick={this.props.toggleInfoModal}>Подробнее</a>
+					        	<a onClick={this.props.toggleInfoModal}>Узнать больше...</a>
 					        </div>
 				        </div>
 			        </div>

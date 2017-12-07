@@ -8,13 +8,25 @@ body {
   background-color: #425351;
 }
 
-a, a:hover {
+a {
   color: #E7DCD2;
   cursor: pointer;
+  border-bottom: 1px dashed #E7DCD2;
 }
   a:hover {
-    text-decoration: underline !important;
+    color: #E7DCD2;
+    cursor: pointer;
+    border-bottom: 1px solid #E7DCD2;
+    text-decoration: none!important;
   }
+  .no-decoration {
+    border: 0 !important;
+    border-bottom: 0 !important;
+  }
+    .no-decoration:hover {
+      border: 0 !important;
+      border-bottom: 0 !important;
+    }
 
 button {
   cursor: pointer;

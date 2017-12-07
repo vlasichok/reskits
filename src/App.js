@@ -49,6 +49,8 @@ class App extends React.Component {
     let catalog = {...this.state.catalog}
     catalog.infoOpened = !catalog.infoOpened
     this.setState({catalog})
+
+    window.$.fn.fullpage.setAllowScrolling(!catalog.infoOpened) // toggling scroll type
   }
 
   // cart methods
