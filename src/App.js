@@ -18,6 +18,7 @@ window.$ = window.jQuery = require('jquery');
 window.IScroll = require('iscroll');
 require('fullpage.js/vendors/scrolloverflow.min.js');
 
+if(sessionStorage['cartItems']) State.cart.items = JSON.parse(sessionStorage['cartItems'])
 const initialState = State
 
 class App extends React.Component {
@@ -67,12 +68,13 @@ class App extends React.Component {
     }
 
     this.setState({cart})
+    sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
   }
   removeItem(e, index){
     let cart = {...this.state.cart}
     cart.items.splice(index, 1)
     this.setState({cart})
-
+    sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
   }
   toggleCartModal(){
     let cart = {...this.state.cart}
