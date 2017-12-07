@@ -43,7 +43,20 @@ class Slider extends React.Component {
 				<Modal isOpen={catalog.infoOpened} size="lg" toggle={this.props.toggleInfoModal} backdrop={true}>
 		        	<ModalHeader toggle={this.props.toggleInfoModal}>{current.name}</ModalHeader>
 		        	<ModalBody>
-		        		Подробая инфа
+		        		<div className="row">
+		        			<div className="col-12">
+				        		<ul className="list-group">
+				        			{current.info.parts.map((part, i)=>{
+				        				return(
+											<li key={i} className="list-group-item">
+												<span>{part.name}</span>
+												<span className="pull-right">{part.quantity} {part.unit}</span>
+											</li>
+										)
+									})}
+								</ul>
+							</div>
+		        		</div>
 					</ModalBody>
 		        </Modal>
 			</div>
