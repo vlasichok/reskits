@@ -27,6 +27,7 @@ class App extends React.Component {
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     this.chooseItem = this.chooseItem.bind(this)
+    this.toggleInfoModal = this.toggleInfoModal.bind(this)
     this.addItem = this.addItem.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
@@ -42,6 +43,11 @@ class App extends React.Component {
   chooseItem(e, i){
     let catalog = {...this.state.catalog}
     catalog.currentIndex = i
+    this.setState({catalog})
+  }
+  toggleInfoModal(e){
+    let catalog = {...this.state.catalog}
+    catalog.infoOpened = !catalog.infoOpened
     this.setState({catalog})
   }
 
@@ -139,7 +145,7 @@ class App extends React.Component {
               <Home />
             </section>
             <section className="section">
-              <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} />
+              <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} toggleInfoModal={this.toggleInfoModal} />
             </section>
             <section className="section">
               <Details />
