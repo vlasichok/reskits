@@ -199,7 +199,8 @@ const State = {
         winnerIndex: null,
         finished: false
       },
-      mobileMenuOpened: false
+      mobileMenuOpened: false,
+      loading: true
     }
 
 export default State

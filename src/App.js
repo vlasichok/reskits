@@ -107,20 +107,32 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    window.$(document).ready(function() {
-        window.$('#fullpage').fullpage({
+    function fullpageInit(){
+       window.$('#fullpage').fullpage({
           anchors: ['main', 'catalog', 'details', 'test', 'about'],
           scrollOverflow: true,
           verticalCentered: true,
-          normalScrollElement: '.modal'
-        });
-    });
+          normalScrollElement: '.modal',
+          afterRender: changeLoadingState.bind(this)
+        })
+    }
+    function changeLoadingState(){
+      this.setState({loading: false})
+    }
+
+    window.$(document).ready(
+      fullpageInit.call(this)
+    );
   }
   render() {
     const {catalog, cart, test} = this.state
 
     return (
       <div>
+        <div className={this.state.loading ? "loading " : "loading hide"}>
+          <h3>Загрузка...</h3>
+        </div>
+        <div>
           <div id="header">
             <div className="pull-left mt-4 pt-1 ml-5">ЛОГО</div>
 
@@ -164,6 +176,7 @@ class App extends React.Component {
               <About />
             </section>
           </div>
+        </div>
       </div>
     );
   }
