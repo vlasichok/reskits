@@ -3,8 +3,8 @@
 	font-size: 15px;
 }
 
-@include media-breakpoint-up(sm) {
+@media screen and (min-width: 575px) {
   .about p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
