@@ -25,7 +25,8 @@ class Slider extends React.Component {
 								{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 					        </div>
 					        <div className="pl-4">
-					        	<a onClick={this.props.togglePartsModal}>Состав</a>
+					        	<a onClick={this.props.toggleInfoModal} className="m-2">Подробности</a>
+					        	<a onClick={this.props.togglePartsModal} className="m-2">Состав</a>
 					        </div>
 				        </div>
 			        </div>
@@ -55,6 +56,16 @@ class Slider extends React.Component {
 										)
 									})}
 								</ul>
+							</div>
+		        		</div>
+					</ModalBody>
+		        </Modal>
+				<Modal isOpen={catalog.infoOpened} size="lg" toggle={this.props.toggleInfoModal} backdrop={true}>
+		        	<ModalHeader toggle={this.props.toggleInfoModal}>{current.name}</ModalHeader>
+		        	<ModalBody>
+		        		<div className="row">
+		        			<div className="col-12">
+				        		Info
 							</div>
 		        		</div>
 					</ModalBody>

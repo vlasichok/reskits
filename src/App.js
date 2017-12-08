@@ -29,6 +29,7 @@ class App extends React.Component {
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     this.chooseItem = this.chooseItem.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
+    this.toggleInfoModal = this.toggleInfoModal.bind(this)
     this.addItem = this.addItem.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
@@ -53,6 +54,14 @@ class App extends React.Component {
     this.setState({catalog})
 
     window.$.fn.fullpage.setAllowScrolling(!catalog.partsOpened) // toggling scroll type
+  }
+  toggleInfoModal(e){
+    console.log('ok')
+    let catalog = {...this.state.catalog}
+    catalog.infoOpened = !catalog.infoOpened
+    this.setState({catalog})
+
+    window.$.fn.fullpage.setAllowScrolling(!catalog.infoOpened) // toggling scroll type
   }
 
   // cart methods
@@ -166,7 +175,7 @@ class App extends React.Component {
               <Home />
             </section>
             <section className="section">
-              <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} togglePartsModal={this.togglePartsModal} />
+              <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} togglePartsModal={this.togglePartsModal} toggleInfoModal={this.toggleInfoModal} />
             </section>
             <section className="section">
               <Details />
