@@ -1,3 +1,10 @@
 .about p {
 	text-indent: 25px;
+	font-size: 15px;
+}
+
+@include media-breakpoint-up(sm) {
+  .about p {
+    font-size: 16px;
+  }
 }

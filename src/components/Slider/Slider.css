@@ -28,11 +28,29 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-wrap: wrap;
 }
 	.slider .items .item {
-		cursor: pointer;
+		overflow: none;
 	}
-		.slider .items .item:hover .name {
-			text-decoration: underline;
+		.slider .items .item .icon {
+			float: none;
 		}
+
+@media screen and (max-width: 575px) {
+	.slider .items {
+		display: block;
+	}
+		.slider .items .item {
+			overflow: hidden;
+		}
+			.slider .items .item .icon {
+				float: left;
+			}
+}
+
+.slider .items .item {
+	cursor: pointer;
+}
+	.slider .items .item:hover .name {
+		text-decoration: underline;
+	}
