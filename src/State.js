@@ -201,7 +201,8 @@ const State = {
         finished: false
       },
       mobileMenuOpened: false,
-      loading: true
+      loading: true,
+      currentSection: false
     }
 
 export default State

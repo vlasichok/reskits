@@ -19,6 +19,10 @@ a {
     border-bottom: 1px solid #E7DCD2;
     text-decoration: none!important;
   }
+  a.current {
+    font-weight: bold;
+    border-bottom: 1px solid #E7DCD2;
+  }
   .no-decoration {
     border: 0 !important;
     border-bottom: 0 !important;

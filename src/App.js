@@ -123,11 +123,15 @@ class App extends React.Component {
           scrollOverflow: true,
           verticalCentered: true,
           normalScrollElement: '.modal',
-          afterRender: changeLoadingState.bind(this)
+          afterRender: changeLoadingState.bind(this),
+          afterLoad: changeCurrentLocation.bind(this)
         })
     }
     function changeLoadingState(){
-      this.setState({loading: false})
+      this.setState({loading: false, currentSection: window.location.hash})
+    }
+    function changeCurrentLocation(){
+      this.setState({currentSection: window.location.hash})
     }
 
     window.$(document).ready(
@@ -147,7 +151,7 @@ class App extends React.Component {
             <div className="pull-left mt-4 pt-1 ml-5">ЛОГО</div>
 
             <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
-            <MainMenu toggleMobileMenu={this.toggleMobileMenu} />
+            <MainMenu toggleMobileMenu={this.toggleMobileMenu} currentSection={this.state.currentSection} />
 
             <OverlayMenu 
               open={this.state.mobileMenuOpened} 
