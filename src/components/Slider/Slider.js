@@ -21,8 +21,11 @@ class Slider extends React.Component {
 								{current.name}
 								<button className="btn btn-light btn-sm mx-3" onClick={(e) => this.props.addItem(e, current)}>В корзину</button>
 							</h3>
-							<div className="descr">
+							<div className="descr d-none d-sm-block">
 								{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+					        </div>
+					        <div className="descr-mobile d-sm-none no-decoration">
+					        	<p>{current.info.text}</p>
 					        </div>
 					        <div className="pl-4">
 					        	<a onClick={this.props.toggleInfoModal} className="m-2">Подробности</a>
@@ -66,7 +69,12 @@ class Slider extends React.Component {
 		        		<div className="item-info">
 			        		<div className="row">
 			        			<div className="col-12">
-					        		<p>{current.info.text}</p>
+			        				<div className="descr d-none d-sm-block">
+										<p>{current.info.text}</p>
+									</div>
+					        		<div className="descr-mobile d-block d-sm-none">
+										{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+							        </div>
 								</div>
 			        		</div>
 		        		</div>
