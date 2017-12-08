@@ -56,7 +56,6 @@ class App extends React.Component {
     window.$.fn.fullpage.setAllowScrolling(!catalog.partsOpened) // toggling scroll type
   }
   toggleInfoModal(e){
-    console.log('ok')
     let catalog = {...this.state.catalog}
     catalog.infoOpened = !catalog.infoOpened
     this.setState({catalog})

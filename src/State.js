@@ -7,7 +7,7 @@ const State = {
             img: 'UK1.jpg',
             icon: 'battery-quarter',
             info: {
-              text: null,
+              text: 'Urban Kit 1 — необходимый набор для безопасного оказания помощи и прекрасный подарок коллегам по офису, спорту или путешествиям.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.'},
@@ -22,7 +22,7 @@ const State = {
             img: 'UK1.jpg',
             icon: 'battery-half',
             info: {
-              text: null,
+              text: 'Urban Kit 2 — недорогой набор для личного использования, в качестве подарка, а также как элемент офисной,домашней или мото аптечки.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.'},
@@ -42,7 +42,7 @@ const State = {
             img: 'UK1.jpg',
             icon: 'battery-three-quarters',
             info: {
-              text: null,
+              text: 'Urban Kit 2+ подходит для личного использования, в качестве подарка, а также как элемент офисной,домашней или мото аптечки.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.'},
@@ -62,7 +62,7 @@ const State = {
             img: 'UK1.jpg',
             icon: 'battery-full',
             info: {
-              text: null,
+              text: 'Full Urban Kit — выбор настоящего параноика.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.'},
@@ -87,7 +87,7 @@ const State = {
             img: 'UK1.jpg',
             icon: 'battery-full',
             info: {
-              text: null,
+              text: 'Каждый ответственный водитель должен иметь свой MVA Kit.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.'},

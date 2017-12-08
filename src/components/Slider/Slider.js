@@ -63,10 +63,12 @@ class Slider extends React.Component {
 				<Modal isOpen={catalog.infoOpened} size="lg" toggle={this.props.toggleInfoModal} backdrop={true}>
 		        	<ModalHeader toggle={this.props.toggleInfoModal}>{current.name}</ModalHeader>
 		        	<ModalBody>
-		        		<div className="row">
-		        			<div className="col-12">
-				        		Info
-							</div>
+		        		<div className="item-info">
+			        		<div className="row">
+			        			<div className="col-12">
+					        		<p>{current.info.text}</p>
+								</div>
+			        		</div>
 		        		</div>
 					</ModalBody>
 		        </Modal>
