@@ -2,13 +2,18 @@ import React from 'react'
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import _ from 'lodash'
 
-import './Cart.css';
+import CartForm from './CartForm.js'
+import CartList from './CartList.js'
+
+import './Cart.css'
 import {Icon} from 'react-fa'
 
 class Cart extends React.Component {
 	constructor(props){
 		super(props)
 		this.model = this.props.cart.form
+
+		this.updateLocalModel = this.updateLocalModel.bind(this)
 	}
 
 	updateLocalModel(propName, value){
@@ -34,69 +39,11 @@ class Cart extends React.Component {
 		          <ModalBody>
 		        	<div className="row">
 			        	<div className="col-md-6 col-sm-12">
-			        		<form className="px-2">
-			        			<label>ФИО</label>
-			        			<div className="form-group" name="name">
-			        				<input type="text" className="form-control" value={this.model.name} onChange={e => this.updateLocalModel('name', e.target.value)}/>
-			        			</div>
-
-			        			<label>E-mail</label>
-			        			<div className="form-group" name="e-mail">
-			        				<input type="e-mail" className="form-control" value={this.model.email} onChange={e => this.updateLocalModel('email', e.target.value)} />
-			        			</div>
-
-			        			<label>Телефон</label>
-			        			<div className="form-group" name="phone-number">
-			        				<input type="text" className="form-control" value={this.model.phone} onChange={e => this.updateLocalModel('phone', e.target.value)} />
-			        			</div>
-
-			        			<label>Способ доставки</label>
-			        			<div className="form-group" name="shipping">
-			        				<select type="text" className="form-control" value={this.model.shipping} onChange={e => this.updateLocalModel('shipping', Number(e.target.value))}>
-			        					{cart.shippingTypes.map((type, i)=>{
-			        						return <option key={i} value={i}>{type.name}</option>
-			        					})}
-			        				</select>
-			        			</div>
-
-			        			<label>Способ оплаты</label>
-			        			<div className="form-group" name="pay-type">
-			        				<select type="text" className="form-control" value={this.model.payment} onChange={e => this.updateLocalModel('payment', Number(e.target.value))}>
-			        					{cart.paymentTypes.map((type, i)=>{
-			        						return <option key={i} value={i}>{type.name}</option>
-			        					})}
-			        				</select>
-			        			</div>
-			        		</form>
+			        		<CartForm model={this.model} paymentTypes={cart.paymentTypes} shippingTypes={cart.shippingTypes} updateLocalModel={this.updateLocalModel} />
 			        	</div>
 			        	<div className="col-md-6 col-sm-12 align-self-center">
 				        	<div className="mx-0 my-3 p-0">
-					        	{cart.items.length>0 ? (
-					        		<div className="order-list mx-2 p-0">
-					        			<label>Ваш заказ:</label>
-							        	<table class="table table-striped">
-							        		<tbody>
-								        		{cart.items.map((item, i) => {
-								        			return(
-								        				<tr key={i} className="pt-3">
-								        					<td><strong>{item.name}</strong></td>
-								        					<td>
-								        						<button className="btn btn-secondary btn-sm py-0" onClick={() => this.props.changeQuantity(i, false)} disabled={item.quantity <= 1}>-</button>
-								        						<span className="quantity">{item.quantity}</span>
-								        						<button className="btn btn-secondary btn-sm py-0" onClick={() => this.props.changeQuantity(i, true)}>+</button>
-								        					</td>
-								        					<td className="text-right">{item.price*item.quantity} ₴</td>
-								        					<td><a onClick={(e) => this.props.removeItem(e, i)} className="ml-2"><Icon name="times" /></a></td>
-								        				</tr>
-								        			)
-								        		})}
-							        		</tbody>
-							        	</table>
-							        	<h4 className="ml-1">Итого: {total} грн.</h4>
-						        	</div>
-						        ) : (
-						        	<h4 className="text-center my-2">Корзина пуста</h4>
-						        )}
+				        		<CartList items={cart.items} total={total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
 						    </div>
 						</div>
 					</div>
