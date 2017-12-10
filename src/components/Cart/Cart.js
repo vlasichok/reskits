@@ -72,18 +72,26 @@ class Cart extends React.Component {
 			        	<div className="col-md-6 col-sm-12 align-self-center">
 				        	<div className="mx-0 my-3 p-0">
 					        	{cart.items.length>0 ? (
-					        		<div className="mx-2 p-0">
+					        		<div className="order-list mx-2 p-0">
 					        			<label>Ваш заказ:</label>
-							        	<ul>
-							        		{cart.items.map((item, i) => {
-							        			return(
-							        				<li key={i}>
-							        					<strong>{item.name}</strong> ({item.quantity} по {item.price} грн.) 
-							        					<a onClick={(e) => this.props.removeItem(e, i)} className="ml-2"><Icon name="times" /></a>
-							        				</li>
-							        			)
-							        		})}
-							        	</ul>
+							        	<table class="table table-striped">
+							        		<tbody>
+								        		{cart.items.map((item, i) => {
+								        			return(
+								        				<tr key={i} className="pt-3">
+								        					<td><strong>{item.name}</strong></td>
+								        					<td>
+								        						<button className="btn btn-secondary btn-sm py-0" onClick={() => this.props.changeQuantity(i, false)} disabled={item.quantity <= 1}>-</button>
+								        						<span className="quantity">{item.quantity}</span>
+								        						<button className="btn btn-secondary btn-sm py-0" onClick={() => this.props.changeQuantity(i, true)}>+</button>
+								        					</td>
+								        					<td className="text-right">{item.price*item.quantity} ₴</td>
+								        					<td><a onClick={(e) => this.props.removeItem(e, i)} className="ml-2"><Icon name="times" /></a></td>
+								        				</tr>
+								        			)
+								        		})}
+							        		</tbody>
+							        	</table>
 							        	<h4 className="ml-1">Итого: {total} грн.</h4>
 						        	</div>
 						        ) : (
@@ -96,7 +104,7 @@ class Cart extends React.Component {
 		          <ModalFooter>
 		          	<div className="row">
 		          		<div className="col">
-		          			{JSON.stringify(this.model)}
+
 		          		</div>
 		          		<div className="col">
 		          			<button className="btn btn-default" disabled={cart.items.length === 0}>Отправить заказ</button>

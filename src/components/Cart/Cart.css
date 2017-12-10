@@ -49,3 +49,9 @@ label {
 .form-group {
   margin-bottom: .7rem;
 }
+
+.order-list .quantity {
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+}

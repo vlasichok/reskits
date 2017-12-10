@@ -32,6 +32,7 @@ class App extends React.Component {
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
     this.updateForm = this.updateForm.bind(this)
     this.addItem = this.addItem.bind(this)
+    this.changeQuantity = this.changeQuantity.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
@@ -76,6 +77,12 @@ class App extends React.Component {
       cart.items.push(item)
     }
 
+    this.setState({cart})
+    sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
+  }
+  changeQuantity(index, increment){
+    let cart = {...this.state.cart};
+    (increment) ? cart.items[index].quantity++ : cart.items[index].quantity--
     this.setState({cart})
     sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
   }
@@ -157,7 +164,7 @@ class App extends React.Component {
           <div id="header">
             <div className="pull-left mt-4 pt-1 ml-5">ЛОГО</div>
 
-            <Cart cart={cart} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} />
+            <Cart cart={cart} changeQuantity={this.changeQuantity} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} />
             <MainMenu toggleMobileMenu={this.toggleMobileMenu} currentSection={this.state.currentSection} />
 
             <OverlayMenu 
