@@ -124,7 +124,6 @@ class App extends React.Component {
           verticalCentered: true,
           normalScrollElement: '.modal',
           afterRender: changeLoadingState.bind(this),
-          afterLoad: changeCurrentLocation.bind(this)
         })
     }
     function changeLoadingState(){
@@ -137,6 +136,7 @@ class App extends React.Component {
     window.$(document).ready(
       fullpageInit.call(this)
     );
+    window.onhashchange = changeCurrentLocation.bind(this)
   }
   render() {
     const {catalog, cart, test} = this.state
