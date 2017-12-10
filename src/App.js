@@ -153,7 +153,7 @@ class App extends React.Component {
     window.onhashchange = changeCurrentLocation.bind(this)
   }
   render() {
-    const {catalog, cart, test} = this.state
+    const {catalog, cart, test, details} = this.state
 
     return (
       <div>
@@ -195,7 +195,7 @@ class App extends React.Component {
               <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} togglePartsModal={this.togglePartsModal} toggleInfoModal={this.toggleInfoModal} />
             </section>
             <section className="section">
-              <Details />
+              <Details items={details.items} />
             </section>
             <section className="section">
               <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} goToResult={this.goToResult} />

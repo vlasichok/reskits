@@ -174,7 +174,7 @@ const State = {
                   {answerText: 'Да', resultIndex: 6},
                   {answerText: 'Нет', questionText: 'Он городской супергерой?', answers: [
                     {answerText: 'Да', resultIndex: 3},
-                    {answerText: 'Нет, он домашний супергерой', resultIndex: 7}
+                    {answerText: 'Нет, он домашний супергерой (ง"̀-"́)ง', resultIndex: 7}
                   ]}
                 ]}
               ]}
@@ -211,10 +211,38 @@ const State = {
           {name: 'MVA+'},
           {name: 'Mountain kit'},
           {name: 'Any mission'},
-          {name: '¯_(ツ)_/¯ Лучше купить шоколадку'}
+          {name: '¯\\_(ツ)_/¯ Лучше купить шоколадку'}
         ],
         winnerIndex: null,
         finished: false
+      },
+      details: {
+        items: [
+          {
+            title: 'Созданы для города', 
+            text: 'Reskits представлены в двух видах упаковки: в вакуумной и функциональных чехлах из Cordura 1000D.', 
+            icon: 'building',
+            expanded: true
+          },
+          {
+            title: 'Удобно хранить и транспортировать', 
+            text: 'Reskits представлены в двух видах упаковки: в вакуумной и функциональных чехлах из Cordura 1000D.', 
+            icon: 'medkit',
+            expanded: false
+          },
+          {
+            title: 'Правильное наполнение', 
+            text: 'При выборе снаряжения использовались международные стандарты первой помощи и практический опыт спасения жизни.', 
+            icon: 'thumbs-up',
+            expanded: false
+          },
+          {
+            title: 'Жизненно-важный подарок', 
+            text: 'Мы верим, что подарить Reskits значит проявить заботу о жизни и здоровье близких людей и коллег.', 
+            icon: 'heart',
+            expanded: false
+          }
+        ]
       },
       mobileMenuOpened: false,
       loading: true,
