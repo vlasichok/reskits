@@ -118,7 +118,23 @@ const State = {
         infoOpened: false
       },
       cart: {
-        items: []
+        items: [],
+        form: {
+          name: '',
+          email: '',
+          phone: '',
+          shipping: 0,
+          payment: 0
+        },
+        shippingTypes: [
+          {name: 'Доставка в отделение Новой почты', cost: 35},
+          {name: 'Доставка куръером Новой почты', cost: 55},
+          {name: 'Самовывоз в Одессе', cost: 0}
+        ],
+        paymentTypes: [
+          {name: 'Наложенный платеж', cost: 35},
+          {name: 'Оплата на карту', cost: 55}
+        ]
       },
       test: {
         queue: {questionText: 'Я выбираю аптечку ...', answers: [

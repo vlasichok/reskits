@@ -30,6 +30,7 @@ class App extends React.Component {
     this.chooseItem = this.chooseItem.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
+    this.updateForm = this.updateForm.bind(this)
     this.addItem = this.addItem.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
@@ -91,6 +92,12 @@ class App extends React.Component {
 
     window.$.fn.fullpage.setAllowScrolling(!cart.opened) // toggling scroll type
   }
+  updateForm(model){
+    console.log(model)
+    let cart = {...this.state.cart}
+    cart.form = model
+    this.setState({cart})
+  }
 
   // test methods
   giveAnswer(e, answer){
@@ -150,7 +157,7 @@ class App extends React.Component {
           <div id="header">
             <div className="pull-left mt-4 pt-1 ml-5">ЛОГО</div>
 
-            <Cart cart={cart} removeItem={this.removeItem} toggleCartModal={this.toggleCartModal} />
+            <Cart cart={cart} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} />
             <MainMenu toggleMobileMenu={this.toggleMobileMenu} currentSection={this.state.currentSection} />
 
             <OverlayMenu 
