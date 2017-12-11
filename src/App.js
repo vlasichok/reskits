@@ -185,31 +185,34 @@ class App extends React.Component {
         <div className={this.state.loading ? "loading " : "loading hide"}>
           <h3>Загрузка...</h3>
         </div>
+
+        <OverlayMenu 
+          open={this.state.mobileMenuOpened} 
+          onClose={this.toggleMobileMenu}
+          right
+        >
+          <div className="text-center my-3">
+            <a onClick={this.toggleMobileMenu}>
+              <Icon name="times" size="2x" />
+            </a>
+          </div>
+          <ul className="mx-5">
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#details">FAQ</a></li>
+            <li><a href="#test">Подобрать</a></li>
+            <li><a href="#about">О нас</a></li>
+          </ul>
+        </OverlayMenu>
+
         <div>
           <div id="header">
-            <div className="pull-left mt-4 pt-1 ml-5">ЛОГО</div>
+            <div className="pull-left mt-4 ml-3 ml-sm-5">
+              <a href="#main" className="no-decoration"><img className="logo" src='/logo.svg' /></a>
+            </div>
 
             <Cart cart={cart} changeQuantity={this.changeQuantity} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} />
             <MainMenu toggleMobileMenu={this.toggleMobileMenu} currentSection={this.state.currentSection} />
-
-            <OverlayMenu 
-              open={this.state.mobileMenuOpened} 
-              onClose={this.toggleMobileMenu}
-              right
-            >
-              <div className="text-center my-3">
-                <a onClick={this.toggleMobileMenu}>
-                  <Icon name="times" size="2x" />
-                </a>
-              </div>
-              <ul className="mx-5">
-                <li><a href="#main">Главная</a></li>
-                <li><a href="#catalog">Каталог</a></li>
-                <li><a href="#details">FAQ</a></li>
-                <li><a href="#test">Подобрать</a></li>
-                <li><a href="#about">О нас</a></li>
-              </ul>
-            </OverlayMenu>
           </div>
 
           <div id="fullpage">
