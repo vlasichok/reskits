@@ -38,6 +38,7 @@ class App extends React.Component {
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
     this.goToResult = this.goToResult.bind(this)
+    this.toggleCollapse = this.toggleCollapse.bind(this)
   }
 
   toggleMobileMenu(){
@@ -130,6 +131,15 @@ class App extends React.Component {
     this.chooseItem(e, index)
   }
 
+  // details methods
+  toggleCollapse(e, index){
+    let details = {...this.state.details}
+    for (let i = 0; i < details.items.length; i++){
+      details.items[i].expanded = (i === index) ? !details.items[i].expanded : false
+    }
+    this.setState({details})
+  }
+
   componentDidMount(){
     function fullpageInit(){
        window.$('#fullpage').fullpage({
@@ -195,7 +205,7 @@ class App extends React.Component {
               <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} togglePartsModal={this.togglePartsModal} toggleInfoModal={this.toggleInfoModal} />
             </section>
             <section className="section">
-              <Details items={details.items} />
+              <Details items={details.items} toggleCollapse={this.toggleCollapse} />
             </section>
             <section className="section">
               <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} goToResult={this.goToResult} />

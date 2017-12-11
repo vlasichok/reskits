@@ -14,7 +14,9 @@ const Details = (props) => {
 					    <div className="col-10 offset-1 col-md-8 offset-md-2">
 				        	<div className="row mt-2">
 				            	<div className="icon col-2 col-sm-3 text-center text-md-right"><Icon name={item.icon} size="2x" /></div>
-				            	<div className="title col-10 col-sm-8"><h3>{item.title}</h3></div>
+				            	<div className="title col-10 col-sm-8">
+				            		<h3><a onClick={(e) => props.toggleCollapse(e, i)}>{item.title}</a></h3>
+				            	</div>
 				        	</div>
 					        <Collapse isOpen={item.expanded}>
 					        	<div className="row">
