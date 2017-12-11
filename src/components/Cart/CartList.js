@@ -7,7 +7,7 @@ const CartList = (props) => {
 			{props.items.length>0 ? (
 				<div className="order-list mx-2 p-0">
 					<label>Ваш заказ:</label>
-		        	<table class="table table-striped">
+		        	<table class="table table-striped table-sm">
 		        		<tbody>
 			        		{props.items.map((item, i) => {
 			        			return(

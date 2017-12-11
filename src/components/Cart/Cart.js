@@ -38,10 +38,10 @@ class Cart extends React.Component {
 		          <ModalHeader toggle={this.props.toggleCartModal}>Корзина</ModalHeader>
 		          <ModalBody>
 		        	<div className="row">
-			        	<div className="col-md-6 col-sm-12">
+			        	<div className="col-12 col-lg-6">
 			        		<CartForm model={this.model} paymentTypes={cart.paymentTypes} shippingTypes={cart.shippingTypes} updateLocalModel={this.updateLocalModel} />
 			        	</div>
-			        	<div className="col-md-6 col-sm-12 align-self-center">
+			        	<div className="col-12 col-lg-6 align-self-center">
 				        	<div className="mx-0 my-3 p-0">
 				        		<CartList items={cart.items} total={total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
 						    </div>
