@@ -66,14 +66,18 @@ class App extends React.Component {
 
     window.$.fn.fullpage.setAllowScrolling(!catalog.infoOpened) // toggling scroll type
   }
-  goToNextImg(currItemIndex){
+  goToNextImg(currItemIndex, reversedOrder){
     let catalog = {...this.state.catalog}
     let currentItem = catalog.items[currItemIndex]
-    if(currentItem.gallery.current < currentItem.gallery.imgs.length-1){
-      currentItem.gallery.current++
+    let isFirst = currentItem.gallery.current === 0
+    let isLast = currentItem.gallery.current === currentItem.gallery.imgs.length-1
+
+    if(reversedOrder) {
+        (!isFirst) ? currentItem.gallery.current-- : currentItem.gallery.current = currentItem.gallery.imgs.length-1
     } else {
-      currentItem.gallery.current = 0
+        (!isLast) ? currentItem.gallery.current++ : currentItem.gallery.current = 0
     }
+
     this.setState({catalog})
   }
 
