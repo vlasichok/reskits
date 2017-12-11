@@ -4,7 +4,10 @@ const State = {
           {
             name: 'Urban Kit 1',
             price: 300,
-            img: 'UK1.jpg',
+            gallery: {
+              imgs: ['UK1.jpg', 'UK1_2.jpg'],
+              current: 0
+            },
             icon: 'battery-quarter',
             info: {
               text: 'Urban Kit 1 — необходимый набор для безопасного оказания помощи и прекрасный подарок коллегам по офису, спорту или путешествиям.',
@@ -19,7 +22,10 @@ const State = {
           {
             name: 'Urban Kit 2',
             price: 450,
-            img: 'UK1.jpg',
+            gallery: {
+              imgs: ['UK1.jpg', 'UK1_2.jpg'],
+              current: 0
+            },
             icon: 'battery-half',
             info: {
               text: 'Urban Kit 2 — недорогой набор для личного использования, в качестве подарка, а также как элемент офисной,домашней или мото аптечки.',
@@ -39,7 +45,10 @@ const State = {
           {
             name: 'Urban Kit 2+',
             price: 550,
-            img: 'UK1.jpg',
+            gallery: {
+              imgs: ['UK1.jpg', 'UK1_2.jpg'],
+              current: 0
+            },
             icon: 'battery-three-quarters',
             info: {
               text: 'Urban Kit 2+ подходит для личного использования, в качестве подарка, а также как элемент офисной,домашней или мото аптечки.',
@@ -59,7 +68,10 @@ const State = {
           {
             name: 'Urban Full',
             price: 1500,
-            img: 'UK1.jpg',
+            gallery: {
+              imgs: ['UK1.jpg', 'UK1_2.jpg'],
+              current: 0
+            },
             icon: 'battery-full',
             info: {
               text: 'Full Urban Kit — выбор настоящего параноика.',
@@ -84,7 +96,10 @@ const State = {
           {
             name: 'MVA Kit',
             price: 990,
-            img: 'UK1.jpg',
+            gallery: {
+              imgs: ['UK1.jpg', 'UK1_2.jpg'],
+              current: 0
+            },
             icon: 'battery-full',
             info: {
               text: 'Каждый ответственный водитель должен иметь свой MVA Kit.',

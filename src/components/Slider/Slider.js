@@ -4,17 +4,44 @@ import './Slider.css'
 import {Icon} from 'react-fa'
 
 class Slider extends React.Component {
+	constructor(props){
+		super(props)
+
+		this.pauseGallery = this.pauseGallery.bind(this)
+		this.resumeGallery = this.resumeGallery.bind(this)
+	}
+
+	startGallery(){
+		this.galleryInterval = setInterval( () => {
+				this.props.goToNextImg(this.props.catalog.currentIndex)
+			}
+		, 3000)
+	}
+	pauseGallery(){
+		clearInterval(this.galleryInterval)
+	}
+	resumeGallery(){
+		setTimeout( ()=> {
+			this.props.goToNextImg(this.props.catalog.currentIndex)
+			this.startGallery()
+		}, 1000)
+	}
+
+	componentDidMount(){
+		this.startGallery()
+	}
 	render(){
 		const catalog = this.props.catalog
 		let currentIndex = this.props.catalog.currentIndex
 		let current = this.props.catalog.items[currentIndex]
+		let currentImg = current.gallery.imgs[current.gallery.current]
 
 		return(
 			<div>
 				<div className="container slider">
 					<div className="current-item row mb-3 mb-md-4 mb-xl-5">
 						<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3 col-xs-12">
-							<img className="image d-none d-sm-block" src="/img/UK1.jpg" />
+							<img className="image d-none d-sm-block" src={'/img/' + currentImg} onMouseEnter={this.pauseGallery} onMouseLeave={this.resumeGallery}/>
 						</div>
 						<div className="col-xl-7 col-lg-8 col-md-8 col-sm-9 col-xs-12">
 							<h3 className="name mb-md-3">

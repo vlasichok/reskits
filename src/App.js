@@ -28,6 +28,7 @@ class App extends React.Component {
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     this.chooseItem = this.chooseItem.bind(this)
+    this.goToNextImg = this.goToNextImg.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
     this.updateForm = this.updateForm.bind(this)
@@ -64,6 +65,16 @@ class App extends React.Component {
     this.setState({catalog})
 
     window.$.fn.fullpage.setAllowScrolling(!catalog.infoOpened) // toggling scroll type
+  }
+  goToNextImg(currItemIndex){
+    let catalog = {...this.state.catalog}
+    let currentItem = catalog.items[currItemIndex]
+    if(currentItem.gallery.current < currentItem.gallery.imgs.length-1){
+      currentItem.gallery.current++
+    } else {
+      currentItem.gallery.current = 0
+    }
+    this.setState({catalog})
   }
 
   // cart methods
@@ -202,7 +213,7 @@ class App extends React.Component {
               <Home />
             </section>
             <section className="section">
-              <Slider catalog={catalog} chooseItem={this.chooseItem} addItem={this.addItem} togglePartsModal={this.togglePartsModal} toggleInfoModal={this.toggleInfoModal} />
+              <Slider catalog={catalog} chooseItem={this.chooseItem} goToNextImg={this.goToNextImg} addItem={this.addItem} togglePartsModal={this.togglePartsModal} toggleInfoModal={this.toggleInfoModal} />
             </section>
             <section className="section">
               <Details items={details.items} toggleCollapse={this.toggleCollapse} />
