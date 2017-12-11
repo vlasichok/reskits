@@ -16,10 +16,6 @@
 		transform: translateY(-0.5rem) scale(1.0125);
 	}
 
-.slider .current-item .descr p {
-	text-indent: 25px;
-}
-
 .item-info p {
 	text-indent: 25px;
 }

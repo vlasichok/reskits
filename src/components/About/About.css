@@ -1,6 +1,6 @@
 .about p {
-	text-indent: 25px;
 	font-size: 15px;
+    margin-bottom: 1.3rem; 
 }
 
 @media screen and (min-width: 575px) {

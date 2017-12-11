@@ -33,8 +33,8 @@ class Slider extends React.Component {
 					        <div className="descr-mobile d-sm-none no-decoration">
 					        	<p>{current.info.text}</p>
 					        </div>
-					        <div className="pl-4">
-					        	<a onClick={this.props.toggleInfoModal} className="m-2">Подробности</a>
+					        <div>
+					        	<a onClick={this.props.toggleInfoModal} className="m-2 ml-sm-0">Подробности</a>
 					        	<a onClick={this.props.togglePartsModal} className="m-2">Состав</a>
 					        </div>
 				        </div>
