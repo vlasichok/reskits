@@ -133,7 +133,7 @@ class App extends React.Component {
     cart.form = model
     this.setState({cart})
   }
-  loadNPCities(cityName){
+  loadNPCities(cityName = 'Од'){
     reqwest({
         url: "https://api.novaposhta.ua/v2.0/json/",
         method: "GET",
@@ -144,13 +144,13 @@ class App extends React.Component {
           modelName: "Address",
               calledMethod: "searchSettlements",
               methodProperties: {
-                  CityName: "Одеса",
+                  CityName: cityName,
                   Limit: 5
             }
         },
     }).then( response => {
         let cart = {...this.state.cart}
-        cart.NPCities = response.data[0].Addresses
+        cart.NPCities = (response.data[0]) ? response.data[0].Addresses : []
         this.setState({cart})
     })
   }

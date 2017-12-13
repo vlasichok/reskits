@@ -33,11 +33,12 @@ class CartForm extends React.Component {
 
 				<label>Ваш город</label>
 				<div className="form-group" name="shipping">
-					<select type="text" className="form-control" value={this.props.model.shipping} onChange={e => this.props.updateLocalModel('shipping', Number(e.target.value))}>
+					<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => this.props.loadNPCities(e.target.value)} list="cityname" />
+					<datalist id="cityname">
 						{this.props.NPCities.map((city, i)=>{
-							return <option key={i} value={i}>{JSON.stringify(city)}</option>
+							return <option key={i} value={city.MainDescription}></option>
 						})}
-					</select>
+					</datalist>
 				</div>
 
 				<label>Способ оплаты</label>
