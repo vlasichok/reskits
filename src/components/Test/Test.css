@@ -1,3 +1,14 @@
 .test .answers {
 	list-style-type: none;
 }
+
+@media screen and (max-width: 575px) {
+	.test .question {
+		font-size: 1.4em;
+		line-height: 1.05em;
+	}
+	.test button {
+		white-space: normal;
+		line-height: 1.2em;
+	}
+}
