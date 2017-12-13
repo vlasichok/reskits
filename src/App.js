@@ -27,23 +27,34 @@ class App extends React.Component {
     super(props)
     this.state = _.clone(initialState)
 
+    // app methods
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+
+    // slider methods
     this.chooseItem = this.chooseItem.bind(this)
     this.goToNextImg = this.goToNextImg.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
-    this.updateForm = this.updateForm.bind(this)
     this.addItem = this.addItem.bind(this)
+
+    // cart methods
+    this.updateForm = this.updateForm.bind(this)
     this.changeQuantity = this.changeQuantity.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.loadNPCities = this.loadNPCities.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
+
+    // test methods
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
     this.goToResult = this.goToResult.bind(this)
+
+    // details methods
     this.toggleCollapse = this.toggleCollapse.bind(this)
   }
 
+
+  // app methods
   toggleMobileMenu(){
     this.setState({mobileMenuOpened: !this.state.mobileMenuOpened})
   }
@@ -82,8 +93,6 @@ class App extends React.Component {
 
     this.setState({catalog})
   }
-
-  // cart methods
   addItem(e, item){
     let cart = {...this.state.cart}
     let existingIndex = cart.items.findIndex(i => i.name === item.name)
@@ -98,6 +107,8 @@ class App extends React.Component {
     this.setState({cart})
     sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
   }
+
+  // cart methods
   changeQuantity(index, increment){
     let cart = {...this.state.cart};
     (increment) ? cart.items[index].quantity++ : cart.items[index].quantity--
@@ -144,7 +155,6 @@ class App extends React.Component {
     })
   }
 
-
   // test methods
   giveAnswer(e, answer){
     let test = {...this.state.test}
@@ -188,10 +198,10 @@ class App extends React.Component {
           afterRender: changeLoadingState.bind(this),
         })
     }
-    function changeLoadingState(){
+    function changeLoadingState(){ // for preloader
       this.setState({loading: false, currentSection: window.location.hash})
     }
-    function changeCurrentLocation(){
+    function changeCurrentLocation(){ // changing current hash state
       this.setState({currentSection: window.location.hash})
     }
 
@@ -200,6 +210,7 @@ class App extends React.Component {
     );
     window.onhashchange = changeCurrentLocation.bind(this)
   }
+
   render() {
     const {catalog, cart, test, details} = this.state
 
@@ -231,29 +242,57 @@ class App extends React.Component {
         <div>
           <div id="header">
             <div className="pull-left mt-4 ml-3 ml-sm-5">
-              <a href="#main" className="no-decoration"><img className="logo" src='/logo.svg' /></a>
+              <a href="#main" className="no-decoration"><img className="logo" src='/logo.svg' alt='logo' /></a>
             </div>
 
-            <Cart cart={cart} changeQuantity={this.changeQuantity} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} loadNPCities={this.loadNPCities} />
-            <MainMenu toggleMobileMenu={this.toggleMobileMenu} currentSection={this.state.currentSection} />
+            <Cart cart={cart} 
+              changeQuantity={this.changeQuantity} 
+              removeItem={this.removeItem} 
+              updateForm={this.updateForm} 
+              toggleCartModal={this.toggleCartModal} 
+              loadNPCities={this.loadNPCities} 
+            />
+            <MainMenu 
+              toggleMobileMenu={this.toggleMobileMenu}
+              currentSection={this.state.currentSection} 
+            />
+
           </div>
 
           <div id="fullpage">
+
             <section className="section">
               <Home />
             </section>
+
             <section className="section">
-              <Slider catalog={catalog} chooseItem={this.chooseItem} goToNextImg={this.goToNextImg} addItem={this.addItem} togglePartsModal={this.togglePartsModal} toggleInfoModal={this.toggleInfoModal} />
+              <Slider catalog={catalog} 
+                chooseItem={this.chooseItem} 
+                goToNextImg={this.goToNextImg} 
+                addItem={this.addItem} 
+                togglePartsModal={this.togglePartsModal} 
+                toggleInfoModal={this.toggleInfoModal} 
+              />
             </section>
+
             <section className="section">
-              <Details items={details.items} toggleCollapse={this.toggleCollapse} />
+              <Details items={details.items} 
+                toggleCollapse={this.toggleCollapse} 
+              />
             </section>
+
             <section className="section">
-              <Test test={test} giveAnswer={this.giveAnswer} restartTest={this.restartTest} goToResult={this.goToResult} />
+              <Test test={test} 
+                giveAnswer={this.giveAnswer} 
+                restartTest={this.restartTest} 
+                goToResult={this.goToResult}
+              />
             </section>
+
             <section className="section">
               <About />
             </section>
+
           </div>
         </div>
       </div>
