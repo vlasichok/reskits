@@ -48,11 +48,6 @@ const SliderCurrent = props => {
 					</div>
 					<div className="col-10 offset-1">
 						<img className="image" src={'/img/' + currentImg} alt="medkit"/>
-						<div className="w-100 text-center">
-							<a onClick={() => props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
-							<span>{current.gallery.current+1} / {current.gallery.imgs.length}</span>
-							<a onClick={() => props.goToNextImg(currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
-						</div>
 					</div>
 					<div className="col-12">
 				        <div className="text-center mt-2">
