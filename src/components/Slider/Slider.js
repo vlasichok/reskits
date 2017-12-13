@@ -15,7 +15,7 @@ class Slider extends React.Component {
 				<div className="container slider">
 					<div className="current-item row mb-3 mb-md-4 mb-xl-5">
 						<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3 col-xs-12">
-							<img className="image d-none d-sm-block" src={'/img/' + currentImg}/>
+							<img className="image d-none d-sm-block" src={'/img/' + currentImg} alt="medkit"/>
 							<div className="w-100 text-center">
 								<a onClick={() => this.props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
 								<span>{current.gallery.current+1} / {current.gallery.imgs.length}</span>
