@@ -1,9 +1,8 @@
-.accordion {
-	width: 100%;
-}
-	.accordion__title {
-		cursor: pointer;
+@media screen and (max-width: 575px) {
+	.details .descr p {
+		line-height: 1.25em;
 	}
-		.accordion__title:focus {
-			outline: 0;
-		}
+	.details .title {
+		font-size: 20px;
+	}
+}
