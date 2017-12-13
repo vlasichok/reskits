@@ -149,7 +149,8 @@ const State = {
         paymentTypes: [
           {name: 'Наложенный платеж', cost: 35},
           {name: 'Оплата на карту', cost: 55}
-        ]
+        ],
+        NPCities: []
       },
       test: {
         queue: {questionText: 'Я выбираю аптечку ...', answers: [

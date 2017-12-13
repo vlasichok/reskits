@@ -1,27 +1,8 @@
 import React from 'react'
-import $ from 'jquery'
-
 
 class CartForm extends React.Component {
 	componentDidMount(){
-		$.ajax({
-		    url: 'https://api.novaposhta.ua/v2.0/json/',
-		    method: 'GET',
-		    type: 'jsonp',
-		    contentType: "application/json; charset=UTF-8",
-		    data: {
-				apiKey: "7314d0691ba990733c4a83182ca0354d",
-				modelName: "Address",
-				    calledMethod: "searchSettlements",
-				    methodProperties: {
-				        CityName: "Одеса",
-				        Limit: 5
-					}
-			},
-		    success: function(response){
-		      console.log(response);
-		    }
-		});
+		this.props.loadNPCities()
 	}
 	render(){
 		return(
@@ -46,6 +27,15 @@ class CartForm extends React.Component {
 					<select type="text" className="form-control" value={this.props.model.shipping} onChange={e => this.props.updateLocalModel('shipping', Number(e.target.value))}>
 						{this.props.shippingTypes.map((type, i)=>{
 							return <option key={i} value={i}>{type.name}</option>
+						})}
+					</select>
+				</div>
+
+				<label>Ваш город</label>
+				<div className="form-group" name="shipping">
+					<select type="text" className="form-control" value={this.props.model.shipping} onChange={e => this.props.updateLocalModel('shipping', Number(e.target.value))}>
+						{this.props.NPCities.map((city, i)=>{
+							return <option key={i} value={i}>{JSON.stringify(city)}</option>
 						})}
 					</select>
 				</div>

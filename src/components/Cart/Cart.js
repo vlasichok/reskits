@@ -39,7 +39,7 @@ class Cart extends React.Component {
 		          <ModalBody>
 		        	<div className="row">
 			        	<div className="col-12 col-lg-6">
-			        		<CartForm model={this.model} paymentTypes={cart.paymentTypes} shippingTypes={cart.shippingTypes} updateLocalModel={this.updateLocalModel} />
+			        		<CartForm model={this.model} paymentTypes={cart.paymentTypes} shippingTypes={cart.shippingTypes} NPCities={cart.NPCities} updateLocalModel={this.updateLocalModel} loadNPCities={this.props.loadNPCities} />
 			        	</div>
 			        	<div className="col-12 col-lg-6 align-self-center">
 				        	<div className="mx-0 my-3 p-0">

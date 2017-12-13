@@ -4,6 +4,7 @@ import _ from 'lodash'
 import 'fullpage.js'
 import './App.css'
 import {Icon} from 'react-fa'
+import reqwest from 'reqwest'
 
 import MainMenu from './components/MainMenu/MainMenu'
 import OverlayMenu from 'react-overlay-menu'
@@ -35,6 +36,7 @@ class App extends React.Component {
     this.addItem = this.addItem.bind(this)
     this.changeQuantity = this.changeQuantity.bind(this)
     this.removeItem = this.removeItem.bind(this)
+    this.loadNPCities = this.loadNPCities.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
     this.giveAnswer = this.giveAnswer.bind(this)
     this.restartTest = this.restartTest.bind(this)
@@ -116,11 +118,32 @@ class App extends React.Component {
     window.$.fn.fullpage.setAllowScrolling(!cart.opened) // toggling scroll type
   }
   updateForm(model){
-    console.log(model)
     let cart = {...this.state.cart}
     cart.form = model
     this.setState({cart})
   }
+  loadNPCities(cityName){
+    reqwest({
+        url: "https://api.novaposhta.ua/v2.0/json/",
+        method: "GET",
+        type: "jsonp",
+        contentType: "application/json; charset=UTF-8",
+        data: {
+          apiKey: "7314d0691ba990733c4a83182ca0354d",
+          modelName: "Address",
+              calledMethod: "searchSettlements",
+              methodProperties: {
+                  CityName: "Одеса",
+                  Limit: 5
+            }
+        },
+    }).then( response => {
+        let cart = {...this.state.cart}
+        cart.NPCities = response.data[0].Addresses
+        this.setState({cart})
+    })
+  }
+
 
   // test methods
   giveAnswer(e, answer){
@@ -211,7 +234,7 @@ class App extends React.Component {
               <a href="#main" className="no-decoration"><img className="logo" src='/logo.svg' /></a>
             </div>
 
-            <Cart cart={cart} changeQuantity={this.changeQuantity} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} />
+            <Cart cart={cart} changeQuantity={this.changeQuantity} removeItem={this.removeItem} updateForm={this.updateForm} toggleCartModal={this.toggleCartModal} loadNPCities={this.loadNPCities} />
             <MainMenu toggleMobileMenu={this.toggleMobileMenu} currentSection={this.state.currentSection} />
           </div>
 
