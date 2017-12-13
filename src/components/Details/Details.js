@@ -11,7 +11,7 @@ const Details = (props) => {
 			<div className="row">
 				{props.items.map((item, i) => {
 					return(
-					    <div className="col-12 col-md-10 offset-md-1">
+					    <div key={i} className="col-12 col-md-10 offset-md-1">
 				        	<div className="row mt-2">
 				            	<div className="icon col-2 col-sm-3 text-center text-md-right"><Icon name={item.icon} size="2x" /></div>
 				            	<div className="title col-10 col-sm-8">
