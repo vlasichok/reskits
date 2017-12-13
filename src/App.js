@@ -241,7 +241,7 @@ class App extends React.Component {
 
         <div>
           <div id="header">
-            <div className="pull-left mt-4 ml-3 ml-sm-5">
+            <div className="pull-left mt-3 mt-sm-4 ml-3 ml-sm-5">
               <a href="#main" className="no-decoration"><img className="logo" src='/logo.svg' alt='logo' /></a>
             </div>
 

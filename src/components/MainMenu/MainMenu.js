@@ -5,7 +5,7 @@ import {Icon} from 'react-fa'
 
 const MainMenu = (props) => {
 	return (
-		<div className="text-right pull-right my-4">
+		<div className="text-right pull-right my-3 my-sm-4">
 			<ul className="main-menu d-none d-md-block">
 				<li><a href="#catalog" className={(props.currentSection === '#catalog') ? 'current' : ''}>Каталог</a></li>
 				<li><a href="#details" className={(props.currentSection === '#details') ? 'current' : ''}>FAQ</a></li>
