@@ -103,9 +103,15 @@ class App extends React.Component {
       item.quantity = 1
       cart.items.push(item)
     }
+    cart.animateCounter = true // animation flag on
 
     this.setState({cart})
     sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
+
+    setTimeout(() => { // animation flag off
+      cart.animateCounter = false
+      this.setState({cart})
+    }, 600)
   }
 
   // cart methods

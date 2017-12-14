@@ -150,7 +150,8 @@ const State = {
           {name: 'Наложенный платеж', cost: 35},
           {name: 'Оплата на карту', cost: 55}
         ],
-        NPCities: []
+        NPCities: [],
+        animateCounter: false
       },
       test: {
         queue: {questionText: 'Я выбираю аптечку ...', answers: [
