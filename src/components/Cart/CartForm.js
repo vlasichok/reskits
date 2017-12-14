@@ -35,7 +35,7 @@ class CartForm extends React.Component {
 					<div>
 						<label>Ваш город</label>
 						<div className="form-group" name="shipping">
-							<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => this.props.loadNPCities(e.target.value)} list="cityname" />
+							<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => { this.props.loadNPCities(e.target.value); this.props.updateLocalModel('NPCity', e.target.value)}} list="cityname" />
 							<datalist id="cityname">
 								{this.props.NPCities.map((city, i)=>{
 									return <option key={i} value={city.MainDescription}></option>
