@@ -43,7 +43,6 @@ const SliderCurrent = props => {
 					<div className="col-10 offset-1 text-center">
 						<h3 className="name">
 							{current.name}
-							<button className="btn btn-light btn-sm mx-3" onClick={(e) => props.addItem(e, current)}>В корзину</button>
 						</h3>
 					</div>
 					<div className="col-10 offset-1">
@@ -51,8 +50,9 @@ const SliderCurrent = props => {
 					</div>
 					<div className="col-12">
 				        <div className="text-center mt-2">
-				        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm m-2 ml-sm-0">Подробности</button>
-				        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm m-2">Состав</button>
+				        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm m-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
+				        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm m-2"><Icon name="list"/></button>
+				        	<button className="btn btn-light btn-sm m-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
 				        </div>
 			        </div>
 		        </div>

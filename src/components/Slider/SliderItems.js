@@ -16,7 +16,38 @@ const SliderItems = props => {
 					})}
 				</div>
 			) : (
-				<div></div>
+				<div className="items-mobile">
+					<div className="row">
+						<div className="col-2 p-3">
+							<a className="left-step no-decoration ml-2"><Icon name="arrow-left" /></a>
+						</div>
+						<div className="col-8">
+							<div className="row">
+								<div className="col-4 text-center p-2">
+									<div className="item">
+										<div className="icon text-sm-center-xs"><Icon name="battery-full" /></div>
+										<p className="name text-sm-center">Any scevw</p>
+									</div>
+								</div>
+								<div className="col-4 text-center p-2">
+									<div className="item">
+										<div className="icon text-sm-center-xs"><Icon name="battery-full" /></div>
+										<p className="name text-sm-center">Any mission</p>
+									</div>
+								</div>
+								<div className="col-4 text-center p-2">
+									<div className="item">
+										<div className="icon text-sm-center-xs"><Icon name="battery-full" /></div>
+										<p className="name text-sm-center">Ay ission</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="col-2 p-3">
+							<a className="left-step no-decoration"><Icon name="arrow-right" /></a>
+						</div>
+					</div>
+				</div>
 			)}
 		</div>
 	)

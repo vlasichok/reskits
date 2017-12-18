@@ -50,3 +50,7 @@
 	.slider .items .item:hover .name {
 		text-decoration: underline;
 	}
+.slider .items-mobile .item .name {
+	font-size: 12px;
+	line-height: 1.3em;
+}
