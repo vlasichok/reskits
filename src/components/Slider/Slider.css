@@ -54,3 +54,7 @@
 	font-size: 12px;
 	line-height: 1.3em;
 }
+
+.fp-controlArrow {
+	transform: scale(0.6);
+}

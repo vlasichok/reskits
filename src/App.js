@@ -2,6 +2,7 @@ import React from 'react'
 import State from './State'
 import _ from 'lodash'
 import 'fullpage.js'
+import 'fullpage.js/dist/jquery.fullpage.css'
 import './App.css'
 import {Icon} from 'react-fa'
 import reqwest from 'reqwest'
@@ -199,6 +200,7 @@ class App extends React.Component {
        window.$('#fullpage').fullpage({
           anchors: ['main', 'catalog', 'details', 'test', 'about'],
           scrollOverflow: true,
+          loopHorizontal: false,
           verticalCentered: true,
           normalScrollElement: '.modal',
           afterRender: changeLoadingState.bind(this),

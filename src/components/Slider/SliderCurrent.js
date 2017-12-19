@@ -39,23 +39,31 @@ const SliderCurrent = props => {
 			        </div>
 		        </div>
 		     ) : (
-				<div className="current-item row mb-3 mb-md-4 mb-xl-5">
-					<div className="col-10 offset-1 text-center">
-						<h3 className="name">
-							{current.name}
-						</h3>
-					</div>
-					<div className="col-10 offset-1">
-						<img className="image" src={'/img/' + currentImg} alt="medkit"/>
-					</div>
-					<div className="col-12">
-				        <div className="text-center mt-2">
-				        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm m-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
-				        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm m-2"><Icon name="list"/></button>
-				        	<button className="btn btn-light btn-sm m-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
-				        </div>
-			        </div>
-		        </div>
+			     <div>
+			     	{props.catalog.items.map((item, i) => {
+						return(
+							<div className="slide">
+								<div className="current-item">
+									<div className="col-10 offset-1 text-center">
+										<h3 className="name">
+											{item.name}
+										</h3>
+									</div>
+									<div className="col-10 offset-1">
+										<img className="image" src={'/img/' + currentImg} alt="medkit"/>
+									</div>
+									<div className="col-12">
+								        <div className="text-center mt-2">
+								        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm m-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
+								        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm m-2"><Icon name="list"/></button>
+								        	<button className="btn btn-light btn-sm m-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
+								        </div>
+							        </div>
+							    </div>
+							</div>
+						)
+			     	})}
+			     </div>
 		     )}
 
 		     <PartsModal current={current} partsOpened={props.catalog.partsOpened}
