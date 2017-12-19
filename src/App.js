@@ -204,6 +204,7 @@ class App extends React.Component {
           verticalCentered: true,
           normalScrollElement: '.modal',
           afterRender: changeLoadingState.bind(this),
+          onSlideLeave: changeMobileCurrent.bind(this)
         })
     }
     function changeLoadingState(){ // for preloader
@@ -211,6 +212,9 @@ class App extends React.Component {
     }
     function changeCurrentLocation(){ // changing current hash state
       this.setState({currentSection: window.location.hash})
+    }
+    function changeMobileCurrent(anchorLink, index, slideIndex, direction, nextSlideIndex){
+      this.chooseItem(null, nextSlideIndex)
     }
 
     window.$(document).ready(
