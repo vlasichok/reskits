@@ -43,12 +43,12 @@ const SliderCurrent = props => {
 			     	{props.catalog.items.map((item, i) => {
 						return(
 							<div className="slide">
-								<div className="current-item">
+								<div className="current-item mt-2">
 									<div className="col-10 offset-1 text-center">
-										<h3 className="name">
+										<h3 className="name m-0">
 											{item.name}
 										</h3>
-										<p>{item.price} ₴</p>
+										<p className="m-0">{item.price} ₴</p>
 									</div>
 									<div className="col-10 offset-1">
 										<img className="image" src={'/img/' + currentImg} alt="medkit"/>
