@@ -43,12 +43,12 @@ const SliderCurrent = props => {
 			     	{props.catalog.items.map((item, i) => {
 						return(
 							<div className="slide">
-								<div className="current-item row mt-2 mt-sm-4">
+								<div className="current-item--mobile row mt-2 mt-sm-4">
 									<div className="col-10 offset-1 text-center d-block d-sm-none">
 										<h3 className="name m-0">{item.name}</h3>
 										<p className="m-0">{item.price} ₴</p>
 									</div>
-									<div className="col-10 offset-1 col-sm-5 offset-sm-0">
+									<div className="col-10 offset-1 col-sm-5 offset-sm-0 mt-sm-2 text-center">
 										<img className="image" src={'/img/' + item.gallery.imgs[item.gallery.current]} alt="medkit"/>
 										<div className="w-100 text-center">
 											<a onClick={() => props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
@@ -58,15 +58,18 @@ const SliderCurrent = props => {
 									</div>
 									<div className="col-12 col-sm-7">
 								        <div className="text-center text-sm-left mt-2 mt-sm-4">
-								 			<div className="mb-3 d-none d-sm-block">
-												<h4 className="name m-0">{item.name} <span className="badge badge-light badge-sm">{item.price} ₴</span></h4>
+								 			<div className="mb-3 mb-sm-2 d-none d-sm-block">
+												<h4 className="name m-0 float-left">{item.name}</h4>
+												<span className="price d-inline-block my-1 mx-2"> — {item.price}₴</span>
 											</div>
 								        	<div className="descr-mobile d-none d-sm-block no-decoration">
-									        	<p>{current.info.text}</p>
+									        	<p>{item.info.text}</p>
 									        </div>
-								        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm m-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
-								        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm m-2"><Icon name="list"/></button>
-								        	<button className="btn btn-light btn-sm m-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
+									        <div className="mt-3 mt-sm-0">
+									        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm mx-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
+									        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm mx-2"><Icon name="list"/></button>
+									        	<button className="btn btn-light btn-sm mx-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
+								        	</div>
 								        </div>
 							        </div>
 							    </div>
