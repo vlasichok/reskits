@@ -63,7 +63,7 @@ class App extends React.Component {
   // slider methods
   chooseItem(e, i){
     let catalog = {...this.state.catalog}
-    catalog.currentIndex = i
+    catalog.currentIndex = Number(i)
     this.setState({catalog})
   }
   togglePartsModal(e){
@@ -203,15 +203,21 @@ class App extends React.Component {
           loopHorizontal: false,
           verticalCentered: true,
           normalScrollElement: '.modal',
-          afterRender: changeLoadingState.bind(this),
+          afterRender: afterRender.bind(this),
           onSlideLeave: changeMobileCurrent.bind(this)
         })
     }
-    function changeLoadingState(){ // for preloader
-      this.setState({loading: false, currentSection: window.location.hash})
+    function afterRender(){
+      let sectionName = window.location.hash.split('/')[0]
+      let slideIndex = window.location.hash.split('/')[1] || 0 // for catalog on mobile
+      this.setState({
+        loading: false, // hiding preloader
+        currentSection: sectionName // setting curr section satet (for menu hightligting)
+      })
+      this.chooseItem(null, slideIndex)
     }
     function changeCurrentLocation(){ // changing current hash state
-      this.setState({currentSection: window.location.hash})
+      this.setState({currentSection: window.location.hash.split('/')[0]})
     }
     function changeMobileCurrent(anchorLink, index, slideIndex, direction, nextSlideIndex){
       this.chooseItem(null, nextSlideIndex)
