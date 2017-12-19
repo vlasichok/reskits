@@ -12,7 +12,7 @@ const SliderCurrent = props => {
 	return(
 		<div>
 			{(window.innerWidth > 575) ? (
-				<div className="current-item row mb-3 mb-md-4 mb-xl-5">
+				<div className="current-item row mb-3 mb-sm-0 mb-md-4 mb-xl-5">
 					<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3">
 						<img className="image d-none d-sm-block" src={'/img/' + currentImg} alt="medkit"/>
 						<div className="w-100 text-center">
@@ -26,10 +26,10 @@ const SliderCurrent = props => {
 							{current.name}
 							<button className="btn btn-light btn-sm mx-3" onClick={(e) => props.addItem(e, current)}>В корзину</button>
 						</h3>
-						<div className="descr d-none d-sm-block">
+						<div className="descr d-none d-md-block">
 							{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 				        </div>
-				        <div className="descr-mobile d-sm-none no-decoration">
+				        <div className="descr-mobile d-md-none no-decoration">
 				        	<p>{current.info.text}</p>
 				        </div>
 				        <div>
