@@ -11,7 +11,7 @@ const SliderCurrent = props => {
 
 	return(
 		<div>
-			{(window.innerWidth > 575) ? (
+			{(window.innerWidth > 767) ? (
 				<div className="current-item row mb-3 mb-sm-0 mb-md-4 mb-xl-5">
 					<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3">
 						<img className="image d-none d-sm-block" src={'/img/' + currentImg} alt="medkit"/>
@@ -43,14 +43,12 @@ const SliderCurrent = props => {
 			     	{props.catalog.items.map((item, i) => {
 						return(
 							<div className="slide">
-								<div className="current-item mt-2">
-									<div className="col-10 offset-1 text-center">
-										<h3 className="name m-0">
-											{item.name}
-										</h3>
+								<div className="current-item row mt-2 mt-sm-4">
+									<div className="col-10 offset-1 text-center d-block d-sm-none">
+										<h3 className="name m-0">{item.name}</h3>
 										<p className="m-0">{item.price} ₴</p>
 									</div>
-									<div className="col-10 offset-1">
+									<div className="col-10 offset-1 col-sm-5 offset-sm-0">
 										<img className="image" src={'/img/' + item.gallery.imgs[item.gallery.current]} alt="medkit"/>
 										<div className="w-100 text-center">
 											<a onClick={() => props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
@@ -58,8 +56,14 @@ const SliderCurrent = props => {
 											<a onClick={() => props.goToNextImg(currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
 										</div>
 									</div>
-									<div className="col-12">
-								        <div className="text-center mt-2">
+									<div className="col-12 col-sm-7">
+								        <div className="text-center text-sm-left mt-2 mt-sm-4">
+								 			<div className="mb-3 d-none d-sm-block">
+												<h4 className="name m-0">{item.name} <span className="badge badge-light badge-sm">{item.price} ₴</span></h4>
+											</div>
+								        	<div className="descr-mobile d-none d-sm-block no-decoration">
+									        	<p>{current.info.text}</p>
+									        </div>
 								        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm m-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
 								        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm m-2"><Icon name="list"/></button>
 								        	<button className="btn btn-light btn-sm m-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>

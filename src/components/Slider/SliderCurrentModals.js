@@ -33,10 +33,10 @@ const InfoModal = props => {
         		<div className="item-info">
 	        		<div className="row">
 	        			<div className="col-12">
-	        				<div className="descr d-none d-sm-block">
+	        				<div className="descr d-none d-md-block">
 								<p>{props.current.info.text}</p>
 							</div>
-			        		<div className="descr-mobile d-block d-sm-none">
+			        		<div className="descr-mobile d-block d-md-none">
 								{props.current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 					        </div>
 						</div>

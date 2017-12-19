@@ -4,7 +4,7 @@ import {Icon} from 'react-fa'
 const SliderItems = props => {
 	return(
 		<div>
-			{(window.innerWidth > 575) && (
+			{(window.innerWidth > 767) && (
 				<div className="items mt-1">
 					{props.catalog.items.map((item, i)=>{
 						return(
