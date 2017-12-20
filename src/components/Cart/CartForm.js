@@ -32,7 +32,7 @@ class CartForm extends React.Component {
 					</select>
 				</div>
 
-				{(this.props.model.shipping === 0 || this.props.model.shipping === 1) &&
+				{(this.props.model.shipping === 1 || this.props.model.shipping === 2) &&
 					<div>
 						<div>
 							<label>Ваш город</label>
@@ -40,7 +40,7 @@ class CartForm extends React.Component {
 								<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => { this.props.loadNPCities(e.target.value); this.props.updateLocalModel('NPCity', e.target.value); this.props.loadNPWarehouses(this.props.model.NPCity)}} list="cityname" />
 								<datalist id="cityname">
 									{this.props.NPCities.map((city, i)=>{
-										return <option key={i} value={city.MainDescription}></option>
+										return <option key={i} value={city.Description}></option>
 									})}
 								</datalist>
 							</div>
@@ -67,7 +67,7 @@ class CartForm extends React.Component {
 					</div>
 				}
 
-				{(this.props.model.shipping === 1) &&
+				{(this.props.model.shipping === 2) &&
 					<div>
 						<label>Ваш адрес</label>
 						<div className="form-group" name="shippingAdress">

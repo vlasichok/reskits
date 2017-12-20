@@ -150,15 +150,15 @@ class App extends React.Component {
         data: {
           apiKey: "7314d0691ba990733c4a83182ca0354d",
           modelName: "Address",
-              calledMethod: "searchSettlements",
+              calledMethod: "getCities",
               methodProperties: {
                   CityName: cityName,
-                  Limit: 5
+                  Limit: 200
             }
         },
     }).then( response => {
         let cart = {...this.state.cart}
-        cart.NPCities = (response.data[0]) ? response.data[0].Addresses : []
+        cart.NPCities = (response.data.length) ? response.data : []
         this.setState({cart})
     })
   }
@@ -174,6 +174,7 @@ class App extends React.Component {
           calledMethod: "getWarehouses",
           methodProperties: {
               CityName: cityName,
+              Limit: 200
           }
         },
     }).then( response => {
