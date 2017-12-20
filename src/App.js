@@ -43,6 +43,7 @@ class App extends React.Component {
     this.changeQuantity = this.changeQuantity.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.loadNPCities = this.loadNPCities.bind(this)
+    this.loadNPWarehouses = this.loadNPWarehouses.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
 
     // test methods
@@ -140,7 +141,7 @@ class App extends React.Component {
     cart.form = model
     this.setState({cart})
   }
-  loadNPCities(cityName = 'Од'){
+  loadNPCities(cityName = 'Київ'){
     reqwest({
         url: "https://api.novaposhta.ua/v2.0/json/",
         method: "GET",
@@ -158,6 +159,26 @@ class App extends React.Component {
     }).then( response => {
         let cart = {...this.state.cart}
         cart.NPCities = (response.data[0]) ? response.data[0].Addresses : []
+        this.setState({cart})
+    })
+  }
+  loadNPWarehouses(cityName = ''){
+    reqwest({
+        url: "https://api.novaposhta.ua/v2.0/json/",
+        method: "GET",
+        type: "jsonp",
+        contentType: "application/json; charset=UTF-8",
+        data: {
+          apiKey: "7314d0691ba990733c4a83182ca0354d",
+          modelName: "AddressGeneral",
+          calledMethod: "getWarehouses",
+          methodProperties: {
+              CityName: cityName,
+          }
+        },
+    }).then( response => {
+        let cart = {...this.state.cart}
+        cart.NPWarehouses = (response.data.length) ? response.data : []
         this.setState({cart})
     })
   }
@@ -268,7 +289,8 @@ class App extends React.Component {
               removeItem={this.removeItem} 
               updateForm={this.updateForm} 
               toggleCartModal={this.toggleCartModal} 
-              loadNPCities={this.loadNPCities} 
+              loadNPCities={this.loadNPCities}
+              loadNPWarehouses={this.loadNPWarehouses} 
             />
             <MainMenu 
               toggleMobileMenu={this.toggleMobileMenu}

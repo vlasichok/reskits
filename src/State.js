@@ -139,6 +139,9 @@ const State = {
           email: '',
           phone: '',
           shipping: 0,
+          NPCity: null,
+          NPWarehouse: null,
+          NPAdress: null,
           payment: 0
         },
         shippingTypes: [
@@ -151,6 +154,7 @@ const State = {
           {name: 'Оплата на карту', cost: 55}
         ],
         NPCities: [],
+        NPWarehouses: [],
         animateCounter: false
       },
       test: {

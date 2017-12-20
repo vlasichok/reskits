@@ -3,6 +3,7 @@ import React from 'react'
 class CartForm extends React.Component {
 	componentDidMount(){
 		this.props.loadNPCities()
+		this.props.loadNPWarehouses()
 	}
 	render(){
 		return(
@@ -33,14 +34,44 @@ class CartForm extends React.Component {
 
 				{(this.props.model.shipping === 0 || this.props.model.shipping === 1) &&
 					<div>
-						<label>Ваш город</label>
-						<div className="form-group" name="shipping">
-							<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => { this.props.loadNPCities(e.target.value); this.props.updateLocalModel('NPCity', e.target.value)}} list="cityname" />
-							<datalist id="cityname">
-								{this.props.NPCities.map((city, i)=>{
-									return <option key={i} value={city.MainDescription}></option>
-								})}
-							</datalist>
+						<div>
+							<label>Ваш город</label>
+							<div className="form-group" name="shippingCity">
+								<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => { this.props.loadNPCities(e.target.value); this.props.updateLocalModel('NPCity', e.target.value); this.props.loadNPWarehouses(this.props.model.NPCity)}} list="cityname" />
+								<datalist id="cityname">
+									{this.props.NPCities.map((city, i)=>{
+										return <option key={i} value={city.MainDescription}></option>
+									})}
+								</datalist>
+							</div>
+						</div>
+
+						{(this.props.model.NPCity) &&
+							<div>
+								<label>Ваше отделение</label>
+
+								{(this.props.NPWarehouses && this.props.NPWarehouses.length) ? ( 
+									<div className="form-group" name="shippingWarehouse">
+										<input type="text" className="form-control" value={this.props.model.NPWarehouse} onChange={e => { this.props.updateLocalModel('NPWarehouse', e.target.value)}} list="warehouses" />
+										<datalist id="warehouses">
+											{this.props.NPWarehouses.map((warehouse, i)=>{
+												return <option key={i} value={warehouse.Description}></option>
+											})}
+										</datalist>
+									</div>
+								):(
+									<input type="text" className="form-control" value={this.props.model.NPWarehouse} onChange={e => { this.props.updateLocalModel('NPWarehouse', e.target.value)}} />
+								)}
+							</div>
+						}
+					</div>
+				}
+
+				{(this.props.model.shipping === 1) &&
+					<div>
+						<label>Ваш адрес</label>
+						<div className="form-group" name="shippingAdress">
+							<input type="text" className="form-control" value={this.props.model.NPAdress} onChange={e => { this.props.updateLocalModel('NPAdress', e.target.value)}} />
 						</div>
 					</div>
 				}
