@@ -142,7 +142,8 @@ class App extends React.Component {
     this.setState({cart})
   }
   loadNPCities(cityName = 'Київ'){
-    reqwest({
+    if(cityName.length>1){
+      reqwest({
         url: "https://api.novaposhta.ua/v2.0/json/",
         method: "GET",
         type: "jsonp",
@@ -152,18 +153,22 @@ class App extends React.Component {
           modelName: "Address",
               calledMethod: "getCities",
               methodProperties: {
-                  CityName: cityName,
-                  Limit: 200
+                  FindByString: cityName
             }
         },
-    }).then( response => {
+      }).then( response => {
         let cart = {...this.state.cart}
         cart.NPCities = (response.data.length) ? response.data : []
         this.setState({cart})
-    })
+      })
+    } else {
+      let cart = {...this.state.cart}
+      cart.NPCities = []
+      this.setState({cart})
+    }
   }
   loadNPWarehouses(cityName = ''){
-    reqwest({
+      reqwest({
         url: "https://api.novaposhta.ua/v2.0/json/",
         method: "GET",
         type: "jsonp",
@@ -173,15 +178,14 @@ class App extends React.Component {
           modelName: "AddressGeneral",
           calledMethod: "getWarehouses",
           methodProperties: {
-              CityName: cityName,
-              Limit: 200
+              CityName: cityName
           }
         },
-    }).then( response => {
+      }).then( response => {
         let cart = {...this.state.cart}
         cart.NPWarehouses = (response.data.length) ? response.data : []
         this.setState({cart})
-    })
+      })
   }
 
   // test methods

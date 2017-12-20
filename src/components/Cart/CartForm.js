@@ -1,10 +1,8 @@
 import React from 'react'
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 class CartForm extends React.Component {
-	componentDidMount(){
-		this.props.loadNPCities()
-		this.props.loadNPWarehouses()
-	}
 	render(){
 		return(
 			<form className="px-2">
@@ -25,11 +23,15 @@ class CartForm extends React.Component {
 
 				<label>Способ доставки</label>
 				<div className="form-group" name="shipping">
-					<select type="text" className="form-control" value={this.props.model.shipping} onChange={e => this.props.updateLocalModel('shipping', Number(e.target.value))}>
-						{this.props.shippingTypes.map((type, i)=>{
-							return <option key={i} value={i}>{type.name}</option>
+				      <Select
+				        name="shipping"
+				        value={this.props.model.shipping}
+				        clearable={false}
+				        onChange={selectedOption => this.props.updateLocalModel('shipping', selectedOption.value)}
+				        options={this.props.shippingTypes.map((type, i)=>{
+							return {value: i, label: type.name}
 						})}
-					</select>
+				      />
 				</div>
 
 				{(this.props.model.shipping === 1 || this.props.model.shipping === 2) &&
@@ -37,33 +39,45 @@ class CartForm extends React.Component {
 						<div>
 							<label>Ваш город</label>
 							<div className="form-group" name="shippingCity">
-								<input type="text" className="form-control" value={this.props.model.NPCity} onChange={e => { this.props.loadNPCities(e.target.value); this.props.updateLocalModel('NPCity', e.target.value); this.props.loadNPWarehouses(this.props.model.NPCity)}} list="cityname" />
-								<datalist id="cityname">
-									{this.props.NPCities.map((city, i)=>{
-										return <option key={i} value={city.Description}></option>
+								<Select
+									name="NPCity"
+									value={this.props.model.NPCity}
+									clearable={false}
+									onInputChange={input => {
+										this.props.loadNPCities(input)
+									}}
+									onChange={selectedOption => {
+										this.props.updateLocalModel('NPCity', selectedOption)
+										this.props.loadNPWarehouses(selectedOption.label)
+									}}
+									options={this.props.NPCities.map((city, i)=>{
+										return {value: i, label: city.Description}
 									})}
-								</datalist>
+								/>
 							</div>
 						</div>
+					</div>
+				}
 
-						{(this.props.model.NPCity) &&
-							<div>
-								<label>Ваше отделение</label>
+				{(this.props.model.shipping === 1 && this.props.model.NPCity) &&
+					<div>
+						<label>Ваше отделение</label>
 
-								{(this.props.NPWarehouses && this.props.NPWarehouses.length) ? ( 
-									<div className="form-group" name="shippingWarehouse">
-										<input type="text" className="form-control" value={this.props.model.NPWarehouse} onChange={e => { this.props.updateLocalModel('NPWarehouse', e.target.value)}} list="warehouses" />
-										<datalist id="warehouses">
-											{this.props.NPWarehouses.map((warehouse, i)=>{
-												return <option key={i} value={warehouse.Description}></option>
-											})}
-										</datalist>
-									</div>
-								):(
-									<input type="text" className="form-control" value={this.props.model.NPWarehouse} onChange={e => { this.props.updateLocalModel('NPWarehouse', e.target.value)}} />
-								)}
+						{(this.props.NPWarehouses && this.props.NPWarehouses.length) ? ( 
+							<div className="form-group" name="shippingWarehouse">
+								<Select
+									name="NPWarehouse"
+									value={this.props.model.NPWarehouse}
+									clearable={false}
+									onChange={selectedOption => this.props.updateLocalModel('NPWarehouse', selectedOption)}
+									options={this.props.NPWarehouses.map((warehouse, i)=>{
+										return {value: i, label: warehouse.Description}
+									})}
+								/>
 							</div>
-						}
+						):(
+							<input type="text" className="form-control" value={this.props.model.NPWarehouse} onChange={e => { this.props.updateLocalModel('NPWarehouse', e.target.value)}} />
+						)}
 					</div>
 				}
 
@@ -78,11 +92,15 @@ class CartForm extends React.Component {
 
 				<label>Способ оплаты</label>
 				<div className="form-group" name="pay-type">
-					<select type="text" className="form-control" value={this.props.model.payment} onChange={e => this.props.updateLocalModel('payment', Number(e.target.value))}>
-						{this.props.paymentTypes.map((type, i)=>{
-							return <option key={i} value={i}>{type.name}</option>
+					<Select
+						name="payment"
+						value={this.props.model.payment}
+						clearable={false}
+						onChange={selectedOption => this.props.updateLocalModel('payment', selectedOption.value)}
+						options={this.props.paymentTypes.map((type, i)=>{
+							return {value: i, label: type.name}
 						})}
-					</select>
+					/>
 				</div>
 			</form>
 		)
