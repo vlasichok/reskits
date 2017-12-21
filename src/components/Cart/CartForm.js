@@ -3,6 +3,22 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 class CartForm extends React.Component {
+	formatPhoneNumber(input){
+			// Strip all characters from the input except digits, trim over 10 cars
+	        input = input.replace(/\D/g,'').substring(0,10);
+
+	        var size = input.length;
+	        if(size == 0) {
+	            input = input;
+	        } else if(size < 4) {
+	            input = '('+input;
+	        } else if(size < 7) {
+	            input = '('+input.substring(0,3)+') '+input.substring(3,6);
+	        } else {
+	            input = '('+input.substring(0,3)+') '+input.substring(3,6)+'-'+input.substring(6,8)+'-'+input.substring(8,10);
+	        }
+	        return input; 
+	}
 	render(){
 		return(
 			<form className="px-2">
@@ -18,7 +34,7 @@ class CartForm extends React.Component {
 
 				<label>Телефон</label>
 				<div className="form-group" name="phone-number">
-					<input type="text" className="form-control" value={this.props.model.phone} onChange={e => this.props.updateLocalModel('phone', e.target.value)} />
+					<input type="text" className="form-control" value={this.props.model.phone} onChange={e => this.props.updateLocalModel('phone', this.formatPhoneNumber(e.target.value))} />
 				</div>
 
 				<label>Способ доставки</label>
