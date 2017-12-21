@@ -84,13 +84,15 @@ class App extends React.Component {
   goToNextImg(currItemIndex, reversedOrder){
     let catalog = {...this.state.catalog}
     let currentItem = catalog.items[currItemIndex]
-    let isFirst = currentItem.gallery.current === 0
-    let isLast = currentItem.gallery.current === currentItem.gallery.imgs.length-1
+    let currentColor = currentItem.colors[currentItem.currColorIndex]
+    let currentGallery = currentItem.gallery[currentColor]
+    let isFirst = currentGallery.current === 0
+    let isLast = currentGallery.current === currentGallery.imgs.length-1
 
     if(reversedOrder) {
-        (!isFirst) ? currentItem.gallery.current-- : currentItem.gallery.current = currentItem.gallery.imgs.length-1
+        (!isFirst) ? currentGallery.current-- : currentGallery.current = currentGallery.imgs.length-1
     } else {
-        (!isLast) ? currentItem.gallery.current++ : currentItem.gallery.current = 0
+        (!isLast) ? currentGallery.current++ : currentGallery.current = 0
     }
 
     this.setState({catalog})

@@ -3,10 +3,14 @@ const State = {
         items: [
           {
             name: 'Urban Kit 1',
+            colors: ['transparent'],
+            currColorIndex: 0,
             price: 300,
             gallery: {
-              imgs: ['UK1.jpg', 'UK1_2.jpg'],
-              current: 0
+              transparent: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              }
             },
             icon: 'battery-quarter',
             info: {
@@ -21,10 +25,14 @@ const State = {
             descr: 'Человек потерял сознание и не дышит, вы вызвали скорую и начинаете реанимацию. Откажетесь от вдохов или будете рисковать здоровьем, вдыхая без барьера?\nUrban Kit 1 создан, чтобы исключить подобный выбор. Маска-клапан и перчатки надежно защитят вас от возможного заражения инфекцией пострадавшего, а пленка-клапан всегда будет с вами на брелоке ключей. '},
           {
             name: 'Urban Kit 2',
+            colors: ['transparent'],
+            currColorIndex: 0,
             price: 450,
             gallery: {
-              imgs: ['UK1.jpg', 'UK1_2.jpg'],
-              current: 0
+              transparent: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              }
             },
             icon: 'battery-half',
             info: {
@@ -44,10 +52,18 @@ const State = {
             descr: 'Urban Kit 2 незаменим в ситуациях, когда счет идет на минуты. Его содержимое позволяет безопасно проводить реанимацию и остановить критическое кровотечение конечности.\nНабор отвечает требованиям современного горожанина — благодаря вакуумной упаковке он не занимает много места и не изнашивается.\nОтличием Urban Kit 2 от Urban Kit 1 служит наличие в комплекте турникета.'},
           {
             name: 'Urban Kit 2+',
+            colors: ['yellow', 'darkgreen'],
+            currColorIndex: 0,
             price: 550,
             gallery: {
-              imgs: ['UK1.jpg', 'UK1_2.jpg'],
-              current: 0
+              darkgreen: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              },
+              yellow: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              }
             },
             icon: 'battery-three-quarters',
             info: {
@@ -67,10 +83,18 @@ const State = {
             descr: 'Назначение Urban Kit 2+, как и Urban Kit 2 — спасти жизнь при остановке сердца и критическом кровотечении конечности. Их отличие — в модели турникета и чехле набора.\nВ состав Urban Kit 2+ входит CAT G7 (Combat Application Tourniquet 7, последнего поколения). Вооруженные Силы США используют CAT G7 потому, что результаты исследований подтверждают его высокую эффективность, практичность и надежность.'},
           {
             name: 'Urban Full',
+            colors: ['yellow', 'darkgreen'],
+            currColorIndex: 0,
             price: 1500,
             gallery: {
-              imgs: ['UK1.jpg', 'UK1_2.jpg'],
-              current: 0
+              darkgreen: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              },
+              yellow: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              }
             },
             icon: 'battery-full',
             info: {
@@ -95,10 +119,18 @@ const State = {
             descr: 'Full Urban Kit — ваш ответ на комплексные вызовы городской среды. Содержимое набора позволяет своевременно и безопасно оказать помощь при различных видах травм и неотложных состояний: остановке сердца, кровотечениях, ранениях груди, переохлаждении.\nОснова набора — современное американское и израильское снаряжение. При его разработке, главным приоритетом было качество комплектующих, а не низкая цена.\nВ набор входит снаряжение, необходимое для комфорта спасателя — чехол, набор карточек с рекомендациями.'},
           {
             name: 'MVA Kit',
+            colors: ['yellow', 'darkgreen'],
+            currColorIndex: 0,
             price: 990,
             gallery: {
-              imgs: ['UK1.jpg', 'UK1_2.jpg'],
-              current: 0
+              darkgreen: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              },
+              yellow: {
+                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                current: 0
+              }
             },
             icon: 'battery-full',
             info: {

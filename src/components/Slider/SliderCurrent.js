@@ -7,7 +7,9 @@ const SliderCurrent = props => {
 
 	let currentIndex = props.catalog.currentIndex
 	let current = props.catalog.items[currentIndex]
-	let currentImg = current.gallery.imgs[current.gallery.current]
+	let currentColor = current.colors[current.currColorIndex]
+	let currentGallery = current.gallery[currentColor]
+	let currentImg = currentGallery.imgs[currentGallery.current]
 
 	return(
 		<div>
@@ -17,7 +19,7 @@ const SliderCurrent = props => {
 						<img className="image d-none d-sm-block" src={'/img/' + currentImg} alt="medkit"/>
 						<div className="w-100 text-center">
 							<a onClick={() => props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
-							<span>{current.gallery.current+1} / {current.gallery.imgs.length}</span>
+							<span>{currentGallery.current+1} / {currentGallery.imgs.length}</span>
 							<a onClick={() => props.goToNextImg(currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
 						</div>
 					</div>
