@@ -30,7 +30,7 @@ const SliderCurrent = props => {
 						</h3>
 						<div className="colors mb-2">
 							{current.colors.length > 1 && current.colors.map( (color, i) => {
-								return( <a className={'mx-1 color ' + color + ((color === currentColor) ? ' current' : '')}></a> )
+								return( <a className={'mx-1 color ' + color + ((color === currentColor) ? ' current' : '')} onClick={e => props.chooseColor(e,i)}></a> )
 							})}
 						</div>
 						<div className="descr d-none d-md-block">

@@ -33,6 +33,7 @@ class App extends React.Component {
 
     // slider methods
     this.chooseItem = this.chooseItem.bind(this)
+    this.chooseColor = this.chooseColor.bind(this)
     this.goToNextImg = this.goToNextImg.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
@@ -65,6 +66,11 @@ class App extends React.Component {
   chooseItem(e, i){
     let catalog = {...this.state.catalog}
     catalog.currentIndex = Number(i)
+    this.setState({catalog})
+  }
+  chooseColor(e, i){
+    let catalog = {...this.state.catalog}
+    catalog.items[catalog.currentIndex].currColorIndex = Number(i)
     this.setState({catalog})
   }
   togglePartsModal(e){
@@ -315,6 +321,7 @@ class App extends React.Component {
             <section className="section">
               <Slider catalog={catalog} 
                 chooseItem={this.chooseItem} 
+                chooseColor={this.chooseColor} 
                 goToNextImg={this.goToNextImg} 
                 addItem={this.addItem} 
                 togglePartsModal={this.togglePartsModal} 
