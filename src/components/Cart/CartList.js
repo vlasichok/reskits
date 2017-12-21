@@ -11,8 +11,11 @@ const CartList = (props) => {
 		        		<tbody>
 			        		{props.items.map((item, i) => {
 			        			return(
-			        				<tr key={i} className="pt-3">
-			        					<td><strong>{item.name}</strong></td>
+			        				<tr key={i} className="item pt-3">
+			        					<td>
+			        						<strong>{item.name}</strong>
+			        						<span className={'mx-1 color ' + item.colors[item.currColorIndex]} ></span>
+			        					</td>
 			        					<td>
 			        						<button className="btn btn-secondary btn-sm py-0" onClick={() => props.changeQuantity(i, false)} disabled={item.quantity <= 1}>-</button>
 			        						<span className="quantity">{item.quantity}</span>

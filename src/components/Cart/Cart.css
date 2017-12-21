@@ -55,6 +55,21 @@ label {
   width: 25px;
   text-align: center;
 }
+.order-list .item .color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+.order-list .item .color.yellow {
+  background-color: yellow;
+}
+.order-list .item .color.darkgreen {
+  background-color: green;
+}
+.order-list .item .color.transparent {
+  display: none;
+}
+
 
 .cart-link--animation {
   display: block;

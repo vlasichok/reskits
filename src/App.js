@@ -105,13 +105,13 @@ class App extends React.Component {
   }
   addItem(e, item){
     let cart = {...this.state.cart}
-    let existingIndex = cart.items.findIndex(i => i.name === item.name)
+    let existingIndex = cart.items.findIndex(i => (i.name === item.name) && (i.currColorIndex === item.currColorIndex))
 
     if(existingIndex !== -1){ // checking if such item already added
       cart.items[existingIndex].quantity++
     } else {
       item.quantity = 1
-      cart.items.push(item)
+      cart.items.push({...item})
     }
     cart.animateCounter = true // animation flag on
 
