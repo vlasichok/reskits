@@ -208,7 +208,7 @@ class App extends React.Component {
     this.setState({test})
   }
   goToResult(e, index){
-    window.location.hash = 'catalog'
+    window.location.hash = 'catalog/' + index
     this.chooseItem(e, index)
   }
 
