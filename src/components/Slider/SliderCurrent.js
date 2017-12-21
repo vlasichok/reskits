@@ -28,6 +28,11 @@ const SliderCurrent = props => {
 							{current.name}
 							<button className="btn btn-light btn-sm mx-3" onClick={(e) => props.addItem(e, current)}>В корзину</button>
 						</h3>
+						<div className="colors mb-2">
+							{current.colors.length > 1 && current.colors.map( (color, i) => {
+								return( <a className={'mx-1 color ' + color + ((color === currentColor) ? ' current' : '')}></a> )
+							})}
+						</div>
 						<div className="descr d-none d-md-block">
 							{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 				        </div>
