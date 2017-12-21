@@ -27,19 +27,19 @@
 }
 
 /*color buttons*/
-.slider .current-item .colors .color {
+.slider .colors .color {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
 	border-bottom: none;
 }
-.slider .current-item .colors .color.yellow {
+.slider .colors .color.yellow {
 	background-color: yellow;
 }
-.slider .current-item .colors .color.darkgreen {
+.slider .colors .color.darkgreen {
 	background-color: green;
 }
-.slider .current-item .colors .color.current {
+.slider .colors .color.current {
 	border: 2px solid white;
 }
 

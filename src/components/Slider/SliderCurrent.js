@@ -1,6 +1,8 @@
 import React from 'react'
 import {Icon} from 'react-fa'
 
+import Image from './SliderCurrentImage'
+import Color from './SliderCurrentColor'
 import {PartsModal, InfoModal} from './SliderCurrentModals'
 
 const SliderCurrent = props => {
@@ -8,30 +10,21 @@ const SliderCurrent = props => {
 	let currentIndex = props.catalog.currentIndex
 	let current = props.catalog.items[currentIndex]
 	let currentColor = current.colors[current.currColorIndex]
-	let currentGallery = current.gallery[currentColor]
-	let currentImg = currentGallery.imgs[currentGallery.current]
 
 	return(
 		<div>
 			{(window.innerWidth > 767) ? (
 				<div className="current-item row mb-3 mb-sm-0 mb-md-4 mb-xl-5">
 					<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3">
-						<img className="image d-none d-sm-block" src={'/img/' + currentImg} alt="medkit"/>
-						<div className="w-100 text-center">
-							<a onClick={() => props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
-							<span>{currentGallery.current+1} / {currentGallery.imgs.length}</span>
-							<a onClick={() => props.goToNextImg(currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
-						</div>
+						<Image current={current} currentIndex={currentIndex} goToNextImg={props.goToNextImg} />
 					</div>
 					<div className="col-xl-7 col-lg-8 col-md-8 col-sm-9">
 						<h3 className="name mb-md-3">
 							{current.name}
 							<button className="btn btn-light btn-sm mx-3" onClick={(e) => props.addItem(e, current)}>В корзину</button>
 						</h3>
-						<div className="colors mb-2">
-							{current.colors.length > 1 && current.colors.map( (color, i) => {
-								return( <a className={'mx-1 color ' + color + ((color === currentColor) ? ' current' : '')} onClick={e => props.chooseColor(e,i)}></a> )
-							})}
+						<div className="mb-2">
+							<Color current={current} chooseColor={props.chooseColor} />
 						</div>
 						<div className="descr d-none d-md-block">
 							{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
@@ -56,12 +49,7 @@ const SliderCurrent = props => {
 										<p className="m-0">{item.price} ₴</p>
 									</div>
 									<div className="col-10 offset-1 col-sm-5 offset-sm-0 mt-sm-2 text-center">
-										<img className="image" src={'/img/' + item.gallery.imgs[item.gallery.current]} alt="medkit"/>
-										<div className="w-100 text-center">
-											<a onClick={() => props.goToNextImg(currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
-											<span>{item.gallery.current+1} / {item.gallery.imgs.length}</span>
-											<a onClick={() => props.goToNextImg(currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
-										</div>
+										<Image current={current} currentIndex={currentIndex} goToNextImg={props.goToNextImg} />
 									</div>
 									<div className="col-12 col-sm-7">
 								        <div className="text-center text-sm-left mt-2 mt-sm-4">
@@ -69,10 +57,13 @@ const SliderCurrent = props => {
 												<h4 className="name m-0 float-left">{item.name}</h4>
 												<span className="price d-inline-block my-1 mx-2"> — {item.price}₴</span>
 											</div>
+											<div>
+												<Color current={item} chooseColor={props.chooseColor} />
+											</div>
 								        	<div className="descr-mobile d-none d-sm-block no-decoration">
 									        	<p>{item.info.text}</p>
 									        </div>
-									        <div className="mt-3 mt-sm-0">
+									        <div className="mt-2 mt-sm-0">
 									        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm mx-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
 									        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm mx-2"><Icon name="list"/></button>
 									        	<button className="btn btn-light btn-sm mx-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
