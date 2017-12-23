@@ -8,9 +8,7 @@ class CartForm extends React.Component {
 	        input = input.replace(/\D/g,'').substring(0,10);
 
 	        var size = input.length;
-	        if(size == 0) {
-	            input = input;
-	        } else if(size < 4) {
+	        if(size < 4) {
 	            input = '('+input;
 	        } else if(size < 7) {
 	            input = '('+input.substring(0,3)+') '+input.substring(3,6);

@@ -9,7 +9,6 @@ const SliderCurrent = props => {
 
 	let currentIndex = props.catalog.currentIndex
 	let current = props.catalog.items[currentIndex]
-	let currentColor = current.colors[current.currColorIndex]
 
 	return(
 		<div>
