@@ -40,7 +40,7 @@
 	background-color: green;
 }
 .slider .colors .color.current {
-	border: 2px solid white;
+	border: 5px solid white;
 }
 
 .item-info p {
