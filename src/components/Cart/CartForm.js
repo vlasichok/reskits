@@ -41,6 +41,7 @@ class CartForm extends React.Component {
 				        name="shipping"
 				        value={this.props.model.shipping}
 				        clearable={false}
+				        searchable={false}
 				        onChange={selectedOption => this.props.updateLocalModel('shipping', selectedOption.value)}
 				        options={this.props.shippingTypes.map((type, i)=>{
 							return {value: i, label: type.name}
@@ -110,6 +111,7 @@ class CartForm extends React.Component {
 						name="payment"
 						value={this.props.model.payment}
 						clearable={false}
+						searchable={false}
 						onChange={selectedOption => this.props.updateLocalModel('payment', selectedOption.value)}
 						options={this.props.paymentTypes.map((type, i)=>{
 							return {value: i, label: type.name}
