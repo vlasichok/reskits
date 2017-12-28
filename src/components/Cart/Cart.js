@@ -1,6 +1,7 @@
 import React from 'react'
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import _ from 'lodash'
+import $ from 'jquery'
 
 import CartForm from './CartForm.js'
 import CartList from './CartList.js'
@@ -14,11 +15,23 @@ class Cart extends React.Component {
 		this.model = this.props.cart.form
 
 		this.updateLocalModel = this.updateLocalModel.bind(this)
+		this.sendOrder = this.sendOrder.bind(this)
 	}
 
 	updateLocalModel(propName, value){
 		this.model[propName] = value
 		this.props.updateForm(this.modal)
+	}
+	sendOrder(){
+		$.ajax({
+		  url: "https://docs.google.com/forms/d/e/1FAIpQLSffYX9gCJGfgsGtBrLcrKGftPN6rrh39mbpgJqGbzqCe78b9A/formResponse",
+		  data: { 
+		  	"entry.1437398298": this.model.name,
+		  	"entry.1441256141": this.model.email
+		  },
+		  type: "POST",
+		  dataType: "xml"
+		})
 	}
 
 	render(){
@@ -54,7 +67,7 @@ class Cart extends React.Component {
 
 		          		</div>
 		          		<div className="col">
-		          			<button className="btn btn-default" disabled={cart.items.length === 0}>Отправить заказ</button>
+		          			<button className="btn btn-default" onClick={this.sendOrder} disabled={cart.items.length === 0}>Отправить заказ</button>
 		          		</div>
 		          	</div>
 		          </ModalFooter>
