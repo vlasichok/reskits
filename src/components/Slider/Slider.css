@@ -39,6 +39,9 @@
 .slider .colors .color.darkgreen {
 	background-color: green;
 }
+.slider .colors .color.black {
+	background-color: black;
+}
 .slider .colors .color.current {
 	border: 5px solid white;
 }

@@ -8,7 +8,7 @@ const Image = props => {
 
 	return(
 		<div>
-			<img className="image" src={'/img/' + currentImg} alt="medkit"/>
+			<img className="image" src={'/img/packs/250x250/' + currentImg} alt="medkit"/>
 			<div className="w-100 text-center">
 				<a onClick={() => props.goToNextImg(props.currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
 				<span>{currentGallery.current+1} / {currentGallery.imgs.length}</span>

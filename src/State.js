@@ -8,7 +8,7 @@ const State = {
             price: 300,
             gallery: {
               transparent: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['UK1_1.jpg', 'UK1_2.jpg', 'UK1_3.jpg'],
                 current: 0
               }
             },
@@ -30,7 +30,7 @@ const State = {
             price: 450,
             gallery: {
               transparent: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['UK2_1.jpg', 'UK2_2.jpg', 'UK2_3.jpg'],
                 current: 0
               }
             },
@@ -52,16 +52,20 @@ const State = {
             descr: 'Urban Kit 2 незаменим в ситуациях, когда счет идет на минуты. Его содержимое позволяет безопасно проводить реанимацию и остановить критическое кровотечение конечности.\nНабор отвечает требованиям современного горожанина — благодаря вакуумной упаковке он не занимает много места и не изнашивается.\nОтличием Urban Kit 2 от Urban Kit 1 служит наличие в комплекте турникета.'},
           {
             name: 'Urban Kit 2+',
-            colors: ['yellow', 'darkgreen'],
+            colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
             price: 550,
             gallery: {
               darkgreen: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['UK2plus_1.jpg', 'UK2plus_2.jpg', 'UK2plus_3.jpg', 'UK2plus_4.jpg', 'UK2plus_5.jpg'],
+                current: 0
+              },
+              black: {
+                imgs: ['UK2plus_black_1.jpg', 'UK2plus_black_2.jpg', 'UK2plus_black_3.jpg', 'UK2plus_black_4.jpg', 'UK2plus_black_5.jpg', 'UK2plus_black_6.jpg'],
                 current: 0
               },
               yellow: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['UK2plus_yellow_1.jpg', 'UK2plus_yellow_2.jpg', 'UK2plus_yellow_3.jpg', 'UK2plus_yellow_4.jpg', 'UK2plus_yellow_5.jpg'],
                 current: 0
               }
             },
@@ -83,16 +87,20 @@ const State = {
             descr: 'Назначение Urban Kit 2+, как и Urban Kit 2 — спасти жизнь при остановке сердца и критическом кровотечении конечности. Их отличие — в модели турникета и чехле набора.\nВ состав Urban Kit 2+ входит CAT G7 (Combat Application Tourniquet 7, последнего поколения). Вооруженные Силы США используют CAT G7 потому, что результаты исследований подтверждают его высокую эффективность, практичность и надежность.'},
           {
             name: 'Urban Full',
-            colors: ['yellow', 'darkgreen'],
+            colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
             price: 1500,
             gallery: {
               darkgreen: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['UKF_1.jpg', 'UKF_2.jpg', 'UKF_3.jpg', 'UKF_4.jpg', 'UKF_5.jpg'],
+                current: 0
+              },
+              black: {
+                imgs: ['UKF_black_1.jpg', 'UKF_black_2.jpg', 'UKF_black_3.jpg', 'UKF_black_4.jpg', 'UKF_black_5.jpg', 'UKF_black_6.jpg'],
                 current: 0
               },
               yellow: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['UKF_yellow_1.jpg', 'UKF_yellow_2.jpg', 'UKF_yellow_3.jpg', 'UKF_yellow_4.jpg', 'UKF_yellow_5.jpg', 'UKF_yellow_6.jpg'],
                 current: 0
               }
             },
@@ -124,11 +132,11 @@ const State = {
             price: 990,
             gallery: {
               darkgreen: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['', ''],
                 current: 0
               },
               yellow: {
-                imgs: ['UK1.jpg', 'UK1_2.jpg'],
+                imgs: ['', ''],
                 current: 0
               }
             },

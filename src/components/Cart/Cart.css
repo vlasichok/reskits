@@ -66,6 +66,9 @@ label {
 .order-list .item .color.darkgreen {
   background-color: green;
 }
+.order-list .item .color.black {
+  background-color: black;
+}
 .order-list .item .color.transparent {
   display: none;
 }
