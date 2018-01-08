@@ -26,9 +26,6 @@ const SliderCurrent = props => {
 							<Color current={current} chooseColor={props.chooseColor} />
 						</div>
 						<div className="descr d-none d-md-block">
-							{current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
-				        </div>
-				        <div className="descr-mobile d-md-none no-decoration">
 				        	<p>{current.info.text}</p>
 				        </div>
 				        <div>

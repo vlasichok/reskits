@@ -8,10 +8,11 @@ const PartsModal = props => {
         	<ModalBody>
         		<div className="row">
         			<div className="col-12">
-		        		<ul className="list-group">
+		        		<ul className="list-group parts">
 		        			{props.current.info.parts.map((part, i)=>{
 		        				return(
-									<li key={i} className="list-group-item">
+									<li key={i} className="list-group-item part">
+										<img src={'/img/parts/'+part.img} class="photo" />
 										<span>{part.name}</span>
 										<span className="pull-right">{part.quantity} {part.unit}</span>
 									</li>
@@ -33,10 +34,7 @@ const InfoModal = props => {
         		<div className="item-info">
 	        		<div className="row">
 	        			<div className="col-12">
-	        				<div className="descr d-none d-md-block">
-								<p>{props.current.info.text}</p>
-							</div>
-			        		<div className="descr-mobile d-block d-md-none">
+	        				<div className="descr">
 								{props.current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 					        </div>
 						</div>
