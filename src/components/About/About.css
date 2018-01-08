@@ -1,5 +1,16 @@
+.about {
+	padding-left: 25px;
+}
+
 .about p {
 	font-size: 18px;
+}
+
+.about .title {
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
 }
 
 @media screen and (max-width: 767px) {
