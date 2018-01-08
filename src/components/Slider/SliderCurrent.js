@@ -14,24 +14,28 @@ const SliderCurrent = props => {
 		<div>
 			{(window.innerWidth > 767) ? (
 				<div className="current-item row mb-3 mb-sm-0 mb-md-4 mb-xl-5">
-					<div className="col-xl-3 offset-xl-1 col-lg-3 col-md-4 col-sm-3">
+					<div className="col-sm-3 col-md-4 col-lg-3 col-xl-3 offset-lg-1 offset-xl-2 text-center">
 						<Image current={current} currentIndex={currentIndex} goToNextImg={props.goToNextImg} />
 					</div>
-					<div className="col-xl-7 col-lg-8 col-md-8 col-sm-9">
-						<h3 className="name mb-md-3">
-							{current.name}
-							<button className="btn btn-light btn-sm mx-3" onClick={(e) => props.addItem(e, current)}>В корзину</button>
-						</h3>
-						<div className="mb-2">
-							<Color current={current} chooseColor={props.chooseColor} />
+					<div className="col-sm-9 col-md-8 col-lg-7 col-xl-5">
+						<div className="info d-flex align-items-center">
+							<div className="mb-4">
+								<h3 className="name mb-md-3">
+									{current.name}
+									<button className="btn btn-light btn-sm mx-3" onClick={(e) => props.addItem(e, current)}>В корзину</button>
+								</h3>
+								<div className="mb-2">
+									<Color current={current} chooseColor={props.chooseColor} />
+								</div>
+								<div className="descr d-none d-md-block">
+						        	<p>{current.info.text}</p>
+						        </div>
+						        <div>
+						        	<a onClick={props.toggleInfoModal} className="m-2 ml-sm-0">Подробности</a>
+						        	<a onClick={props.togglePartsModal} className="m-2">Состав</a>
+						        </div>
+						    </div>
 						</div>
-						<div className="descr d-none d-md-block">
-				        	<p>{current.info.text}</p>
-				        </div>
-				        <div>
-				        	<a onClick={props.toggleInfoModal} className="m-2 ml-sm-0">Подробности</a>
-				        	<a onClick={props.togglePartsModal} className="m-2">Состав</a>
-				        </div>
 			        </div>
 		        </div>
 		     ) : (

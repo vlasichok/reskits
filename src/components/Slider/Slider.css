@@ -4,9 +4,9 @@
 
 .slider .current-item .image {
 	display: inline-block;
-	width: 90%;
+	width: 100%;
 	max-width: 20rem;
-	margin: 1rem;
+	margin: 1rem 0;
 	font-size: 1rem;
 	text-decoration: none;
 	box-shadow: 0 1.2em 5rem -1rem rgba(0,0,0,0.7);
@@ -15,6 +15,10 @@
 	.slider .current-item .image:hover {
 		transform: translateY(-0.5rem) scale(1.0125);
 	}
+
+.slider .current-item .info {
+	min-height: 285px;
+}
 
 .slider .current-item--mobile .image {
 	display: inline-block;

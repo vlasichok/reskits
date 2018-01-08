@@ -6,7 +6,7 @@ import Items from './SliderItems'
 
 const Slider = props => {
 	return(
-		<div>
+		<div className="w-100">
 			<div className="container slider">
 				<Current {...props} />
 				<Items catalog={props.catalog} 

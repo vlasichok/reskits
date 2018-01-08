@@ -7,7 +7,7 @@ const Image = props => {
 	let currentImg = currentGallery.imgs[currentGallery.current]
 
 	return(
-		<div>
+		<div className="w-100">
 			<img className="image" src={'/img/packs/250x250/' + currentImg} alt="medkit"/>
 			<div className="w-100 text-center">
 				<a onClick={() => props.goToNextImg(props.currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
