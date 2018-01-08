@@ -233,6 +233,7 @@ class App extends React.Component {
     function fullpageInit(){
        window.$('#fullpage').fullpage({
           anchors: ['main', 'catalog', 'details', 'test', 'about'],
+          scrollingSpeed: 600,
           scrollOverflow: true,
           loopHorizontal: false,
           verticalCentered: true,
@@ -314,7 +315,7 @@ class App extends React.Component {
 
           <div id="fullpage">
 
-            <section className="section">
+            <section className="section" id="homeSection">
               <Home />
             </section>
 
@@ -343,8 +344,8 @@ class App extends React.Component {
               />
             </section>
 
-            <section className="section">
-              <About />
+            <section className="section" id="aboutSection">
+                <About />
             </section>
 
           </div>

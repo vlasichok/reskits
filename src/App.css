@@ -23,3 +23,19 @@
 #footer{
     bottom: 0px;
 }
+
+#homeSection {
+    background: url('/img/home.jpg') center no-repeat;
+    background-size: cover;
+}
+    #homeSection .fp-tableCell {
+        background-color: rgba(67, 84, 81, 0.80);
+    }
+
+#aboutSection {
+    background: url('/img/about.jpg') center no-repeat;
+    background-size: cover;
+}
+    #aboutSection .fp-tableCell {
+        background-color: rgba(67, 84, 81, 0.80);
+    }
