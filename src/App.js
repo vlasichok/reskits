@@ -330,7 +330,7 @@ class App extends React.Component {
               />
             </section>
 
-            <section className="section">
+            <section className="section" id="detailsSection">
               <Details items={details.items} 
                 toggleCollapse={this.toggleCollapse} 
               />

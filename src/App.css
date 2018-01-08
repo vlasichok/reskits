@@ -39,3 +39,8 @@
     #aboutSection .fp-tableCell {
         background-color: rgba(67, 84, 81, 0.80);
     }
+
+#detailsSection {
+    background: url('/img/home.jpg') center no-repeat;
+    background-size: cover;
+}

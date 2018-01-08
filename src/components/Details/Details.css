@@ -1,3 +1,19 @@
+.details {
+	height: 100%;
+	padding: 0;
+}
+	.details > .row {
+		height: 100%;
+	}
+.details .bgr-snake {
+	background: url('/img/bg_snake.png') center no-repeat;
+	background-size: cover;
+	height: 100%;
+}
+.details .bgr-color {
+	background-color: #425351;
+}
+
 @media screen and (max-width: 575px) {
 	.details .descr p {
 		line-height: 1.25em;
