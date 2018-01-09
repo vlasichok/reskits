@@ -19,20 +19,20 @@ class CartForm extends React.Component {
 	}
 	render(){
 		return(
-			<form className="px-2">
+			<form className="cart__form px-2">
 				<label>ФИО</label>
-				<div className="form-group" name="name">
-					<input type="text" className="form-control" value={this.props.model.name} onChange={e => this.props.updateLocalModel('name', e.target.value)}/>
+				<div className="form-group" name="name" required>
+					<input type="text" className="form-control" placeholder="Тарасенко Тарас Тарасович, например" value={this.props.model.name} onChange={e => this.props.updateLocalModel('name', e.target.value)}/>
 				</div>
 
 				<label>E-mail</label>
-				<div className="form-group" name="e-mail">
-					<input type="e-mail" className="form-control" value={this.props.model.email} onChange={e => this.props.updateLocalModel('email', e.target.value)} />
+				<div className="form-group" name="e-mail" required>
+					<input type="e-mail" className="form-control" placeholder="example@ukr.net" value={this.props.model.email} onChange={e => this.props.updateLocalModel('email', e.target.value)} />
 				</div>
 
 				<label>Телефон</label>
-				<div className="form-group" name="phone-number">
-					<input type="text" className="form-control" value={this.props.model.phone} onChange={e => this.props.updateLocalModel('phone', this.formatPhoneNumber(e.target.value))} />
+				<div className="form-group" name="phone-number" required>
+					<input type="text" className="form-control" placeholder="(067) 123-45-67" value={this.props.model.phone} onChange={e => this.props.updateLocalModel('phone', this.formatPhoneNumber(e.target.value))} />
 				</div>
 
 				<label>Способ доставки</label>
@@ -58,6 +58,8 @@ class CartForm extends React.Component {
 									name="NPCity"
 									value={this.props.model.NPCity}
 									clearable={false}
+									placeholder='Название города'
+									noResultsText='Начните вводить название города'
 									onInputChange={input => {
 										this.props.loadNPCities(input)
 									}}
@@ -84,6 +86,8 @@ class CartForm extends React.Component {
 									name="NPWarehouse"
 									value={this.props.model.NPWarehouse}
 									clearable={false}
+									placeholder='Номер отделения'
+									noResultsText='Отделение не найдено'
 									onChange={selectedOption => this.props.updateLocalModel('NPWarehouse', selectedOption)}
 									options={this.props.NPWarehouses.map((warehouse, i)=>{
 										return {value: i, label: warehouse.Description}
@@ -112,6 +116,7 @@ class CartForm extends React.Component {
 						value={this.props.model.payment}
 						clearable={false}
 						searchable={false}
+						placeholder=''
 						onChange={selectedOption => this.props.updateLocalModel('payment', selectedOption.value)}
 						options={this.props.paymentTypes.map((type, i)=>{
 							return {value: i, label: type.name}

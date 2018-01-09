@@ -55,3 +55,9 @@
         50% { background-position: 120% 60%; }
         100% { background-position: 0% 60%; }
     }
+
+.form-control::-webkit-input-placeholder { color: #D6C6BF; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #D6C6BF; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #D6C6BF; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #D6C6BF; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #D6C6BF; }  /* Microsoft Edge */

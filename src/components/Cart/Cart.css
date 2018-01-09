@@ -43,12 +43,12 @@
   cursor: pointer;
 }
 
-label {
+.cart__form label {
   margin-bottom: .1rem;
 }
-.form-group {
+.cart__form .form-group {
   margin-bottom: .7rem;
-}
+}  
 
 .order-list .quantity {
   display: inline-block;
