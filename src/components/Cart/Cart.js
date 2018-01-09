@@ -13,6 +13,7 @@ class Cart extends React.Component {
 	constructor(props){
 		super(props)
 		this.model = this.props.cart.form
+		this.items = this.props.cart.items
 
 		this.updateLocalModel = this.updateLocalModel.bind(this)
 		this.sendOrder = this.sendOrder.bind(this)
@@ -22,15 +23,42 @@ class Cart extends React.Component {
 		this.model[propName] = value
 		this.props.updateForm(this.modal)
 	}
+	itemsToString(items){
+		let itemStrings = []
+		for(let i = 0; i < items.length; i++) {
+			let name = items[i].name
+			let color = items[i].colors[items[i].currColorIndex]
+			let quantity = items[i].quantity
+
+			let itemString = `${i+1}) ${name} (${color}) = ${quantity} шт`
+			itemStrings.push(itemString)
+		}
+		return itemStrings.join(',\n')
+	}
 	sendOrder(){
 		$.ajax({
 		  url: "https://docs.google.com/forms/d/e/1FAIpQLSffYX9gCJGfgsGtBrLcrKGftPN6rrh39mbpgJqGbzqCe78b9A/formResponse",
-		  data: { 
+		  data: {
 		  	"entry.1437398298": this.model.name,
-		  	"entry.1441256141": this.model.email
+		  	"entry.1441256141": this.model.email,
+        	"entry.1516772474": this.model.phone,
+        	"entry.1115901129": this.model.shipping,
+        	"entry.266198164": (this.model.NPCity && this.model.NPCity.label) ? this.model.NPCity.label : '',
+        	"entry.286738280": (this.model.NPWarehouse && this.model.NPWarehouse.label) ? this.model.NPWarehouse.label : '',
+        	"entry.1969539833": this.model.NPAdress,
+        	"entry.1032598905": this.model.payment,
+        	"entry.808755815": this.itemsToString(this.items)
 		  },
 		  type: "POST",
-		  dataType: "xml"
+		  dataType: "xml",
+			statusCode: {
+        0: function (){
+          console.log('success')
+        },
+        200: function (){
+          console.log('success')
+        }
+			}
 		})
 	}
 
