@@ -17,6 +17,7 @@ class Cart extends React.Component {
 		this.items = this.props.cart.items
 		this.payTypes = this.props.cart.paymentTypes
 		this.shipTypes = this.props.cart.shippingTypes
+		this.total = (this.items.length) ? _.sumBy(this.items, i => i.quantity*i.price) : 0
 
 		this.updateLocalModel = this.updateLocalModel.bind(this)
 		this.sendOrder = this.sendOrder.bind(this)
@@ -51,7 +52,8 @@ class Cart extends React.Component {
         	"entry.286738280": (this.model.NPWarehouse && this.model.NPWarehouse.label) ? this.model.NPWarehouse.label : '',
         	"entry.1969539833": this.model.NPAdress,
         	"entry.1032598905": this.payTypes[this.model.payment].name,
-        	"entry.808755815": this.itemsToString(this.items)
+        	"entry.808755815": this.itemsToString(this.items),
+        	"entry.928571857": this.total
 		  },
 		  type: "POST",
 		  dataType: "xml",
@@ -88,7 +90,7 @@ class Cart extends React.Component {
 			        	</div>
 			        	<div className="col-12 col-lg-6 align-self-center">
 				        	<div className="mx-0 my-3 p-0">
-				        		<CartList items={cart.items} total={total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
+				        		<CartList items={cart.items} total={this.total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
 						    </div>
 						</div>
 					</div>
