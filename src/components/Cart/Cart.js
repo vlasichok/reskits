@@ -40,6 +40,9 @@ class Cart extends React.Component {
 		}
 		return itemStrings.join(',\n')
 	}
+	onSent(){
+		this.props.cleanCartItems()
+	}
 	sendOrder(){
 		$.ajax({
 		  url: "https://docs.google.com/forms/d/e/1FAIpQLSffYX9gCJGfgsGtBrLcrKGftPN6rrh39mbpgJqGbzqCe78b9A/formResponse",
@@ -58,12 +61,8 @@ class Cart extends React.Component {
 		  type: "POST",
 		  dataType: "xml",
 			statusCode: {
-        0: function (){
-          console.log('success')
-        },
-        200: function (){
-          console.log('success')
-        }
+		        0: this.onSent(),
+		        200: this.onSent()
 			}
 		})
 	}

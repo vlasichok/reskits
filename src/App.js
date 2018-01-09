@@ -46,6 +46,7 @@ class App extends React.Component {
     this.loadNPCities = this.loadNPCities.bind(this)
     this.loadNPWarehouses = this.loadNPWarehouses.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
+    this.cleanCartItems = this.cleanCartItems.bind(this)
 
     // test methods
     this.giveAnswer = this.giveAnswer.bind(this)
@@ -195,6 +196,11 @@ class App extends React.Component {
         this.setState({cart})
       })
   }
+  cleanCartItems(){
+    let cart = {...this.state.cart}
+    cart.items = []
+    this.setState({cart})
+  }
 
   // test methods
   giveAnswer(e, answer){
@@ -305,6 +311,7 @@ class App extends React.Component {
               toggleCartModal={this.toggleCartModal} 
               loadNPCities={this.loadNPCities}
               loadNPWarehouses={this.loadNPWarehouses} 
+              cleanCartItems={this.cleanCartItems}
             />
             <MainMenu 
               toggleMobileMenu={this.toggleMobileMenu}
