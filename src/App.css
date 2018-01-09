@@ -47,8 +47,11 @@
     animation: snake-bg 22s infinite;
     /*background-attachment: fixed;*/
 }
-@keyframes snake-bg {
- 0% { background-position: 0% 60%; }
- 50% { background-position: 120% 60%; }
- 100% { background-position: 0% 60%; }
-}
+    #detailsSection .bgr-snake {
+        background-position: right
+    }
+    @keyframes snake-bg {
+        0% { background-position: 0% 60%; }
+        50% { background-position: 120% 60%; }
+        100% { background-position: 0% 60%; }
+    }
