@@ -12,8 +12,11 @@ import {Icon} from 'react-fa'
 class Cart extends React.Component {
 	constructor(props){
 		super(props)
+
 		this.model = this.props.cart.form
 		this.items = this.props.cart.items
+		this.payTypes = this.props.cart.paymentTypes
+		this.shipTypes = this.props.cart.shippingTypes
 
 		this.updateLocalModel = this.updateLocalModel.bind(this)
 		this.sendOrder = this.sendOrder.bind(this)
@@ -29,8 +32,9 @@ class Cart extends React.Component {
 			let name = items[i].name
 			let color = items[i].colors[items[i].currColorIndex]
 			let quantity = items[i].quantity
+			let cost = items[i].price*items[i].quantity
 
-			let itemString = `${i+1}) ${name} (${color}) = ${quantity} шт`
+			let itemString = `${i+1}) ${name} (${color}) = ${quantity} шт = ${cost} грн.`
 			itemStrings.push(itemString)
 		}
 		return itemStrings.join(',\n')
@@ -42,11 +46,11 @@ class Cart extends React.Component {
 		  	"entry.1437398298": this.model.name,
 		  	"entry.1441256141": this.model.email,
         	"entry.1516772474": this.model.phone,
-        	"entry.1115901129": this.model.shipping,
+        	"entry.1115901129": this.shipTypes[this.model.shipping].name,
         	"entry.266198164": (this.model.NPCity && this.model.NPCity.label) ? this.model.NPCity.label : '',
         	"entry.286738280": (this.model.NPWarehouse && this.model.NPWarehouse.label) ? this.model.NPWarehouse.label : '',
         	"entry.1969539833": this.model.NPAdress,
-        	"entry.1032598905": this.model.payment,
+        	"entry.1032598905": this.payTypes[this.model.payment].name,
         	"entry.808755815": this.itemsToString(this.items)
 		  },
 		  type: "POST",
