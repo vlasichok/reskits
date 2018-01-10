@@ -12,7 +12,7 @@ const PartsModal = props => {
 		        			{props.current.info.parts.map((part, i)=>{
 		        				return(
 									<li key={i} className="list-group-item part">
-										<img src={'/img/parts/'+part.img} class="photo" />
+										<img src={'/img/parts/'+part.img} class="photo" alt="part" />
 										<span>{part.name}</span>
 										<span className="pull-right">{part.quantity} {part.unit}</span>
 									</li>
