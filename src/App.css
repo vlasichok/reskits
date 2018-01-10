@@ -44,7 +44,7 @@
     background: url('/img/home.jpg') center no-repeat;
     background-size: 120%;
     background-position: 0% 60%;
-    animation: snake-bg 22s infinite;
+    animation: snake-bg linear 22s infinite;
     /*background-attachment: fixed;*/
 }
     #detailsSection .bgr-snake {
