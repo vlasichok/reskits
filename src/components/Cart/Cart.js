@@ -14,13 +14,17 @@ class Cart extends React.Component {
 		super(props)
 
 		this.model = this.props.cart.form
-		this.items = this.props.cart.items
+		this.items = []
 		this.payTypes = this.props.cart.paymentTypes
 		this.shipTypes = this.props.cart.shippingTypes
-		this.total = (this.items.length) ? _.sumBy(this.items, i => i.quantity*i.price) : 0
+		this.total = 0
 
 		this.updateLocalModel = this.updateLocalModel.bind(this)
 		this.sendOrder = this.sendOrder.bind(this)
+	}
+	componentWillReceiveProps(){
+		this.items = this.props.cart.items
+		this.total = (this.items.length) ? _.sumBy(this.items, i => i.quantity*i.price) : 0
 	}
 
 	updateLocalModel(propName, value){
@@ -89,7 +93,7 @@ class Cart extends React.Component {
 			        	</div>
 			        	<div className="col-12 col-lg-6 align-self-center">
 				        	<div className="mx-0 my-3 p-0">
-				        		<CartList items={cart.items} total={this.total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
+				        		<CartList items={cart.items} total={total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
 						    </div>
 						</div>
 					</div>

@@ -200,6 +200,7 @@ class App extends React.Component {
     let cart = {...this.state.cart}
     cart.items = []
     this.setState({cart})
+    sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
   }
 
   // test methods
