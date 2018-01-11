@@ -34,20 +34,6 @@
 	  padding-bottom: 100%;
 	}
 
-/*.slider .current-item .info {
-	min-height: 285px;
-}
-
-.slider .current-item--mobile .image {
-	display: inline-block;
-	width: 80%;
-	max-width: 20rem;
-	margin: 1rem;
-	font-size: 1rem;
-	text-decoration: none;
-	box-shadow: 0 1.2em 5rem -1rem rgba(0,0,0,0.7);
-}*/
-
 /*color buttons*/
 .slider .colors .color {
 	display: inline-block;

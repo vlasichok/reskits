@@ -17,8 +17,8 @@ const SliderCurrent = props => {
 					<div className="col-sm-3 col-md-4 col-lg-3 col-xl-3 offset-lg-1 offset-xl-2 text-center">
 						<Image current={current} currentIndex={currentIndex} goToNextImg={props.goToNextImg} />
 					</div>
-					<div className="col-sm-9 col-md-8 col-lg-7 col-xl-5">
-						<div className="info d-flex align-items-center">
+					<div className="col-sm-9 col-md-8 col-lg-7 col-xl-5 d-flex align-items-center">
+						<div className="info">
 							<div className="mb-4">
 								<h3 className="name mb-md-3">
 									{current.name}
