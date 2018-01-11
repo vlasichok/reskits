@@ -22,7 +22,7 @@ class CartForm extends React.Component {
 			<form className="cart__form px-2">
 				<label>ФИО</label>
 				<div className="form-group" name="name" required>
-					<input type="text" className="form-control" placeholder="Тарасенко Тарас Тарасович, например" value={this.props.model.name} onChange={e => this.props.updateLocalModel('name', e.target.value)}/>
+					<input type="text" className="form-control" placeholder="Змеев Иммануил Александрович, например" value={this.props.model.name} onChange={e => this.props.updateLocalModel('name', e.target.value)}/>
 				</div>
 
 				<label>E-mail</label>

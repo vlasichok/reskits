@@ -1,0 +1,11 @@
+.home .slogan {
+	font-family: 'Roboto';
+	font-size: 22px;
+	line-height: 26px;
+}
+	.home .slogan .title {
+		font-style: italic;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: block;
+	}
