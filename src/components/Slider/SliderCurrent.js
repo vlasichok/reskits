@@ -49,7 +49,7 @@ const SliderCurrent = props => {
 										<p className="m-0">{item.price} ₴</p>
 									</div>
 									<div className="col-8 offset-2 col-sm-5 offset-sm-0 mt-sm-2 text-center">
-										<Image current={item} currentIndex={i} goToNextImg={props.goToNextImg} />
+										<Image current={item} currentIndex={i} goToNextImg={props.goToNextImg} toggleImageModal={props.toggleImageModal} />
 									</div>
 									<div className="col-12 col-sm-7">
 								        <div className="text-center text-sm-left mt-2 mt-sm-4">
