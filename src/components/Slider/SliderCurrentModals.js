@@ -1,9 +1,10 @@
 import React from 'react'
 import {Modal, ModalHeader, ModalBody} from 'reactstrap';
+import {Icon} from 'react-fa'
 
 const PartsModal = props => {
 	return(
-		<Modal isOpen={props.partsOpened} size="lg" toggle={props.togglePartsModal} backdrop={true}>
+		<Modal isOpen={props.partsOpened} size="lg" toggle={props.togglePartsModal} backdrop={true} className="partsModal">
         	<ModalHeader toggle={props.togglePartsModal}>{props.current.name}</ModalHeader>
         	<ModalBody>
         		<div className="row">
@@ -28,7 +29,7 @@ const PartsModal = props => {
 
 const InfoModal = props => {
 	return(
-		<Modal isOpen={props.infoOpened} size="lg" toggle={props.toggleInfoModal} backdrop={true}>
+		<Modal isOpen={props.infoOpened} size="lg" toggle={props.toggleInfoModal} backdrop={true} className="infoModal">
         	<ModalHeader toggle={props.toggleInfoModal}>{props.current.name}</ModalHeader>
         	<ModalBody>
         		<div className="item-info">
@@ -45,4 +46,20 @@ const InfoModal = props => {
 	)
 }
 
-export {PartsModal, InfoModal}
+const ImageModal = props => {
+	let currentColor = props.current.colors[props.current.currColorIndex]
+	let currentGallery = props.current.gallery[currentColor]
+	let currentImg = currentGallery.imgs[currentGallery.current]
+
+	return(
+		<Modal isOpen={props.imageOpened} size="lg" toggle={props.toggleImageModal} backdrop={true} className="imageModal">
+        	<ModalBody>
+				<div className="image">
+					<img src={'/img/packs/250x250/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.toggleImageModal()}/>
+				</div>
+			</ModalBody>
+        </Modal>
+	)
+}
+
+export {PartsModal, InfoModal, ImageModal}

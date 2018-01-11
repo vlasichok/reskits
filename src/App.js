@@ -37,6 +37,7 @@ class App extends React.Component {
     this.goToNextImg = this.goToNextImg.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
+    this.toggleImageModal = this.toggleImageModal.bind(this)
     this.addItem = this.addItem.bind(this)
 
     // cart methods
@@ -87,6 +88,13 @@ class App extends React.Component {
     this.setState({catalog})
 
     window.$.fn.fullpage.setAllowScrolling(!catalog.infoOpened) // toggling scroll type
+  }
+  toggleImageModal(e){
+    let catalog = {...this.state.catalog}
+    catalog.imageOpened = !catalog.imageOpened
+    this.setState({catalog})
+
+    window.$.fn.fullpage.setAllowScrolling(!catalog.imageOpened) // toggling scroll type
   }
   goToNextImg(currItemIndex, reversedOrder){
     let catalog = {...this.state.catalog}
@@ -335,6 +343,7 @@ class App extends React.Component {
                 addItem={this.addItem} 
                 togglePartsModal={this.togglePartsModal} 
                 toggleInfoModal={this.toggleInfoModal} 
+                toggleImageModal = {this.toggleImageModal}
               />
             </section>
 

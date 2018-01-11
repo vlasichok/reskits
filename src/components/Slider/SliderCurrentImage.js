@@ -12,7 +12,7 @@ const Image = props => {
 				<Icon spin name="spinner" className="spinner" />
 			</div>
 			<div className="image">
-				<img src={'/img/packs/250x250/' + currentImg} key={currentImg} alt="medkit"/>
+				<img src={'/img/packs/250x250/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.toggleImageModal()}/>
 			</div>
 
 			<div className="w-100 text-center">

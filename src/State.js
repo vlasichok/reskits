@@ -170,7 +170,8 @@ const State = {
         ],
         currentIndex: 0,
         partsOpened: false,
-        infoOpened: false
+        infoOpened: false,
+        imageOpened: false
       },
       cart: {
         items: [],

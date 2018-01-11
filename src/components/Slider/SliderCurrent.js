@@ -3,7 +3,7 @@ import {Icon} from 'react-fa'
 
 import Image from './SliderCurrentImage'
 import Color from './SliderCurrentColor'
-import {PartsModal, InfoModal} from './SliderCurrentModals'
+import {PartsModal, InfoModal, ImageModal} from './SliderCurrentModals'
 
 const SliderCurrent = props => {
 
@@ -15,7 +15,7 @@ const SliderCurrent = props => {
 			{(window.innerWidth > 767) ? (
 				<div className="current-item row mb-3 mb-sm-0 mb-md-4 mb-xl-5">
 					<div className="col-sm-3 col-md-4 col-lg-3 col-xl-3 offset-lg-1 offset-xl-2 text-center">
-						<Image current={current} currentIndex={currentIndex} goToNextImg={props.goToNextImg} />
+						<Image current={current} currentIndex={currentIndex} goToNextImg={props.goToNextImg} toggleImageModal={props.toggleImageModal} />
 					</div>
 					<div className="col-sm-9 col-md-8 col-lg-7 col-xl-5 d-flex align-items-center">
 						<div className="info">
@@ -82,6 +82,9 @@ const SliderCurrent = props => {
 
 		     <InfoModal current={current} infoOpened={props.catalog.infoOpened}
 		     	toggleInfoModal={props.toggleInfoModal} />
+
+		     <ImageModal current={current} imageOpened={props.catalog.imageOpened}
+		     	toggleImageModal={props.toggleImageModal} />
 	     </div>
 	)
 }

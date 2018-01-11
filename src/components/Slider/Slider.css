@@ -97,8 +97,19 @@
 	transform: scale(0.5);
 }
 
-.parts .part .photo {
+
+/*MODALS*/
+/*=== parts*/
+.partsModal .parts .part .photo {
 	max-width: 80px;
 	padding-right: 10px;
 	border-radius: 50%;
 }
+
+/*=== image*/
+.imageModal .image {
+	width: 100%;
+}
+	.imageModal .image img {
+		width: 100%;
+	}
