@@ -256,6 +256,7 @@ class App extends React.Component {
           afterRender: afterRender.bind(this),
           onSlideLeave: changeMobileCurrent.bind(this)
         })
+       console.log('init')
     }
     function afterRender(){
       let sectionName = window.location.hash.split('/')[0]
@@ -277,6 +278,10 @@ class App extends React.Component {
       fullpageInit.call(this)
     );
     window.onhashchange = changeCurrentLocation.bind(this)
+    window.onresize = () => {
+      window.$.fn.fullpage.destroy('all')
+      fullpageInit.call(this)
+    };
   }
 
   render() {
