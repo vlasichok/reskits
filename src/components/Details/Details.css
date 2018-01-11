@@ -5,10 +5,25 @@
 	.details > .row {
 		height: 100%;
 	}
-.details .bgr-snake {
-	background: url('/img/bg_snake.png') center no-repeat;
-	background-size: cover;
+
+.details .bgr-photo {
 	height: 100%;
+	width: 100%;
+    background: url('/img/home.jpg') center no-repeat;
+    background-size: cover;
+    animation: snake-photo linear 22s infinite;
+}
+    @keyframes snake-photo {
+        0% { background-position-x: 0%; }
+        50% { background-position-x: 100%; }
+        100% { background-position-x: 0%; }
+    }
+.details .bgr-snake {
+	background: url('/img/bg_snake.png') right no-repeat;
+	background-size: cover;
+	background-position-y: 70%;
+	height: 100%;
+	width: 100%;
 }
 .details .bgr-color {
 	background-color: #425351;

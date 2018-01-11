@@ -40,22 +40,6 @@
         background-color: rgba(67, 84, 81, 0.80);
     }
 
-#detailsSection {
-    background: url('/img/home.jpg') center no-repeat;
-    background-size: 120%;
-    background-position: 0% 60%;
-    animation: snake-bg linear 22s infinite;
-    /*background-attachment: fixed;*/
-}
-    #detailsSection .bgr-snake {
-        background-position: right
-    }
-    @keyframes snake-bg {
-        0% { background-position: 0% 60%; }
-        50% { background-position: 120% 60%; }
-        100% { background-position: 0% 60%; }
-    }
-
 .form-control::-webkit-input-placeholder { color: #D6C6BF; }  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: #D6C6BF; }  /* Mozilla Firefox 4 to 18 */
 .form-control::-moz-placeholder { color: #D6C6BF; }  /* Mozilla Firefox 19+ */

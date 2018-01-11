@@ -9,7 +9,11 @@ const Details = (props) => {
 	return( 
 		<div className="container-fluid details">
 			<div className="row">
-				<div className="col-lg-4 col-xl-5 bgr-snake d-none d-lg-block"></div>
+				<div className="col-lg-4 col-xl-5 d-none d-lg-block">
+					<div className="bgr-photo">
+						<div className="bgr-snake"></div>
+					</div>
+				</div>
 				<div className="col-12 col-lg-8 col-xl-7 bgr-color d-flex align-items-center">
 					<div className="details-list w-100">
 						{props.items.map((item, i) => {
