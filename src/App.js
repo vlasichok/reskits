@@ -286,7 +286,7 @@ class App extends React.Component {
           right
         >
           <div className="text-center my-3">
-            <a onClick={this.toggleMobileMenu}>
+            <a onClick={this.toggleMobileMenu} className="no-decoration">
               <Icon name="times" size="2x" />
             </a>
           </div>
