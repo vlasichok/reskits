@@ -9,3 +9,13 @@
 		text-transform: uppercase;
 		display: block;
 	}
+
+@media screen and (max-width: 575px) {
+	.home .slogan {
+		font-size: 16px;
+		line-height: 18px;
+	}
+	.home .slogan .title {
+		font-size: 20px;
+	}
+}
