@@ -15,7 +15,10 @@
 
 @media screen and (max-width: 767px) {
 	.about p {
-		font-size: 14px;
+		font-size: 13px;
 		line-height: 1.2em;
+	}
+	.about .title {
+		font-size: 17px;
 	}
 }
