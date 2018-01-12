@@ -47,7 +47,7 @@ class App extends React.Component {
     this.loadNPCities = this.loadNPCities.bind(this)
     this.loadNPWarehouses = this.loadNPWarehouses.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
-    this.cleanCartItems = this.cleanCartItems.bind(this)
+    this.onOrderSent = this.onOrderSent.bind(this)
 
     // test methods
     this.giveAnswer = this.giveAnswer.bind(this)
@@ -123,9 +123,11 @@ class App extends React.Component {
       cart.items.push({...item})
     }
     cart.animateCounter = true // animation flag on
+    cart.orderSent = false
 
     this.setState({cart})
     sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
+
 
     setTimeout(() => { // animation flag off
       cart.animateCounter = false
@@ -204,9 +206,11 @@ class App extends React.Component {
         this.setState({cart})
       })
   }
-  cleanCartItems(){
+  onOrderSent(){
+    console.log('sent')
     let cart = {...this.state.cart}
     cart.items = []
+    cart.orderSent = true
     this.setState({cart})
     sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
   }
@@ -256,7 +260,6 @@ class App extends React.Component {
           afterRender: afterRender.bind(this),
           onSlideLeave: changeMobileCurrent.bind(this)
         })
-       console.log('init')
     }
     function afterRender(){
       let sectionName = window.location.hash.split('/')[0]
@@ -325,7 +328,7 @@ class App extends React.Component {
               toggleCartModal={this.toggleCartModal} 
               loadNPCities={this.loadNPCities}
               loadNPWarehouses={this.loadNPWarehouses} 
-              cleanCartItems={this.cleanCartItems}
+              onOrderSent={this.onOrderSent}
             />
             <MainMenu 
               toggleMobileMenu={this.toggleMobileMenu}

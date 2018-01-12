@@ -44,9 +44,6 @@ class Cart extends React.Component {
 		}
 		return itemStrings.join(',\n')
 	}
-	onSent(){
-		this.props.cleanCartItems()
-	}
 	sendOrder(){
 		$.ajax({
 		  url: "https://docs.google.com/forms/d/e/1FAIpQLSffYX9gCJGfgsGtBrLcrKGftPN6rrh39mbpgJqGbzqCe78b9A/formResponse",
@@ -65,8 +62,8 @@ class Cart extends React.Component {
 		  type: "POST",
 		  dataType: "xml",
 			statusCode: {
-		        0: this.onSent(),
-		        200: this.onSent()
+		        0: this.props.onOrderSent(),
+		        200: this.props.onOrderSent()
 			}
 		})
 	}
@@ -75,6 +72,7 @@ class Cart extends React.Component {
 		const cart = this.props.cart
 		const counter = (cart.items.length) ? _.sumBy(cart.items, 'quantity') : 0
 		const total = (cart.items.length) ? _.sumBy(cart.items, i => i.quantity*i.price) : 0
+		const orderSent = this.props.cart.orderSent
 
 		return(
 			<div>
@@ -87,16 +85,24 @@ class Cart extends React.Component {
 				<Modal isOpen={cart.opened} size="lg" toggle={this.props.toggleCartModal} backdrop={true}>
 		          <ModalHeader toggle={this.props.toggleCartModal}>Корзина</ModalHeader>
 		          <ModalBody>
-		        	<div className="row">
-			        	<div className="col-12 col-lg-6">
-			        		<CartForm model={this.model} paymentTypes={cart.paymentTypes} shippingTypes={cart.shippingTypes} NPCities={cart.NPCities} NPWarehouses={cart.NPWarehouses} updateLocalModel={this.updateLocalModel} loadNPCities={this.props.loadNPCities} loadNPWarehouses={this.props.loadNPWarehouses} />
-			        	</div>
-			        	<div className="col-12 col-lg-6 align-self-center">
-				        	<div className="mx-0 my-3 p-0">
-				        		<CartList items={cart.items} total={total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
-						    </div>
+		          	{(!orderSent) ? (
+			        	<div className="row">
+				        	<div className="col-12 col-lg-6">
+				        		<CartForm model={this.model} paymentTypes={cart.paymentTypes} shippingTypes={cart.shippingTypes} NPCities={cart.NPCities} NPWarehouses={cart.NPWarehouses} updateLocalModel={this.updateLocalModel} loadNPCities={this.props.loadNPCities} loadNPWarehouses={this.props.loadNPWarehouses} />
+				        	</div>
+				        	<div className="col-12 col-lg-6 align-self-center">
+					        	<div className="mx-0 my-3 p-0">
+					        		<CartList items={cart.items} total={total} changeQuantity={this.props.changeQuantity} removeItem={this.props.removeItem} />
+							    </div>
+							</div>
 						</div>
-					</div>
+		          	):(
+			        	<div className="row my-5">
+				        	<div className="col-12">
+				        		<p className="h4 text-center">Спасибо, ваш заказ отправлен в обработку.</p>
+				        	</div>
+						</div>
+		          	)}
 		          </ModalBody>
 		          <ModalFooter>
 		          	<div className="row">
