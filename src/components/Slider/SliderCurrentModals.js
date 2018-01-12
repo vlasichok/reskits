@@ -55,7 +55,7 @@ const ImageModal = props => {
 		<Modal isOpen={props.imageOpened} size="lg" toggle={props.toggleImageModal} backdrop={true} className="imageModal">
         	<ModalBody>
 				<div className="image">
-					<img src={'/img/packs/250x250/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.toggleImageModal()}/>
+					<img src={'/img/packs/original/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.toggleImageModal()}/>
 				</div>
 			</ModalBody>
         </Modal>
