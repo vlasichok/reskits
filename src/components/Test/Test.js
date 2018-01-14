@@ -10,9 +10,10 @@ class Test extends React.Component {
 		      winner = results[winnerIndex]
 
 		return(
-			<div className="container test">
-				<div className="row">
-					<div className="col-10 offset-1 text-center">
+			<div className="container-fluid h-100 test">
+				<div className="row h-100">
+					<div className="col-3 d-none d-lg-block bgr-city-left"></div>
+					<div className="col-12 col-lg-6 text-center d-flex align-items-center flex-column justify-content-center">
 						{finished ? (
 							<div>
 								<h4>
@@ -35,9 +36,10 @@ class Test extends React.Component {
 								</ul>
 							</div>
 						)}
+						<p className="text-center mt-2"><Icon name="refresh" /><a onClick={(e) => this.props.restartTest(e)} className="ml-2">Начать заново</a></p>
 					</div>
+					<div className="col-3 d-none d-lg-block bgr-city-right"></div>
 				</div>
-				<p className="text-center mt-2"><Icon name="refresh" /><a onClick={(e) => this.props.restartTest(e)} className="ml-2">Начать заново</a></p>
 			</div>
 		)
 	}

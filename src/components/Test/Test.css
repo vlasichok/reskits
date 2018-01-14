@@ -19,3 +19,14 @@
 		line-height: 1.2em;
 	}
 }
+
+.test .bgr-city-left {
+	background: url('/img/bg_city_left.png') center no-repeat;
+	background-size: contain;
+	background-position: bottom;
+}
+.test .bgr-city-right {
+	background: url('/img/bg_city_right.png') center no-repeat;
+	background-size: contain;
+	background-position: bottom;
+}
