@@ -210,19 +210,19 @@ const State = {
                   ]},
                   {answerText: 'Нет', resultIndex: 0}
                 ]},
-                {answerText: 'В горы', resultIndex: 6},
+                // {answerText: 'В горы', resultIndex: 6},
               ]},
               {answerText: 'аптечка ездила со мной в машине', questionText: 'В ней должно быть все самое лучшее, верно?', answers: [
-                {answerText: 'Конечно', resultIndex: 5},
+                // {answerText: 'Конечно', resultIndex: 5},
                 {answerText: 'Главное, чтобы работало', resultIndex: 4}
               ]},
               {answerText: 'аптечка находилась дома/в офисе', questionText: 'Полный комплект или попроще?', answers: [
-                {answerText: 'Полный', resultIndex: 7},
+                // {answerText: 'Полный', resultIndex: 7},
                 {answerText: 'Попроще', resultIndex: 3}
               ]}
             ]}, 
             {answerText: 'другу', questionText: 'Я рассчитываю потратить до ...', answers: [
-              {answerText: '100 грн.', resultIndex: 8},
+              // {answerText: '100 грн.', resultIndex: 8},
               {answerText: 'меньше 1500 грн.', questionText: 'Для меня важно ...', answers: [
                 {answerText: 'внимание', resultIndex: 0},
                 {answerText: 'чтобы просто, функционально и недорого', resultIndex: 2},
@@ -231,13 +231,13 @@ const State = {
               {answerText: 'больше 1500 грн.', questionText: 'Друг водит машину?', answers: [
                 {answerText: 'Да', questionText: 'У нас есть аптечка за ХХХХ гривен', answers: [
                   {answerText: 'Давайте поскромнее', resultIndex: 4},
-                  {answerText: 'Для друга не жалко', resultIndex: 5}
+                  // {answerText: 'Для друга не жалко', resultIndex: 5}
                 ]},
                 {answerText: 'Нет', questionText: 'А в походы ходит?', answers: [
-                  {answerText: 'Да', resultIndex: 6},
+                  // {answerText: 'Да', resultIndex: 6},
                   {answerText: 'Нет', questionText: 'Он городской супергерой?', answers: [
                     {answerText: 'Да', resultIndex: 3},
-                    {answerText: 'Нет, он домашний супергерой (ง"̀-"́)ง', resultIndex: 7}
+                    // {answerText: 'Нет, он домашний супергерой (ง"̀-"́)ง', resultIndex: 7}
                   ]}
                 ]}
               ]}
@@ -246,10 +246,10 @@ const State = {
               {answerText: 'Для безопасности, конечно', questionText: 'Безопасности чего?', answers: [
                 {answerText: 'Безопасности на дороге', questionText: 'Как у вас с бюджетом?', answers: [
                   {answerText: 'Как всегда...', resultIndex: 4},
-                  {answerText: 'Нормально', resultIndex: 5},
+                  // {answerText: 'Нормально', resultIndex: 5},
                 ]},
-                {answerText: 'Безопасности офиса', resultIndex: 7},
-                {answerText: 'Безопасности производства', resultIndex: 7}
+                // {answerText: 'Безопасности офиса', resultIndex: 7},
+                // {answerText: 'Безопасности производства', resultIndex: 7}
               ]},
               {answerText: 'Для эмоций, конечно', questionText: 'У кого и какие эмоции должна вызывать?', answers: [
                 {answerText: 'У многих коллег, подарим небольшие наборы', questionText: 'Как у нас с бюджетом?', answers: [
@@ -257,10 +257,10 @@ const State = {
                   {answerText: 'Нормально', resultIndex: 1},
                   {answerText: 'Фантастика!', resultIndex: 2}
                 ]},
-                {answerText: 'Гордость у топ-менеджмента', resultIndex: 7},
+                // {answerText: 'Гордость у топ-менеджмента', resultIndex: 7},
                 {answerText: 'Спокойствие и безопасности у босса', questionText: 'Как у нас с бюджетом?', answers: [
                   {answerText: 'Как всегда...', resultIndex: 3},
-                  {answerText: 'Нормально!', resultIndex: 7}
+                  // {answerText: 'Нормально!', resultIndex: 7}
                 ]}
               ]}
             ]}
