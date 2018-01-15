@@ -73,6 +73,12 @@
   display: none;
 }
 
+.cartModal .errorMessage {
+  height: 100%;
+  width: 100%;
+  color: red;
+}
+
 
 .cart-link--animation {
   display: block;

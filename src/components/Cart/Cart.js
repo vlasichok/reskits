@@ -85,7 +85,7 @@ class Cart extends React.Component {
 					</a>
 				</div>
 
-				<Modal isOpen={cart.opened} size="lg" toggle={this.props.toggleCartModal} backdrop={true}>
+				<Modal isOpen={cart.opened} size="lg" toggle={this.props.toggleCartModal} backdrop={true} className="cartModal">
 		          <ModalHeader toggle={this.props.toggleCartModal}>Корзина</ModalHeader>
 		          <ModalBody>
 		          	{(!orderSent) ? (
@@ -110,9 +110,11 @@ class Cart extends React.Component {
 		          <ModalFooter>
 		          	<div className="row w-100">
 		          		<div className="col-6">
-		          			{ !orderSent &&
-		          				cart.errorMessage
-		          			}
+		          			<div className="errorMessage d-flex align-items-center">
+			          			{ !orderSent &&
+			          				cart.errorMessage
+			          			}
+		          			</div>
 		          		</div>
 		          		<div className="col-6 text-right">
 		          			<button className="btn btn-default" onClick={this.sendOrder} disabled={cart.items.length === 0}>Отправить заказ</button>
