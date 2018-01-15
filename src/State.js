@@ -197,7 +197,8 @@ const State = {
         NPCities: [],
         NPWarehouses: [],
         animateCounter: false,
-        orderSent: false
+        orderSent: false,
+        errorMessage: ''
       },
       test: {
         queue: {questionText: 'Я выбираю аптечку ...', answers: [

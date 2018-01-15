@@ -48,6 +48,7 @@ class App extends React.Component {
     this.loadNPWarehouses = this.loadNPWarehouses.bind(this)
     this.toggleCartModal = this.toggleCartModal.bind(this)
     this.onOrderSent = this.onOrderSent.bind(this)
+    this.validateOrderForm = this.validateOrderForm.bind(this)
 
     // test methods
     this.giveAnswer = this.giveAnswer.bind(this)
@@ -207,12 +208,36 @@ class App extends React.Component {
       })
   }
   onOrderSent(){
-    console.log('sent')
     let cart = {...this.state.cart}
     cart.items = []
     cart.orderSent = true
     this.setState({cart})
     sessionStorage.setItem('cartItems', JSON.stringify(cart.items))
+  }
+  validateOrderForm(form){
+    let cart = {...this.state.cart}
+    cart.errorMessage = ''
+    let errorMessagesArr = []
+
+    // name
+    if(form.name === '') errorMessagesArr.push('укажите имя');
+
+    // e-mail
+    let mailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(form.email === '') {
+      errorMessagesArr.push('укажите e-mail');
+    } else if(!mailRegExp.test(form.email.toLowerCase())) {
+      errorMessagesArr.push('неверно указан e-mail');
+    }
+
+    // phone
+    if(form.phone === '') errorMessagesArr.push('укажите номер телефона');
+
+    cart.errorMessage = errorMessagesArr.join(', ')
+    cart.errorMessage = cart.errorMessage.charAt(0).toUpperCase() + cart.errorMessage.slice(1) // uppercase first letter
+    this.setState({cart})
+
+    return cart.errorMessage;
   }
 
   // test methods
@@ -329,6 +354,7 @@ class App extends React.Component {
               loadNPCities={this.loadNPCities}
               loadNPWarehouses={this.loadNPWarehouses} 
               onOrderSent={this.onOrderSent}
+              validateOrderForm={this.validateOrderForm}
             />
             <MainMenu 
               toggleMobileMenu={this.toggleMobileMenu}

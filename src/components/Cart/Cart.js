@@ -22,7 +22,7 @@ class Cart extends React.Component {
 		this.updateLocalModel = this.updateLocalModel.bind(this)
 		this.sendOrder = this.sendOrder.bind(this)
 	}
-	componentWillReceiveProps(){
+	componentWillUpdate(){
 		this.items = this.props.cart.items
 		this.total = (this.items.length) ? _.sumBy(this.items, i => i.quantity*i.price) : 0
 	}
@@ -45,6 +45,13 @@ class Cart extends React.Component {
 		return itemStrings.join(',\n')
 	}
 	sendOrder(){
+		let validation = this.props.validateOrderForm(this.model)
+		console.log(validation)
+
+		if (validation.length) return;
+
+		console.log('sending')
+
 		$.ajax({
 		  url: "https://docs.google.com/forms/d/e/1FAIpQLSffYX9gCJGfgsGtBrLcrKGftPN6rrh39mbpgJqGbzqCe78b9A/formResponse",
 		  data: {
@@ -107,7 +114,7 @@ class Cart extends React.Component {
 		          <ModalFooter>
 		          	<div className="row">
 		          		<div className="col">
-
+		          			{cart.errorMessage}
 		          		</div>
 		          		<div className="col">
 		          			<button className="btn btn-default" onClick={this.sendOrder} disabled={cart.items.length === 0}>Отправить заказ</button>
