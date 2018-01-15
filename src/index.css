@@ -37,6 +37,9 @@ a {
 button {
   cursor: pointer;
 }
+.btn {
+  background-color: #e7dcd2 !important;
+}
 
 h1, h2 {
 	font-family: 'Roboto', sans-serif;
