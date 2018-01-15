@@ -109,14 +109,14 @@ class Cart extends React.Component {
 		          </ModalBody>
 		          <ModalFooter>
 		          	<div className="row w-100">
-		          		<div className="col-6">
-		          			<div className="errorMessage d-flex align-items-center">
-			          			{ !orderSent &&
-			          				cart.errorMessage
-			          			}
-		          			</div>
+		          		<div className="col-12 col-sm-6">
+		          			{ !orderSent ? (
+	          					<div className="errorMessage d-flex align-items-center mb-3 mb-sm-0">
+	          					 {cart.errorMessage}
+	          					</div>
+		          			) : null}
 		          		</div>
-		          		<div className="col-6 text-right">
+		          		<div className="col-12 col-sm-6 text-left text-sm-right">
 		          			<button className="btn btn-default" onClick={this.sendOrder} disabled={cart.items.length === 0}>Отправить заказ</button>
 		          		</div>
 		          	</div>
