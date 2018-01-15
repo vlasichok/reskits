@@ -61,10 +61,10 @@
   height: 12px;
 }
 .order-list .item .color.yellow {
-  background-color: yellow;
+  background-color: #fcdf00;
 }
 .order-list .item .color.darkgreen {
-  background-color: green;
+  background-color: #4e774e;
 }
 .order-list .item .color.black {
   background-color: black;

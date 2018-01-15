@@ -44,10 +44,10 @@
 	border-bottom: none;
 }
 .slider .colors .color.yellow {
-	background-color: yellow;
+	background-color: #fcdf00;
 }
 .slider .colors .color.darkgreen {
-	background-color: green;
+	background-color: #4e774e;
 }
 .slider .colors .color.black {
 	background-color: black;
