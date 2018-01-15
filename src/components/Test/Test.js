@@ -21,7 +21,7 @@ class Test extends React.Component {
 									{winner.name}
 								</h4>
 								{ winner.itemIndex !== undefined &&
-									<button className="btn btn-light m-1" onClick={(e)=> this.props.goToResult(e, winner.itemIndex)}>Узнать подробнее</button>
+									<button className="learnmore btn btn-light m-1" onClick={(e)=> this.props.goToResult(e, winner.itemIndex)}>Узнать подробнее</button>
 								}
 							</div>
 						) : (

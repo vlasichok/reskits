@@ -1,12 +1,14 @@
 .test .answers {
 	list-style-type: none;
 }
-	.test .answers .answer {
+	.test .answers .answer,
+	.test .learnmore {
 		width: 100%;
 		max-width: 250px;
 		word-wrap: break-word;
 		white-space: normal;
 		padding: 10px 4px;
+		line-height: 16px;
 	}
 
 @media screen and (max-width: 575px) {
