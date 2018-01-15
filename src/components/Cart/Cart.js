@@ -46,11 +46,7 @@ class Cart extends React.Component {
 	}
 	sendOrder(){
 		let validation = this.props.validateOrderForm(this.model)
-		console.log(validation)
-
 		if (validation.length) return;
-
-		console.log('sending')
 
 		$.ajax({
 		  url: "https://docs.google.com/forms/d/e/1FAIpQLSffYX9gCJGfgsGtBrLcrKGftPN6rrh39mbpgJqGbzqCe78b9A/formResponse",
@@ -112,11 +108,13 @@ class Cart extends React.Component {
 		          	)}
 		          </ModalBody>
 		          <ModalFooter>
-		          	<div className="row">
-		          		<div className="col">
-		          			{cart.errorMessage}
+		          	<div className="row w-100">
+		          		<div className="col-6">
+		          			{ !orderSent &&
+		          				cart.errorMessage
+		          			}
 		          		</div>
-		          		<div className="col">
+		          		<div className="col-6 text-right">
 		          			<button className="btn btn-default" onClick={this.sendOrder} disabled={cart.items.length === 0}>Отправить заказ</button>
 		          		</div>
 		          	</div>
