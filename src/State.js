@@ -201,11 +201,11 @@ const State = {
         errorMessage: ''
       },
       test: {
-        queue: {questionText: 'Я выбираю аптечку ...', answers: [
+        queue: {questionText: 'Я выбираю набор ...', answers: [
             {answerText: 'себе', questionText: 'Я хочу чтобы ...', answers: [
-              {answerText: 'аптечка была со мной в рюкзаке', questionText: 'По городу или в горы?', answers: [
+              {answerText: 'набор был со мной в рюкзаке', questionText: 'По городу или в горы?', answers: [
                 {answerText: 'По городу', questionText: 'Умеешь пользоваться турникетом/жгутом?', answers: [
-                  {answerText: 'Да', questionText: 'Аптечка должна быть экономной?', answers: [
+                  {answerText: 'Да', questionText: 'Набор должен быть экономным?', answers: [
                     {answerText: 'Да', resultIndex: 1},
                     {answerText: 'Нет', resultIndex: 2}
                   ]},
@@ -213,11 +213,11 @@ const State = {
                 ]},
                 // {answerText: 'В горы', resultIndex: 6},
               ]},
-              {answerText: 'аптечка ездила со мной в машине', questionText: 'В ней должно быть все самое лучшее, верно?', answers: [
+              {answerText: 'набор ездил со мной в машине', questionText: 'В ней должно быть все самое лучшее, верно?', answers: [
                 // {answerText: 'Конечно', resultIndex: 5},
                 {answerText: 'Главное, чтобы работало', resultIndex: 4}
               ]},
-              {answerText: 'аптечка находилась дома/в офисе', questionText: 'Полный комплект или попроще?', answers: [
+              {answerText: 'набор находился дома/в офисе', questionText: 'Полный комплект или попроще?', answers: [
                 // {answerText: 'Полный', resultIndex: 7},
                 {answerText: 'Попроще', resultIndex: 3}
               ]}
@@ -230,7 +230,7 @@ const State = {
                 {answerText: 'чтобы просто, функционально и очень качественно', resultIndex: 3}
               ]},
               {answerText: 'больше 1500 грн.', questionText: 'Друг водит машину?', answers: [
-                {answerText: 'Да', questionText: 'У нас есть аптечка за ХХХХ гривен', answers: [
+                {answerText: 'Да', questionText: 'У нас есть наборы за ХХХХ гривен', answers: [
                   {answerText: 'Давайте поскромнее', resultIndex: 4},
                   // {answerText: 'Для друга не жалко', resultIndex: 5}
                 ]},
@@ -243,7 +243,7 @@ const State = {
                 ]}
               ]}
             ]}, 
-            {answerText: 'в компанию', questionText: 'Аптечка нужна для ...', answers: [
+            {answerText: 'в компанию', questionText: 'Набор нужен для ...', answers: [
               {answerText: 'Для безопасности, конечно', questionText: 'Безопасности чего?', answers: [
                 {answerText: 'Безопасности на дороге', questionText: 'Как у вас с бюджетом?', answers: [
                   {answerText: 'Как всегда...', resultIndex: 4},
