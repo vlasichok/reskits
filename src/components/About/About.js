@@ -14,8 +14,8 @@ const About = () => {
 			</div>
 			<div className="row mt-2">
 				<div className="col-12 text-center">
-					<a href="#" className="no-decoration"><Icon name="facebook" size="2x" /></a>
-					<a href="#" className="ml-4 no-decoration"><Icon name="instagram" size="2x" /></a>
+					<a href="https://www.facebook.com/Reskits-1735879073092016/" target="about_blank" className="no-decoration"><Icon name="facebook" size="2x" /></a>
+					<a href="https://www.instagram.com/reskits/" target="about_blank" className="ml-4 no-decoration"><Icon name="instagram" size="2x" /></a>
 				</div>
 			</div>
 		</div>
