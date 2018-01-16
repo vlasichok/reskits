@@ -102,7 +102,7 @@ class Cart extends React.Component {
 		          	):(
 			        	<div className="row my-5">
 				        	<div className="col-12">
-				        		<p className="h4 text-center m-0">Спасибо, ваш заказ отправлен в обработку.</p>
+				        		<p className="h4 text-center m-0">Спасибо, ваш заказ принят.<br/>Мы свяжемся с вами в ближайшее время.</p>
 				        	</div>
 						</div>
 		          	)}
