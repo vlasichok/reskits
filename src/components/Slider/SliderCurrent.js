@@ -28,7 +28,10 @@ const SliderCurrent = props => {
 									<Color current={current} chooseColor={props.chooseColor} />
 								</div>
 								<div className="descr d-none d-md-block">
-						        	<p>{current.info.text}</p>
+						        	<p className="m-0">{current.info.text}</p>
+						        </div>
+						        <div className="my-2">
+						        	<span className="price">Стоимость: {current.price}₴</span>
 						        </div>
 						        <div>
 						        	<a onClick={props.toggleInfoModal} className="m-2 ml-sm-0">Подробности</a>
