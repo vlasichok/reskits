@@ -106,7 +106,7 @@ const State = {
             },
             icon: 'battery-full',
             info: {
-              text: 'Full Urban Kit — выбор настоящего параноика.',
+              text: 'Full Urban Kit — набор для комплексного ответа на угрозы городской среды. Выбор тех, кто хочет быть максимально защищенным.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'mask2.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
@@ -142,7 +142,7 @@ const State = {
             },
             icon: 'battery-full',
             info: {
-              text: 'Каждый ответственный водитель должен иметь свой MVA Kit.',
+              text: 'Набор для ответственного водителя. MVA Kit это снаряжение, необходимое для помощи пострадавшим в ДТП и при травмах.',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'mask2.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
