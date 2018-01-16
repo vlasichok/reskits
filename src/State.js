@@ -5,7 +5,7 @@ const State = {
             name: 'Urban Kit 1',
             colors: ['transparent'],
             currColorIndex: 0,
-            price: 300,
+            price: 250,
             gallery: {
               transparent: {
                 imgs: ['UK1_1.jpg', 'UK1_2.jpg', 'UK1_3.jpg'],
@@ -27,7 +27,7 @@ const State = {
             name: 'Urban Kit 2',
             colors: ['transparent'],
             currColorIndex: 0,
-            price: 450,
+            price: 599,
             gallery: {
               transparent: {
                 imgs: ['UK2_1.jpg', 'UK2_2.jpg', 'UK2_3.jpg'],
@@ -54,7 +54,7 @@ const State = {
             name: 'Urban Kit 2+',
             colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
-            price: 550,
+            price: 1799,
             gallery: {
               darkgreen: {
                 imgs: ['UK2plus_1.jpg', 'UK2plus_2.jpg', 'UK2plus_3.jpg', 'UK2plus_4.jpg', 'UK2plus_5.jpg'],
@@ -89,7 +89,7 @@ const State = {
             name: 'Urban Full',
             colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
-            price: 1500,
+            price: 3699,
             gallery: {
               darkgreen: {
                 imgs: ['UKF_1.jpg', 'UKF_2.jpg', 'UKF_3.jpg', 'UKF_4.jpg', 'UKF_5.jpg'],
@@ -129,7 +129,7 @@ const State = {
             name: 'MVA Kit',
             colors: ['yellow', 'darkgreen'],
             currColorIndex: 0,
-            price: 990,
+            price: 4199,
             gallery: {
               darkgreen: {
                 imgs: ['', ''],
