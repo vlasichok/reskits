@@ -333,8 +333,8 @@ class App extends React.Component {
           </div>
           <ul className="mx-5">
             <li><a href="#main">Главная</a></li>
-            <li><a href="#catalog">Каталог</a></li>
-            <li><a href="#details">FAQ</a></li>
+            <li><a href="#catalog">Наборы</a></li>
+            <li><a href="#details">Преимущества</a></li>
             <li><a href="#test">Подобрать</a></li>
             <li><a href="#about">О нас</a></li>
           </ul>
