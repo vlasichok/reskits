@@ -31,12 +31,12 @@ const Home = props => {
 				</ModalBody>
 				<ModalFooter>
 					<div className="row w-100">
-		          		<div className="col-12 col-sm-6">
+		          		<div className="col-12 col-sm-8">
 							<div className="errorMessage d-flex align-items-center mb-3 mb-sm-0">
 								{props.companyForm.errorMessage}
 							</div>
 		          		</div>
-		          		<div className="col-12 col-sm-6 text-left text-sm-right">
+		          		<div className="col-12 col-sm-4 text-left text-sm-right">
 						  <button className="btn btn-default" onClick={() => props.sendCompanyMessage(props.companyForm.form)} disabled={props.companyForm.messageSent}>Отправить</button>
 						</div>
 		          	</div>

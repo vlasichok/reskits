@@ -10,11 +10,16 @@
 		display: block;
 	}
 
-.companyForm .label {
+.companyModal .companyForm .label {
 	margin-bottom: .1rem;
 }
-.companyForm .form-group {
+.companyModal .companyForm .form-group {
 	margin-bottom: 0.6rem;
+}
+.companyModal .errorMessage {
+	line-height: 18px;
+	font-size: 14px;
+	color: red;
 }
 
 @media screen and (max-width: 575px) {
