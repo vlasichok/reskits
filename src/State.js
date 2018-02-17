@@ -318,7 +318,8 @@ const State = {
           email: '',
           comment: ''
         },
-        opened: false
+        opened: false,
+        errorMessage: ''
       },
       mobileMenuOpened: false,
       loading: true,

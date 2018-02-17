@@ -30,10 +30,12 @@ class App extends React.Component {
 
     // app methods
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+    this.formatPhoneNumber = this.formatPhoneNumber.bind(this)
 
     // main section methods
     this.toggleCompanyModal = this.toggleCompanyModal.bind(this)
     this.updateCompanyFormValue = this.updateCompanyFormValue.bind(this)
+    this.sendCompanyMessage = this.sendCompanyMessage.bind(this)
 
     // slider methods
     this.chooseItem = this.chooseItem.bind(this)
@@ -68,6 +70,20 @@ class App extends React.Component {
   toggleMobileMenu(){
     this.setState({mobileMenuOpened: !this.state.mobileMenuOpened})
   }
+  formatPhoneNumber(input){
+    // Strip all characters from the input except digits, trim over 10 cars
+    input = input.replace(/\D/g,'').substring(0,10);
+
+    var size = input.length;
+    if(size < 4) {
+        input = '('+input;
+    } else if(size < 7) {
+        input = '('+input.substring(0,3)+') '+input.substring(3,6);
+    } else {
+        input = '('+input.substring(0,3)+') '+input.substring(3,6)+'-'+input.substring(6,8)+'-'+input.substring(8,10);
+    }
+    return input; 
+  }
 
   // main section methods
   toggleCompanyModal() {
@@ -81,6 +97,50 @@ class App extends React.Component {
     let companyForm = {...this.state.companyForm}
     companyForm.form[prop] = value
     this.setState({companyForm})
+  }
+  sendCompanyMessage(form) {
+    let validation = this.validateCompanyForm(form)
+		if (validation.length) return;
+
+    let companyForm = {...this.state.companyForm}
+    companyForm.form = {
+      name: '',
+      company: '',
+      phone: '',
+      email: '',
+      comment: ''
+    }
+    companyForm.errorMessage = ''
+
+    this.setState({companyForm})
+  }
+  validateCompanyForm(form){
+    let companyForm = {...this.state.companyForm}
+    companyForm.errorMessage = ''
+    let errorMessagesArr = []
+
+    // name
+    if(form.name === '') errorMessagesArr.push('укажите имя');
+
+    // company
+    if(form.company === '') errorMessagesArr.push('укажите компанию');
+
+    // e-mail
+    let mailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(form.email === '') {
+      errorMessagesArr.push('укажите e-mail');
+    } else if(!mailRegExp.test(form.email.toLowerCase())) {
+      errorMessagesArr.push('неверно указан e-mail');
+    }
+
+    // phone
+    if(form.phone === '') errorMessagesArr.push('укажите номер телефона');
+
+    companyForm.errorMessage = errorMessagesArr.join(', ')
+    companyForm.errorMessage = companyForm.errorMessage.charAt(0).toUpperCase() + companyForm.errorMessage.slice(1) // uppercase first letter
+    this.setState({companyForm})
+
+    return companyForm.errorMessage;
   }
 
   // slider methods
@@ -386,7 +446,10 @@ class App extends React.Component {
             <section className="section" id="homeSection">
               <Home companyForm={companyForm}
                 toggleCompanyModal={this.toggleCompanyModal}
-                updateCompanyFormValue={this.updateCompanyFormValue} />
+                updateCompanyFormValue={this.updateCompanyFormValue} 
+                sendCompanyMessage={this.sendCompanyMessage}
+                formatPhoneNumber={this.formatPhoneNumber}
+              />
             </section>
 
             <section className="section">

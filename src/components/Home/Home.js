@@ -22,9 +22,20 @@ const Home = props => {
 				<ModalHeader toggle={props.toggleCompanyModal}>Для компаний</ModalHeader>
 				<ModalBody>
 					<HomeCompanyForm form={props.companyForm.form}
-						updateCompanyFormValue={props.updateCompanyFormValue} />
+						updateCompanyFormValue={props.updateCompanyFormValue} 
+						formatPhoneNumber={props.formatPhoneNumber} />
 				</ModalBody>
 				<ModalFooter>
+					<div className="row w-100">
+		          		<div className="col-12 col-sm-6">
+							<div className="errorMessage d-flex align-items-center mb-3 mb-sm-0">
+								{props.companyForm.errorMessage}
+							</div>
+		          		</div>
+		          		<div className="col-12 col-sm-6 text-left text-sm-right">
+						  <button className="btn btn-default" onClick={() => props.sendCompanyMessage(props.companyForm.form)}>Отправить</button>
+						</div>
+		          	</div>
 				</ModalFooter>
 			</Modal>
 		</div>

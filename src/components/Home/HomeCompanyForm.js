@@ -15,7 +15,7 @@ const HomeCompanyForm = props => {
 
             <label className="label">Номер телефона</label>
             <div className="form-group" name="phone">
-                <input type="tel" className="form-control" value={props.form.phone} onChange={e => props.updateCompanyFormValue('phone', e.target.value)}/>
+                <input type="tel" className="form-control" value={props.form.phone} onChange={e => props.updateCompanyFormValue('phone', props.formatPhoneNumber(e.target.value))}/>
             </div>
 
             <label className="label">E-mail</label>
