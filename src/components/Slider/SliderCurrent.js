@@ -86,7 +86,9 @@ const SliderCurrent = props => {
 		     <InfoModal current={current} infoOpened={props.catalog.infoOpened}
 		     	toggleInfoModal={props.toggleInfoModal} />
 
-		     <ImageModal current={current} imageOpened={props.catalog.imageOpened}
+			 <ImageModal current={current} imageOpened={props.catalog.imageOpened}
+			 	currentIndex={currentIndex}
+				goToNextImg={props.goToNextImg}
 		     	toggleImageModal={props.toggleImageModal} />
 	     </div>
 	)

@@ -57,7 +57,12 @@ const ImageModal = props => {
 		<Modal isOpen={props.imageOpened} size="lg" toggle={props.toggleImageModal} backdrop={true} className="imageModal">
         	<ModalBody>
 				<div className="image">
-					<img src={'/img/packs/original/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.toggleImageModal()}/>
+					<img src={'/img/packs/original/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.goToNextImg(props.currentIndex, true)}/>
+				</div>
+				<div className="w-100 mt-3 text-center">
+					<a onClick={() => props.goToNextImg(props.currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
+					<span>{currentGallery.current+1} / {currentGallery.imgs.length}</span>
+					<a onClick={() => props.goToNextImg(props.currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
 				</div>
 			</ModalBody>
         </Modal>
