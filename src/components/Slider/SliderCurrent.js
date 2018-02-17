@@ -40,6 +40,11 @@ const SliderCurrent = props => {
 						    </div>
 						</div>
 			        </div>
+
+					<div class="controls w-100 h-100">
+						<div className="control prevSlide"><a className="no-decoration" onClick={() => props.goToNextItem(true)}><Icon name="angle-left" className="icon"/></a></div>
+						<div className="control nextSlide"><a className="no-decoration" onClick={() => props.goToNextItem(false)}><Icon name="angle-right" className="icon"/></a></div>
+					</div>
 		        </div>
 		     ) : (
 			     <div>

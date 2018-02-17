@@ -40,6 +40,7 @@ class App extends React.Component {
     // slider methods
     this.chooseItem = this.chooseItem.bind(this)
     this.chooseColor = this.chooseColor.bind(this)
+    this.goToNextItem = this.goToNextItem.bind(this)
     this.goToNextImg = this.goToNextImg.bind(this)
     this.togglePartsModal = this.togglePartsModal.bind(this)
     this.toggleInfoModal = this.toggleInfoModal.bind(this)
@@ -176,6 +177,19 @@ class App extends React.Component {
     this.setState({catalog})
 
     window.$.fn.fullpage.setAllowScrolling(!catalog.imageOpened) // toggling scroll type
+  }
+  goToNextItem(reversedOrder){
+    let catalog = {...this.state.catalog}
+    let index = catalog.currentIndex
+    let itemsLength = catalog.items.length
+
+    if(reversedOrder) {
+      catalog.currentIndex = (index !== 0) ? --catalog.currentIndex : itemsLength-1
+    } else {
+      catalog.currentIndex = (index !== itemsLength-1) ? ++catalog.currentIndex : 0
+    }
+
+    this.setState({catalog})
   }
   goToNextImg(currItemIndex, reversedOrder){
     let catalog = {...this.state.catalog}
@@ -458,6 +472,7 @@ class App extends React.Component {
               <Slider catalog={catalog} 
                 chooseItem={this.chooseItem} 
                 chooseColor={this.chooseColor} 
+                goToNextItem={this.goToNextItem}
                 goToNextImg={this.goToNextImg} 
                 addItem={this.addItem} 
                 togglePartsModal={this.togglePartsModal} 

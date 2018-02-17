@@ -1,6 +1,18 @@
 .slider {
 	margin-bottom: -30px;
 }
+	.slider .current-item {
+		position: relative;
+	}
+		.slider .current-item .controls {
+			position: absolute;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+			.slider .current-item .controls .control .icon {
+				font-size: 75px;
+			}
 
 /*slider current image*/
 .slider .image-wrapper {
