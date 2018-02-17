@@ -10,6 +10,10 @@
 		display: block;
 	}
 
+.companyForm .label {
+	margin-bottom: .1rem;
+}
+
 @media screen and (max-width: 575px) {
 	.home .slogan {
 		font-size: 16px;

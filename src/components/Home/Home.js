@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.css'
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import HomeCompanyForm from './HomeCompanyForm.js'
 
 const Home = props => {
 	return(
@@ -11,14 +12,17 @@ const Home = props => {
 					<div className="text-center mt-4">
 						<a href='#catalog' className="no-decoration"><button className="btn btn-light m-1">Смотреть наборы</button></a>
 						<a href='#test' className="no-decoration"><button className="btn btn-light m-1">Подобрать набор</button></a>
-						<a onClick={props.toggleCompanyModal} className="no-decoration"><button className="btn btn-light m-1">Для компания</button></a>
+					</div>
+					<div className="text-center mt-1">
+						<a onClick={props.toggleCompanyModal}>Связь для компаний</a>
 					</div>
 				</div>
 			</div>
-			<Modal isOpen={props.companyForm.opened} size="lg" toggle={props.toggleCompanyModal} backdrop={true} className="companyModal">
+			<Modal isOpen={props.companyForm.opened} size="md" toggle={props.toggleCompanyModal} backdrop={true} className="companyModal">
 				<ModalHeader toggle={props.toggleCompanyModal}>Для компаний</ModalHeader>
 				<ModalBody>
-
+					<HomeCompanyForm form={props.companyForm.form}
+						updateCompanyFormValue={props.updateCompanyFormValue} />
 				</ModalBody>
 				<ModalFooter>
 				</ModalFooter>

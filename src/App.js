@@ -33,6 +33,7 @@ class App extends React.Component {
 
     // main section methods
     this.toggleCompanyModal = this.toggleCompanyModal.bind(this)
+    this.updateCompanyFormValue = this.updateCompanyFormValue.bind(this)
 
     // slider methods
     this.chooseItem = this.chooseItem.bind(this)
@@ -75,6 +76,11 @@ class App extends React.Component {
     this.setState({companyForm})
 
     window.$.fn.fullpage.setAllowScrolling(!companyForm.opened) // toggling scroll type
+  }
+  updateCompanyFormValue(prop, value) {
+    let companyForm = {...this.state.companyForm}
+    companyForm.form[prop] = value
+    this.setState({companyForm})
   }
 
   // slider methods
@@ -379,7 +385,8 @@ class App extends React.Component {
 
             <section className="section" id="homeSection">
               <Home companyForm={companyForm}
-                toggleCompanyModal={this.toggleCompanyModal} />
+                toggleCompanyModal={this.toggleCompanyModal}
+                updateCompanyFormValue={this.updateCompanyFormValue} />
             </section>
 
             <section className="section">

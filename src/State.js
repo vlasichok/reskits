@@ -311,6 +311,13 @@ const State = {
         ]
       },
       companyForm: {
+        form: {
+          name: '',
+          company: '',
+          phone: '',
+          email: '',
+          comment: ''
+        },
         opened: false
       },
       mobileMenuOpened: false,
