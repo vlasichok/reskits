@@ -184,12 +184,10 @@ class App extends React.Component {
     let itemsLength = catalog.items.length
 
     if(reversedOrder) {
-      catalog.currentIndex = (index !== 0) ? --catalog.currentIndex : itemsLength-1
+      (index !== 0) ? this.chooseItem(null, --catalog.currentIndex) : this.chooseItem(null, itemsLength-1)
     } else {
-      catalog.currentIndex = (index !== itemsLength-1) ? ++catalog.currentIndex : 0
+      (index !== itemsLength-1) ? this.chooseItem(null, ++catalog.currentIndex) : this.chooseItem(null, 0)
     }
-
-    this.setState({catalog})
   }
   goToNextImg(currItemIndex, reversedOrder){
     let catalog = {...this.state.catalog}
