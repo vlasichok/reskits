@@ -67,7 +67,13 @@
 }
 	.slider .items .item {
 		overflow: none;
+		opacity: 0.75;
 	}
+		.slider .items .item.current {
+			text-decoration: underline;
+			transform: scale(1.2);
+			opacity: 1;
+		}
 		.slider .items .item .icon {
 			float: none;
 		}
