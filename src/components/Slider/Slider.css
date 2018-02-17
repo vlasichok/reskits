@@ -30,36 +30,41 @@
 /*slider current image*/
 .slider .image-wrapper {
 	position: relative;
+	z-index: 999;
 }
-.slider .image {
-	display: inline-block;
-	width: 100%;
-	max-width: 20rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	font-size: 1rem;
-	text-decoration: none;
-	cursor: pointer;
-	box-shadow: 0 1.2em 5rem -1rem rgba(0,0,0,0.7);
-	transition: transform 0.1s ease-in-out, box-shadow 0.1s;
-}
-	.slider .image:hover {
-		transform: translateY(-0.5rem) scale(1.0125);
-	}
-	.slider .image img {
+	.slider .image {
+		display: inline-block;
 		width: 100%;
+		max-width: 20rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 1rem;
+		text-decoration: none;
+		cursor: pointer;
+		box-shadow: 0 1.2em 5rem -1rem rgba(0,0,0,0.7);
+		transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 	}
-.slider .image-underlay {
-	width: 100%;
-	max-width: 255px;
-	margin: 1rem 0;
+		.slider .image:hover {
+			transform: translateY(-0.5rem) scale(1.0125);
+		}
+		.slider .image img {
+			width: 100%;
+		}
+	.slider .image-underlay {
+		width: 100%;
+		max-width: 255px;
+		margin: 1rem 0;
+	}
+		.slider .image-underlay:after {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+		}
+
+.slider .info {
+	z-index: 999;
 }
-	.slider .image-underlay:after {
-	  content: "";
-	  display: block;
-	  padding-bottom: 100%;
-	}
 
 /*color buttons*/
 .slider .colors .color {
