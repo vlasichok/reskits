@@ -89,6 +89,7 @@ class App extends React.Component {
   toggleCompanyModal() {
     let companyForm = {...this.state.companyForm}
     companyForm.opened = !companyForm.opened
+    companyForm.messageSent = false
     this.setState({companyForm})
 
     window.$.fn.fullpage.setAllowScrolling(!companyForm.opened) // toggling scroll type
@@ -111,6 +112,7 @@ class App extends React.Component {
       comment: ''
     }
     companyForm.errorMessage = ''
+    companyForm.messageSent = true
 
     this.setState({companyForm})
   }

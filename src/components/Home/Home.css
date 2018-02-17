@@ -13,6 +13,9 @@
 .companyForm .label {
 	margin-bottom: .1rem;
 }
+.companyForm .form-group {
+	margin-bottom: 0.6rem;
+}
 
 @media screen and (max-width: 575px) {
 	.home .slogan {

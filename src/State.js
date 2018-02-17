@@ -319,7 +319,8 @@ const State = {
           comment: ''
         },
         opened: false,
-        errorMessage: ''
+        errorMessage: '',
+        messageSent: false,
       },
       mobileMenuOpened: false,
       loading: true,

@@ -21,9 +21,13 @@ const Home = props => {
 			<Modal isOpen={props.companyForm.opened} size="md" toggle={props.toggleCompanyModal} backdrop={true} className="companyModal">
 				<ModalHeader toggle={props.toggleCompanyModal}>Для компаний</ModalHeader>
 				<ModalBody>
-					<HomeCompanyForm form={props.companyForm.form}
-						updateCompanyFormValue={props.updateCompanyFormValue} 
-						formatPhoneNumber={props.formatPhoneNumber} />
+					{(props.companyForm.messageSent) ? (
+						<p className="h5 text-center m-3">Спасибо, ваше сообщение отправлено.<br/>Мы свяжемся с вами в ближайшее время.</p>
+					) : (
+						<HomeCompanyForm form={props.companyForm.form}
+							updateCompanyFormValue={props.updateCompanyFormValue} 
+							formatPhoneNumber={props.formatPhoneNumber} />
+					)}
 				</ModalBody>
 				<ModalFooter>
 					<div className="row w-100">
@@ -33,7 +37,7 @@ const Home = props => {
 							</div>
 		          		</div>
 		          		<div className="col-12 col-sm-6 text-left text-sm-right">
-						  <button className="btn btn-default" onClick={() => props.sendCompanyMessage(props.companyForm.form)}>Отправить</button>
+						  <button className="btn btn-default" onClick={() => props.sendCompanyMessage(props.companyForm.form)} disabled={props.companyForm.messageSent}>Отправить</button>
 						</div>
 		          	</div>
 				</ModalFooter>
