@@ -1,7 +1,8 @@
 import React from 'react'
 import './Home.css'
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
-const Home = () => {
+const Home = props => {
 	return(
 		<div className="container home">
 			<div className="row mb-2">
@@ -10,9 +11,18 @@ const Home = () => {
 					<div className="text-center mt-4">
 						<a href='#catalog' className="no-decoration"><button className="btn btn-light m-1">Смотреть наборы</button></a>
 						<a href='#test' className="no-decoration"><button className="btn btn-light m-1">Подобрать набор</button></a>
+						<a onClick={props.toggleCompanyModal} className="no-decoration"><button className="btn btn-light m-1">Для компания</button></a>
 					</div>
 				</div>
 			</div>
+			<Modal isOpen={props.companyForm.opened} size="lg" toggle={props.toggleCompanyModal} backdrop={true} className="companyModal">
+				<ModalHeader toggle={props.toggleCompanyModal}>Для компаний</ModalHeader>
+				<ModalBody>
+
+				</ModalBody>
+				<ModalFooter>
+				</ModalFooter>
+			</Modal>
 		</div>
     )
 }

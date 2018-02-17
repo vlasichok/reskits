@@ -31,6 +31,9 @@ class App extends React.Component {
     // app methods
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
 
+    // main section methods
+    this.toggleCompanyModal = this.toggleCompanyModal.bind(this)
+
     // slider methods
     this.chooseItem = this.chooseItem.bind(this)
     this.chooseColor = this.chooseColor.bind(this)
@@ -63,6 +66,15 @@ class App extends React.Component {
   // app methods
   toggleMobileMenu(){
     this.setState({mobileMenuOpened: !this.state.mobileMenuOpened})
+  }
+
+  // main section methods
+  toggleCompanyModal() {
+    let companyForm = {...this.state.companyForm}
+    companyForm.opened = !companyForm.opened
+    this.setState({companyForm})
+
+    window.$.fn.fullpage.setAllowScrolling(!companyForm.opened) // toggling scroll type
   }
 
   // slider methods
@@ -313,7 +325,7 @@ class App extends React.Component {
   }
 
   render() {
-    const {catalog, cart, test, details} = this.state
+    const {catalog, cart, test, details, companyForm} = this.state
 
     return (
       <div>
@@ -366,7 +378,8 @@ class App extends React.Component {
           <div id="fullpage">
 
             <section className="section" id="homeSection">
-              <Home />
+              <Home companyForm={companyForm}
+                toggleCompanyModal={this.toggleCompanyModal} />
             </section>
 
             <section className="section">

@@ -310,6 +310,9 @@ const State = {
           }
         ]
       },
+      companyForm: {
+        opened: false
+      },
       mobileMenuOpened: false,
       loading: true,
       currentSection: false
