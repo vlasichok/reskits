@@ -10,6 +10,19 @@
 			justify-content: space-between;
 			align-items: center;
 		}
+			.slider .current-item .controls .control.prevSlide {
+				padding: 0 0 0 5px;
+				transition: padding 0.4s;
+			}
+			.slider .current-item .controls .control.nextSlide {
+				padding: 0 5px 0 0;
+				transition: padding 0.4s;
+			}
+				.slider .current-item .controls .control.prevSlide:hover,
+				.slider .current-item .controls .control.nextSlide:hover {
+					padding: 0;
+					transition: padding 0.4s;
+				}
 			.slider .current-item .controls .control .icon {
 				font-size: 75px;
 			}
