@@ -30,7 +30,7 @@ const Home = props => {
 					)}
 				</ModalBody>
 				<ModalFooter>
-					<div className="row w-100">
+					<div className="row">
 		          		<div className="col-12 col-sm-8">
 							<div className="errorMessage d-flex align-items-center mb-3 mb-sm-0">
 								{props.companyForm.errorMessage}
