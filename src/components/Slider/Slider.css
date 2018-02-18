@@ -146,8 +146,22 @@
 /*=== image*/
 .imageModal .image {
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 	.imageModal .image img {
-		width: 100%;
+		width: 90%;
+		height: 90%;
 		cursor: pointer;
+		margin: 0 auto;
 	}
+	.imageModal .image .control {
+		font-size: 40px;
+		cursor: pointer;
+		transition: transform .3s;
+	}
+		.imageModal .image .control:hover {
+			transform: scale(1.15);
+			transition: transform .3s;
+		}
