@@ -58,14 +58,11 @@ const ImageModal = props => {
 			<ModalHeader toggle={props.toggleImageModal}>{props.current.name}</ModalHeader>
         	<ModalBody>
 				<div className="image">
-					<a onClick={() => props.goToNextImg(props.currentIndex, true)} className="no-decoration d-none d-sm-block control"><Icon name="angle-left" /></a>
 					<img src={'/img/packs/original/' + currentImg} key={currentImg} alt="medkit" onClick={() => props.goToNextImg(props.currentIndex, false)}/>
-					<a onClick={() => props.goToNextImg(props.currentIndex, false)} className="no-decoration d-none d-sm-block control"><Icon name="angle-right" /></a>
 				</div>
-				<div className="w-100 mt-3 text-center d-sm-none">
-					<a onClick={() => props.goToNextImg(props.currentIndex, true)} className="mx-2 no-decoration"><Icon name="arrow-left" /></a>
-					<span>{currentGallery.current+1} / {currentGallery.imgs.length}</span>
-					<a onClick={() => props.goToNextImg(props.currentIndex, false)} className="mx-2 no-decoration"><Icon name="arrow-right" /></a>
+				<div className="controls w-100">
+					<a onClick={() => props.goToNextImg(props.currentIndex, true)} className="control left no-decoration px-2 px-md-4"><Icon name="angle-left" /></a>
+					<a onClick={() => props.goToNextImg(props.currentIndex, false)} className="control right no-decoration px-2 px-md-4"><Icon name="angle-right" /></a>
 				</div>
 			</ModalBody>
         </Modal>
