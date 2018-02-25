@@ -102,8 +102,26 @@ class App extends React.Component {
   }
   sendCompanyMessage(form) {
     let validation = this.validateCompanyForm(form)
-		if (validation.length) return;
-
+    if (validation.length) return;
+    
+    window.$.ajax({
+		  url: "https://docs.google.com/forms/d/e/1FAIpQLScZCUD0kWOq2LzBLuY36cNeM3ardlgh-XG63Kvo6noy5USe9A/formResponse",
+		  data: {
+		  	"entry.414911749": form.name,
+		  	"entry.2138606470": form.email,
+        "entry.956631206": form.phone,
+        "entry.169081860": form.company,
+        "entry.2107929619": form.comment,
+		  },
+		  type: "POST",
+		  dataType: "xml",
+			statusCode: {
+		        0: this.onCompanyMessageSend(),
+		        200: this.onCompanyMessageSend()
+			}
+		})
+  }
+  onCompanyMessageSend() {
     let companyForm = {...this.state.companyForm}
     companyForm.form = {
       name: '',
