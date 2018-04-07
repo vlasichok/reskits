@@ -137,11 +137,18 @@
 
 /*MODALS*/
 /*=== parts*/
-.partsModal .parts .part .photo {
-	max-width: 80px;
-	padding-right: 10px;
-	border-radius: 50%;
+.partsModal .parts {
+	background-color: white;
+	padding: 12px 0;
 }
+.partsModal .parts .part > div {
+	height: 80px;
+}
+	.partsModal .parts .part .image img {
+		max-width: 80px;
+		padding-right: 10px;
+		border-radius: 50%;
+	}
 
 /*=== image*/
 .imageModal .modal-body {

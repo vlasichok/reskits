@@ -9,15 +9,17 @@ const PartsModal = props => {
         	<ModalBody>
         		<div className="row">
         			<div className="col-12">
-		        		<ul className="list-group parts">
+		        		<ul className="parts">
 		        			{props.current.info.parts.map((part, i)=>{
 		        				return(
-									<li key={i} className="list-group-item part">
-										{(part.img) && (
-											<img src={'/img/parts/'+part.img} className="photo" alt="part" />
-										)}
-										<span>{part.name}</span>
-										<span className="pull-right">{part.quantity} {part.unit}</span>
+									<li key={i} className="part row">
+										<div className="image text-center col-3 col-md-2">
+											{(part.img) && (
+												<img src={'/img/parts/'+part.img} className="photo" alt="part" />
+											)}
+										</div>
+										<div className="col-6 col-md-7 d-flex align-items-center">{part.name}</div>
+										<div className="col-3 d-flex align-items-center">{part.quantity} {' '+part.unit}</div>
 									</li>
 								)
 							})}
