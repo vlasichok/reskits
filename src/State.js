@@ -20,8 +20,8 @@ const State = {
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
                 {name: 'Перчатки', quantity: 2, unit: 'пары', img: 'gloves.jpg'},
                 {name: 'Спасательное одеяло', quantity: 1, unit: 'шт.', img: 'blanket.jpg'},
+                {name: 'Набор карточек', quantity: 1, unit: 'шт.', img: 'cards.jpg'},
                 {name: 'Герметичная упаковка', quantity: 1, unit: 'шт.'},
-                {name: 'Набор карточек', quantity: 1, unit: 'шт.', img: 'cards.jpg'}
               ]
             },
             descr: 'Человек потерял сознание и не дышит, вы вызвали скорую и начинаете реанимацию. Откажетесь от вдохов или будете рисковать здоровьем, вдыхая без барьера?\nUrban Kit 1 создан, чтобы исключить подобный выбор. Маска-клапан и перчатки надежно защитят вас от возможного заражения инфекцией пострадавшего, а пленка-клапан всегда будет с вами на брелоке ключей.'},
@@ -46,8 +46,8 @@ const State = {
                 {name: 'Спасательное одеяло', quantity: 1, unit: 'шт.', img: 'blanket.jpg'},
                 {name: 'Турникет «СІЧ»', quantity: 1, unit: 'шт.', img: 'si4.jpg'},
                 {name: 'Маркер', quantity: 1, unit: 'шт.', img: 'marker.jpg'},
-                {name: 'Герметичная упаковка', quantity: 1, unit: 'шт.'},
                 {name: 'Набор карточек', quantity: 1, unit: 'шт.', img: 'cards.jpg'},
+                {name: 'Герметичная упаковка', quantity: 1, unit: 'шт.'},
               ]
             },
             descr: 'Urban Kit 2 незаменим в ситуациях, когда счет идет на минуты. Его содержимое позволяет безопасно проводить реанимацию и остановить критическое кровотечение конечности.\nНабор отвечает требованиям современного горожанина — благодаря герметичной упаковке он не занимает много места и не изнашивается.\nОтличием Urban Kit 2 от Urban Kit 1 служит наличие в комплекте турникета.'},
@@ -80,9 +80,9 @@ const State = {
                 {name: 'Спасательное одеяло', quantity: 1, unit: 'шт.', img: 'blanket.jpg'},
                 {name: 'Турникет «СІЧ»', quantity: 1, unit: 'шт.', img: 'si4.jpg'},
                 {name: 'Маркер', quantity: 1, unit: 'шт.', img: 'marker.jpg'},
+                {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
                 {name: 'Пластырь', quantity: 1, unit: 'уп.'},
                 {name: 'Чехол', quantity: 1, unit: 'шт.'},
-                {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
               ]
             },
             descr: 'Назначение Urban Kit 2+, как и Urban Kit 2 — спасти жизнь при остановке сердца и критическом кровотечении конечности. Их отличие — в способе упаковки.\nЧехол Urban Kit 2+ представляет собой износостойкий подсумок (Cordura® 1000D), благодаря которому набор можно носить не только в рюкзаке но и на ремне. А механизм быстро открытия минимизирует время доступа к снаряжению в критический момент. Urban Kit 2+ доступен в черном, темно-зеленом и желтом цветах.'},
@@ -115,15 +115,15 @@ const State = {
                 {name: 'Спасательное одеяло', quantity: 1, unit: 'шт.', img: 'blanket.jpg'},
                 {name: 'Турникет «СІЧ»', quantity: 1, unit: 'шт.', img: 'si4.jpg'},
                 {name: 'Израильский бандаж 6” (1 подушечка)', quantity: 1, unit: 'шт.', img: 'israel-bandage.jpg'},
-                {name: 'Гемостатический бинт QuikClot', quantity: 1, unit: 'шт.', img: 'hemostatic-bandage.jpg'},
+                {name: 'Гемостатический бинт Кровоспас', quantity: 1, unit: 'шт.', img: 'hemostatic-bandage.jpg'},
                 {name: 'Компрессионный бинт H&H', quantity: 2, unit: 'шт.', img: 'compression-bandage.jpg'},
                 {name: 'Маркер', quantity: 1, unit: 'шт.', img: 'marker.jpg'},
                 {name: 'Безопасные ножницы', quantity: 1, unit: 'шт.', img: 'scissors.jpg'},
                 {name: 'Армированный скотч', quantity: 1, unit: 'шт.', img: 'arm-tape.jpg'},
-                {name: 'Пластырь', quantity: 1, unit: 'уп.'},
                 {name: 'Eye shield', quantity: 2, unit: 'шт.', img: 'eye-shield.jpg'},
-                {name: 'Чехол', quantity: 1, unit: 'шт.'},
                 {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
+                {name: 'Пластырь', quantity: 1, unit: 'уп.'},
+                {name: 'Чехол', quantity: 1, unit: 'шт.'},
               ]
             },
             descr: 'Full Urban Kit — ваш ответ на комплексные вызовы городской среды. Содержимое набора позволяет своевременно и безопасно оказать помощь при различных видах травм и неотложных состояний: остановке сердца, кровотечениях, ранениях груди, переохлаждении.\nОснова набора — современное снаряжение, которое мы импортировали из Германии, Израиля, США или приобрели у лучших украинских производителей. При его разработке, главным приоритетом было качество комплектующих, а не низкая цена.'},
@@ -131,7 +131,7 @@ const State = {
             name: 'MVA Kit',
             colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
-            price: 3999,
+            price: 4299,
             gallery: {
               darkgreen: {
                 imgs: ['MVA_1.jpg', 'MVA_2.jpg', 'MVA_3.jpg', 'MVA_4.jpg'],
@@ -157,6 +157,7 @@ const State = {
                 {name: 'Термопакеты', quantity: 4, unit: 'шт.', img: 'thermal-pack.jpg'},
                 {name: 'Турникет «СІЧ»', quantity: 2, unit: 'шт.', img: 'si4.jpg'},
                 {name: 'Израильский бандаж 6” (1 подушечка)', quantity: 2, unit: 'шт.', img: 'israel-bandage.jpg'},
+                {name: 'Гемостатический бинт Кровоспас', quantity: 1, unit: 'шт.', img: 'hemostatic-bandage.jpg'},
                 {name: 'Компрессионный бинт H&H', quantity: 3, unit: 'шт.', img: 'compression-bandage.jpg'},
                 {name: 'Стирильный бинт 7х14', quantity: 8, unit: 'шт.', img: 'steril-bandage.jpg'},
                 {name: 'Эластичный бинт', quantity: 2, unit: 'шт.', img: 'elastic-bandage.jpg'},
@@ -167,9 +168,9 @@ const State = {
                 {name: 'Армированный скотч', quantity: 1, unit: 'шт.', img: 'arm-tape.jpg'},
                 {name: 'Eye shield', quantity: 2, unit: 'шт.', img: 'eye-shield.jpg'},
                 {name: 'Гидрогелевая повязка BurnTec 10 см x 10 см', quantity: 1, unit: 'шт.', img: 'hidrohel-bandage-10.jpg'},
+                {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
                 {name: 'Пластырь', quantity: 1, unit: 'уп.'},
                 {name: 'Чехол', quantity: 1, unit: 'шт.'},
-                {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
                 {name: 'Сигнальный жилет', quantity: 1, unit: 'уп.'},
                 {name: 'Треугольник ДТП', quantity: 1, unit: 'уп.'},
               ]
