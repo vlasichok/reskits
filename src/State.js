@@ -29,7 +29,7 @@ const State = {
             name: 'Urban Kit 2',
             colors: ['transparent'],
             currColorIndex: 0,
-            price: 599,
+            price: 499,
             gallery: {
               transparent: {
                 imgs: ['UK2_1.jpg', 'UK2_2.jpg', 'UK2_3.jpg'],
@@ -90,7 +90,7 @@ const State = {
             name: 'Full Urban Kit',
             colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
-            price: 2499,
+            price: 2599,
             gallery: {
               darkgreen: {
                 imgs: ['UKF_1.jpg', 'UKF_2.jpg', 'UKF_3.jpg', 'UKF_4.jpg', 'UKF_5.jpg'],
@@ -131,7 +131,7 @@ const State = {
             name: 'MVA Kit',
             colors: ['darkgreen', 'black', 'yellow'],
             currColorIndex: 0,
-            price: 4299,
+            price: 4499,
             gallery: {
               darkgreen: {
                 imgs: ['MVA_1.jpg', 'MVA_2.jpg', 'MVA_3.jpg', 'MVA_4.jpg'],
@@ -161,7 +161,6 @@ const State = {
                 {name: 'Компрессионный бинт H&H', quantity: 3, unit: 'шт.', img: 'compression-bandage.jpg'},
                 {name: 'Стирильный бинт 7х14', quantity: 8, unit: 'шт.', img: 'steril-bandage.jpg'},
                 {name: 'Эластичный бинт', quantity: 2, unit: 'шт.', img: 'elastic-bandage.jpg'},
-                {name: 'Холодовый пакет', quantity: 2, unit: 'шт.', img: 'cold-pack.jpg'},
                 {name: 'Безопасные ножницы', quantity: 1, unit: 'шт.', img: 'scissors.jpg'},
                 {name: 'Косынка медицинская', quantity: 2, unit: 'шт.', img: 'bondage-trian.jpg'},
                 {name: 'Маркер', quantity: 1, unit: 'шт.', img: 'marker.jpg'},
