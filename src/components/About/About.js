@@ -19,6 +19,9 @@ const About = () => {
 					<a href="https://www.instagram.com/reskits/" target="about_blank" className="ml-4 no-decoration"><Icon name="instagram" size="2x" /></a>
 				</div>
 			</div>
+			<div className="row mt-3">
+				<p className="w-100 text-center"><a href="maulto: tel">+38 (068) 097-2-097</a><br/><a href="maulto: hello@reskits.com.ua">hello@reskits.com.ua</a></p>
+			</div>
 		</div>
     )
 }
