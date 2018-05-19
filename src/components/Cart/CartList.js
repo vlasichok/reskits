@@ -28,7 +28,7 @@ const CartList = (props) => {
 			        		})}
 		        		</tbody>
 		        	</table>
-		        	<h4 className="ml-1">Итого: {props.total} грн.</h4>
+		        	<h4 className="ml-1">Итого: {props.total} ₴.</h4>
 		    	</div>
 		    ) : (
 		    	<h4 className="text-center my-2">Корзина пуста</h4>

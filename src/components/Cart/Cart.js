@@ -39,7 +39,7 @@ class Cart extends React.Component {
 			let quantity = items[i].quantity
 			let cost = items[i].price*items[i].quantity
 
-			let itemString = `${i+1}) ${name} (${color}) = ${quantity} шт = ${cost} грн.`
+			let itemString = `${i+1}) ${name} (${color}) = ${quantity} шт = ${cost} ₴`
 			itemStrings.push(itemString)
 		}
 		return itemStrings.join(',\n')
