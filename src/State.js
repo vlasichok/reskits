@@ -244,13 +244,13 @@ const State = {
               ]}
             ]}, 
             {answerText: 'другу', questionText: 'Я рассчитываю потратить до ...', answers: [
-              // {answerText: '100 грн.', resultIndex: 8},
-              {answerText: 'меньше 1500 грн.', questionText: 'Для меня важно ...', answers: [
+              // {answerText: '100 ₴', resultIndex: 8},
+              {answerText: 'меньше 1500 ₴', questionText: 'Для меня важно ...', answers: [
                 {answerText: 'внимание', resultIndex: 0},
                 {answerText: 'чтобы просто, функционально и недорого', resultIndex: 2},
                 {answerText: 'чтобы просто, функционально и очень качественно', resultIndex: 3}
               ]},
-              {answerText: 'больше 1500 грн.', questionText: 'Друг водит машину?', answers: [
+              {answerText: 'больше 1500 ₴', questionText: 'Друг водит машину?', answers: [
                 {answerText: 'Да', questionText: 'У нас есть наборы за ХХХХ гривен', answers: [
                   {answerText: 'Давайте скромнее', resultIndex: 4},
                   // {answerText: 'Для друга не жалко', resultIndex: 5}
