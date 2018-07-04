@@ -1,4 +1,32 @@
 const State = {
+      details: {
+        items: [
+          {
+            title: 'Создан для городских жителей',
+            text: 'Наборы Reskits предназначены для использования в городской среде.',
+            icon: 'building',
+            expanded: true
+          },
+          {
+            title: 'Правильное наполнение',
+            text: 'При выборе снаряжения для наборов Reskits мы руководствовались международнымы стандартами первой помощи и практическим опытом спасения жизни в Украине.',
+            icon: 'thumbs-up',
+            expanded: false
+          },
+          {
+            title: 'Подарок который спасает жизнь',
+            text: 'Мы верим, что подарить набор от Reskits — значит проявить заботу о жизни и здоровье близких вам людей.',
+            icon: 'heart',
+            expanded: false
+          },
+          {
+            title: 'Удобно хранить и транспортировать',
+            text: 'Наборы Reskits бывают в двух видах упаковки: в герметичной и в функциональных чехлах из Cordura 1000D. Второй вариант прослужит дольше.',
+            icon: 'medkit',
+            expanded: false
+          },
+        ]
+      },
       catalog: {
         items: [
           {
@@ -58,7 +86,7 @@ const State = {
           },
           {
             name: 'Urban Kit 2+',
-            colors: ['darkgreen', 'black', 'yellow'],
+            colors: ['yellow', 'black', 'darkgreen'],
             currColorIndex: 0,
             price: 999,
             gallery: {
@@ -95,7 +123,7 @@ const State = {
           },
           {
             name: 'Full Urban Kit',
-            colors: ['darkgreen', 'black', 'yellow'],
+            colors: ['yellow', 'black', 'darkgreen' ],
             currColorIndex: 0,
             price: 2599,
             gallery: {
@@ -139,7 +167,7 @@ const State = {
           },
           {
             name: 'MVA Kit',
-            colors: ['darkgreen', 'black', 'yellow'],
+            colors: ['yellow', 'black', 'darkgreen'],
             currColorIndex: 0,
             price: 4499,
             gallery: {
@@ -300,34 +328,6 @@ const State = {
         ],
         winnerIndex: null,
         finished: false
-      },
-      details: {
-        items: [
-          {
-            title: 'Создан для городских жителей',
-            text: 'Наборы Reskits предназначены для использования в городской среде.',
-            icon: 'building',
-            expanded: true
-          },
-          {
-            title: 'Правильное наполнение',
-            text: 'При выборе снаряжения для наборов Reskits мы руководствовались международнымы стандартами первой помощи и практическим опытом спасения жизни в Украине.',
-            icon: 'thumbs-up',
-            expanded: false
-          },
-          {
-            title: 'Подарок который спасает жизнь',
-            text: 'Мы верим, что подарить набор от Reskits — значит проявить заботу о жизни и здоровье близких вам людей.',
-            icon: 'heart',
-            expanded: false
-          },
-          {
-              title: 'Удобно хранить и транспортировать',
-              text: 'Наборы Reskits бывают в двух видах упаковки: в герметичной и в функциональных чехлах из Cordura 1000D. Второй вариант прослужит дольше.',
-              icon: 'medkit',
-              expanded: false
-          },
-        ]
       },
       companyForm: {
         form: {

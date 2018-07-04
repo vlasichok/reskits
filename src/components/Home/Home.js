@@ -11,7 +11,7 @@ const Home = props => {
 					<p className="slogan text-center"><span className="title h2">Reskits — современные наборы первой помощи для жителей крупных городов.</span> Набор поможет спасти жизнь в экстренной ситуации. В случайной ситуации, на работе или отдыхе. Выбери свой Reskit!</p>
 					<div className="text-center mt-4">
 						<a href='#catalog' className="no-decoration"><button className="btn btn-light m-1">Смотреть наборы</button></a>
-						<a href='#test' className="no-decoration"><button className="btn btn-light m-1">Пройти тест</button></a>
+						<a href='#test' className="no-decoration"><button className="btn btn-light m-1">Подобрать набор</button></a>
 					</div>
 					<div className="text-center mt-1">
 						<a onClick={props.toggleCompanyModal}>Связь для компаний</a>

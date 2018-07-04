@@ -279,7 +279,7 @@ class App extends React.Component {
         type: "jsonp",
         contentType: "application/json; charset=UTF-8",
         data: {
-          apiKey: "7314d0691ba990733c4a83182ca0354d",
+          apiKey: "347e073728c076159cb6124e28e07790",
           modelName: "Address",
               calledMethod: "getCities",
               methodProperties: {
@@ -304,7 +304,7 @@ class App extends React.Component {
         type: "jsonp",
         contentType: "application/json; charset=UTF-8",
         data: {
-          apiKey: "7314d0691ba990733c4a83182ca0354d",
+          apiKey: "347e073728c076159cb6124e28e07790",
           modelName: "AddressGeneral",
           calledMethod: "getWarehouses",
           methodProperties: {
@@ -386,7 +386,7 @@ class App extends React.Component {
   componentDidMount(){
     function fullpageInit(){
        window.$('#fullpage').fullpage({
-          anchors: ['main', 'catalog', 'details', 'test', 'about'],
+          anchors: ['main', 'details', 'catalog', 'test', 'about'],
           scrollingSpeed: 600,
           scrollOverflow: true,
           loopHorizontal: false,
@@ -443,8 +443,8 @@ class App extends React.Component {
           </div>
           <ul className="mx-5">
             <li><a href="#main">Главная</a></li>
-            <li><a href="#catalog">Наборы</a></li>
             <li><a href="#details">Преимущества</a></li>
+            <li><a href="#catalog">Наборы</a></li>
             <li><a href="#test">Подобрать</a></li>
             <li><a href="#about">О нас</a></li>
           </ul>
@@ -484,6 +484,12 @@ class App extends React.Component {
               />
             </section>
 
+            <section className="section" id="detailsSection">
+                <Details items={details.items}
+                         toggleCollapse={this.toggleCollapse}
+                />
+            </section>
+
             <section className="section">
               <Slider catalog={catalog} 
                 chooseItem={this.chooseItem} 
@@ -494,12 +500,6 @@ class App extends React.Component {
                 togglePartsModal={this.togglePartsModal} 
                 toggleInfoModal={this.toggleInfoModal} 
                 toggleImageModal = {this.toggleImageModal}
-              />
-            </section>
-
-            <section className="section" id="detailsSection">
-              <Details items={details.items} 
-                toggleCollapse={this.toggleCollapse} 
               />
             </section>
 
