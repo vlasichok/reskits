@@ -147,6 +147,7 @@ class App extends React.Component {
     if(form.company === '') errorMessagesArr.push('укажите компанию');
 
     // e-mail
+    // eslint-disable-next-line
     let mailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(form.email === '') {
       errorMessagesArr.push('укажите e-mail');
@@ -333,6 +334,7 @@ class App extends React.Component {
     if(form.name === '') errorMessagesArr.push('укажите имя');
 
     // e-mail
+    // eslint-disable-next-line
     let mailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(form.email === '') {
       errorMessagesArr.push('укажите e-mail');

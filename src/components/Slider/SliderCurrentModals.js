@@ -40,8 +40,32 @@ const InfoModal = props => {
 	        		<div className="row">
 	        			<div className="col-12">
 	        				<div className="descr">
-								{props.current.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+								{props.current.descr.descr.split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
 					        </div>
+                        </div>
+                        <div className="col-2">
+                        </div>
+                        <div className="col-8">
+							<div className="table">
+                                <table>
+									<thead>
+										<tr>
+											<th>Длина (см)</th>
+											<th>Ширина (см)</th>
+											<th>Толщина (см)</th>
+											<th>Вес (гр)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{props.current.descr.table.height}</td>
+											<td>{props.current.descr.table.width}</td>
+											<td>{props.current.descr.table.depth}</td>
+											<td>{props.current.descr.table.weight}</td>
+										</tr>
+									</tbody>
+                                </table>
+							</div>
 						</div>
 	        		</div>
         		</div>
