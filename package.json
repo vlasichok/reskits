@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.2",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -45,6 +46,7 @@
     "react-overlay-menu": "^1.0.0",
     "react-popper": "^0.7.4",
     "react-select": "^1.1.0",
+    "react-super-responsive-table": "^4.2.4",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-alpha.4",
     "reqwest": "^2.0.5",

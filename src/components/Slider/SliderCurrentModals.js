@@ -1,6 +1,8 @@
 import React from 'react'
 import {Modal, ModalHeader, ModalBody} from 'reactstrap';
 import {Icon} from 'react-fa'
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 
 const PartsModal = props => {
 	return(
@@ -46,26 +48,24 @@ const InfoModal = props => {
                         <div className="col-2">
                         </div>
                         <div className="col-8">
-							<div className="table">
-                                <table>
-									<thead>
-										<tr>
-											<th>Длина (см)</th>
-											<th>Ширина (см)</th>
-											<th>Толщина (см)</th>
-											<th>Вес (гр)</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>{props.current.descr.table.height}</td>
-											<td>{props.current.descr.table.width}</td>
-											<td>{props.current.descr.table.depth}</td>
-											<td>{props.current.descr.table.weight}</td>
-										</tr>
-									</tbody>
-                                </table>
-							</div>
+                            <Table className="myTable">
+                                <Thead>
+                                <Tr>
+                                    <Th>Длина (см)</Th>
+                                    <Th>Ширина (см)</Th>
+                                    <Th>Толщина (см)</Th>
+                                    <Th>Вес (гр)</Th>
+                                </Tr>
+                                </Thead>
+                                <Tbody>
+                                <Tr>
+                                    <Td>{props.current.descr.table.height}</Td>
+                                    <Td>{props.current.descr.table.width}</Td>
+                                    <Td>{props.current.descr.table.depth}</Td>
+                                    <Td>{props.current.descr.table.weight}</Td>
+                                </Tr>
+                                </Tbody>
+                            </Table>
 						</div>
 	        		</div>
         		</div>

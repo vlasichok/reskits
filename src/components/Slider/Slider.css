@@ -188,9 +188,9 @@
 			background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 		}
 
-.item-info .table {
-	width: 100%;
+.item-info .myTable{
 	border: 1px solid black;
-	margin: 5px;
 	text-align: center;
+	padding: 10px;
+	margin: 10px;
 }
