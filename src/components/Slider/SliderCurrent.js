@@ -31,11 +31,23 @@ const SliderCurrent = props => {
 						        	<p className="m-0">{current.info.text}</p>
 						        </div>
 						        <div className="my-2">
-						        	<span className="price">Стоимость: {current.price}₴</span>
+									{ (!current.linkPrice) ? (
+                                        <span className="price">Стоимость: {current.price}₴</span>
+									) : (
+                                        <span className="price">Посмотреть <a href={current.linkPrice} target="_blank">прайс-лист</a></span>
+									)}
 						        </div>
 						        <div>
-						        	<a onClick={props.toggleInfoModal} className="m-2 ml-sm-0">Подробности</a>
-						        	<a onClick={props.togglePartsModal} className="m-2">Состав</a>
+                                    { (!current.descr.linkDescr) ? (
+						        		<a onClick={props.toggleInfoModal} className="m-2 ml-sm-0">Подробности</a>
+									) : (
+                                        <a href={current.descr.linkDescr} target="_blank" className="m-2 ml-sm-0">Подробности</a>
+									)}
+                                    { (!current.info.linkParts) ? (
+                                        <a onClick={props.togglePartsModal} className="m-2">Состав</a>
+                                    ) : (
+                                        <a href={current.info.linkParts} target="_blank" className="m-2">Состав</a>
+									)}
 						        </div>
 						    </div>
 						</div>

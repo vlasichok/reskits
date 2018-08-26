@@ -33,6 +33,7 @@ const State = {
             name: 'Urban Kit 1',
             colors: ['transparent'],
             currColorIndex: 0,
+            linkPrice: '',
             price: 250,
             gallery: {
               transparent: {
@@ -43,6 +44,7 @@ const State = {
             icon: 'battery-quarter',
             info: {
               text: 'Urban Kit 1 — необходимый набор для безопасного оказания помощи и прекрасный подарок коллегам по офису, спорту или путешествиям.',
+              linkParts: '',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'mask1.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
@@ -53,13 +55,15 @@ const State = {
               ]
             },
             descr: {
+              linkDescr: '',
               descr: 'Представьте, что человек потерял сознание и не дышит, вы вызвали скорую и начинаете реанимацию. Откажетесь от вдохов или будете рисковать здоровьем, вдыхая без барьера?\n' +
                     'Набор Urban Kit 1 нужен вам для того, чтобы исключить подобный выбор. Маска-клапан и перчатки надежно защитят от возможного заражения инфекцией пострадавшего, а пленка-клапан всегда будет с вами на брелоке ключей.\n',
               table: {
                 height: '17',
                 width: '20',
                 depth: '5',
-                wight: ''
+                weight: '190',
+                description: 'Размеры наборов могут незначительно отличаться от указанных'
               }
             }
           },
@@ -67,6 +71,7 @@ const State = {
             name: 'Urban Kit 2',
             colors: ['transparent'],
             currColorIndex: 0,
+            linkPrice: '',
             price: 499,
             gallery: {
               transparent: {
@@ -77,6 +82,7 @@ const State = {
             icon: 'battery-half',
             info: {
               text: 'Urban Kit 2 — недорогой набор для личного использования, в качестве подарка, а также как элемент офисной, домашней или мото аптечки.',
+              linkParts: '',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'mask1.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
@@ -89,6 +95,7 @@ const State = {
               ]
             },
             descr: {
+              linkDescr: '',
               descr: 'Urban Kit 2 от Reskits незаменим в ситуациях, когда счет идет на минуты. Его содержимое позволяет безопасно провести реанимацию и остановить критическое кровотечение конечности.\n' +
               'Набор отвечает требованиям современного жителя большого города — благодаря герметичной упаковке набор занимает мало места и не изнашивается.\n' +
               'Отличием Urban Kit 2 от Urban Kit 1 является наличие в комплекте турникета для остановки кровотечения.\n',
@@ -96,7 +103,8 @@ const State = {
                 height: '19',
                 width: '20',
                 depth: '5',
-                weight: '287'
+                weight: '287',
+                description: 'Размеры наборов могут незначительно отличаться от указанных'
               }
             }
           },
@@ -104,6 +112,7 @@ const State = {
             name: 'Urban Kit 2+',
             colors: ['yellow', 'black', 'darkgreen'],
             currColorIndex: 0,
+            linkPrice: '',
             price: 999,
             gallery: {
               darkgreen: {
@@ -122,6 +131,7 @@ const State = {
             icon: 'battery-three-quarters',
             info: {
               text: 'Urban Kit 2+ подходит для личного использования, в качестве подарка, а также как элемент офисной, домашней или мото аптечки.',
+              linkParts: '',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'mask2.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
@@ -130,18 +140,20 @@ const State = {
                 {name: 'Турникет «СІЧ»', quantity: 1, unit: 'шт.', img: 'si4.jpg'},
                 {name: 'Маркер', quantity: 1, unit: 'шт.', img: 'marker.jpg'},
                 {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
-                {name: 'Пластырь', quantity: 1, unit: 'уп.'},
+                {name: 'Пластырь', quantity: 1, unit: 'уп.', img: 'plaster.jpg'},
                 {name: 'Чехол', quantity: 1, unit: 'шт.'},
               ]
             },
             descr: {
+              linkDescr: '',
               descr: 'Назначение набора Urban Kit 2+, как и Urban Kit 2 — спасти жизнь при остановке сердца и критическом кровотечении конечности. Их отличие — в способе упаковки.\n' +
               'Чехол Urban Kit 2+ сделан из износостойкого материала (Cordura® 1000D), благодаря которому набор можно носить не только в рюкзаке но и на ремне. А механизм быстро открытия минимизирует время доступа к снаряжению в критический момент. Urban Kit 2+ доступен в черном, темно-зеленом и желтом цветах.\n',
               table: {
                 height: '20',
                 width: '11',
                 depth: '13',
-                wight: '403'
+                weight: '403',
+                description: 'Размеры наборов могут незначительно отличаться от указанных'
               }
             }
           },
@@ -149,10 +161,11 @@ const State = {
             name: 'Full Urban Kit',
             colors: ['yellow', 'black', 'darkgreen' ],
             currColorIndex: 0,
+            linkPrice: '',
             price: 2599,
             gallery: {
               darkgreen: {
-                imgs: ['UKF_1.jpg', 'UKF_2.jpg', 'UKF_3.jpg', 'UKF_4.jpg', 'UKF_5.jpg'],
+                imgs: ['UKF_1.jpg', 'UKF_2.jpg', 'UKF_3.jpg', 'UKF_4.jpg', 'UKF_5.jpg', 'UKF_6.jpg', 'UKF_13.jpg', 'UKF_14.jpg', 'UKF_15.jpg', 'UKF_16.jpg'],
                 current: 0
               },
               black: {
@@ -167,6 +180,7 @@ const State = {
             icon: 'battery-full',
             info: {
               text: 'Full Urban Kit — набор для комплексного ответа на угрозы городской среды. Выбор тех, кто хочет быть максимально защищенным.',
+              linkParts: '',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'mask2.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
@@ -181,19 +195,24 @@ const State = {
                 {name: 'Армированный скотч', quantity: 1, unit: 'шт.', img: 'arm-tape.jpg'},
                 {name: 'Eye shield', quantity: 2, unit: 'шт.', img: 'eye-shield.jpg'},
                 {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
-                {name: 'Пластырь', quantity: 1, unit: 'уп.'},
+                {name: 'Пластырь', quantity: 1, unit: 'уп.', img: 'plaster.jpg'},
                 {name: 'Чехол', quantity: 1, unit: 'шт.'},
               ]
             },
             descr: {
+              linkDescr: '',
               descr: 'Full Urban Kit — ваш ответ на комплексные вызовы городской среды. Содержимое набора позволяет своевременно и безопасно оказать помощь при различных видах травм и неотложных состояний: остановке сердца, кровотечениях, ранениях груди, переохлаждении.\n' +
               'Основа набора — современное снаряжение, которое мы импортировали из Германии, Израиля, США или приобрели у лучших украинских производителей. При его разработке, главным приоритетом было качество комплектующих, а не низкая цена.\n' +
-              'Full Urban Kit доступен в черном, темно-зеленом и желтом цветах.\n',
+              'Full Urban Kit доступен в черном, темно-зеленом и желтом цветах.\n' +
+              'Набор поставляется в одной из двух комплектациях на выбор покупателя: \n' +
+              '- С плечевым ремнем;\n' +
+              '- С системой MOLLE для крепления к рюкзаку, велосипеду или ремню.\n',
               table: {
                 height: '22',
                 width: '19',
                 depth: '11',
-                wight: '820'
+                weight: '820',
+                description: 'Размеры наборов могут незначительно отличаться от указанных'
               }
             }
 
@@ -202,6 +221,7 @@ const State = {
             name: 'MVA Kit',
             colors: ['yellow', 'black', 'darkgreen'],
             currColorIndex: 0,
+            linkPrice: '',
             price: 4499,
             gallery: {
               darkgreen: {
@@ -220,6 +240,7 @@ const State = {
             icon: 'battery-full',
             info: {
               text: 'Набор для ответственного водителя. MVA Kit это снаряжение, необходимое для помощи пострадавшим в ДТП и при травмах.',
+              linkParts: '',
               parts: [
                 {name: 'Маска-клапан для реанимации', quantity: 2, unit: 'шт.', img: 'mask2.jpg'},
                 {name: 'Пленка-клапан для реанимации', quantity: 1, unit: 'шт.', img: 'valve.jpg'},
@@ -230,7 +251,7 @@ const State = {
                 {name: 'Израильский бандаж 6” (1 подушечка)', quantity: 2, unit: 'шт.', img: 'israel-bandage.jpg'},
                 {name: 'Гемостатический бинт Кровоспас', quantity: 1, unit: 'шт.', img: 'hemostatic-bandage.jpg'},
                 {name: 'Компрессионный бинт H&H', quantity: 3, unit: 'шт.', img: 'compression-bandage.jpg'},
-                {name: 'Стирильный бинт 7х14', quantity: 8, unit: 'шт.', img: 'steril-bandage.jpg'},
+                {name: 'Стерильный бинт 7х14', quantity: 8, unit: 'шт.', img: 'steril-bandage.jpg'},
                 {name: 'Эластичный бинт', quantity: 2, unit: 'шт.', img: 'elastic-bandage.jpg'},
                 {name: 'Безопасные ножницы', quantity: 1, unit: 'шт.', img: 'scissors.jpg'},
                 {name: 'Косынка медицинская', quantity: 2, unit: 'шт.', img: 'bondage-trian.jpg'},
@@ -239,23 +260,105 @@ const State = {
                 {name: 'Eye shield', quantity: 2, unit: 'шт.', img: 'eye-shield.jpg'},
                 {name: 'Гидрогелевая повязка BurnTec 10 см x 10 см', quantity: 1, unit: 'шт.', img: 'hidrohel-bandage-10.jpg'},
                 {name: 'Набор карточек', quantity: 1, unit: 'уп.', img: 'cards.jpg'},
-                {name: 'Пластырь', quantity: 1, unit: 'уп.'},
+                {name: 'Пластырь', quantity: 1, unit: 'уп.', img: 'plaster.jpg'},
                 {name: 'Чехол', quantity: 1, unit: 'шт.'},
                 {name: 'Сигнальный жилет', quantity: 1, unit: 'уп.'},
                 {name: 'Треугольник ДТП', quantity: 1, unit: 'уп.'},
               ]
             },
             descr: {
+              linkDescr: 'https://drive.google.com/file/d/1RDtcOM01kU141MTLfiBLjf8kdc9ONbBJ/view',
               descr: '4000 человек ежегодно гибнет в ДТП в Украине. Спасти их жизнь и снизить вред здоровью возможно, своевременно и верно оказав первую помощь. Набор MVA от Reskits включает в себя снаряжение, необходимое для спасения жизни пострадавшего водителя, пассажиров, сбитого пешехода.\n' +
               ' Этот набор  даст вам возможность оказать первую помощь при кровотечениях, переломах, вывихах, ушибах. Тут есть средства для проведения реанимации и для безопасности спасателя: треугольник оповестит водителей о препятствии, а светоотражающий жилет сделает спасателя заметным в темное время суток и плохую погоду.\n' +
               'MVA Kit доступен в черном, темно-зеленом и желтом цветах.\n',
               table: {
-                height: '',
-                width: '',
-                depth: '',
-                wight: ''
+                height: '35',
+                width: '21',
+                depth: '14',
+                weight: '2180',
+                description: 'Размеры наборов могут незначительно отличаться от указанных'
               }
             }
+          },
+          {
+              name: 'Reskits Work kit',
+              colors: ['yellow', 'black', 'darkgreen'],
+              currColorIndex: 0,
+              linkPrice: 'https://drive.google.com/file/d/1A6cLQ_HW-TgC7qpIqlvPtiNLRQnOpFus/view',
+              price: 5999,
+              gallery: {
+                  darkgreen: {
+                      imgs: ['RWK_1.jpg', 'RWK_2.jpg', 'RWK_3.jpg', 'RWK_4.jpg', 'RWK_5.jpg'],
+                      current: 0
+                  },
+                  black: {
+                      imgs: ['RWK_black_1.jpg', 'RWK_black_2.jpg', 'RWK_black_3.jpg', 'RWK_black_4.jpg', 'RWK_black_5.jpg', 'RWK_black_6.jpg', 'RWK_black_7.jpg',  'RWK_black_8.jpg', 'RWK_black_9.jpg'],
+                      current: 0
+                  },
+                  yellow: {
+                      imgs: ['RWK_yellow_1.jpg', 'RWK_yellow_2.jpg', 'RWK_yellow_3.jpg', 'RWK_yellow_4.jpg', 'RWK_yellow_5.jpg', 'RWK_yellow_6.jpg', 'RWK_yellow_7.jpg', 'RWK_yellow_8.jpg'],
+                      current: 0
+                  }
+              },
+              icon: 'battery-full',
+              info: {
+                  text: 'Набор первой помощи, предназначенный для оказания первой помощи в офисном помещении.',
+                  linkParts: 'https://drive.google.com/file/d/1SIQJRiGPD81P-hkS-ET3_jA4JNAyfKOL/view',
+                  parts: [
+
+                  ]
+              },
+              descr: {
+                  linkDescr: 'https://drive.google.com/file/d/11Lna27iglw36g_4OEVnR2NJ0knAyc9F8/view',
+                  descr: '',
+                  table: {
+                      height: '',
+                      width: '',
+                      depth: '',
+                      weight: '',
+                      description: 'Размеры наборов могут незначительно отличаться от указанных'
+                  }
+              }
+          },
+          {
+              name: 'Any Mission kit',
+              colors: ['yellow', 'black', 'darkgreen'],
+              currColorIndex: 0,
+              linkPrice: 'https://drive.google.com/file/d/1c2FT6D0UWlZl1ioMoYC5ARmHr88rLGpr/view',
+              price: 7999,
+              gallery: {
+                  darkgreen: {
+                      imgs: ['MVA_1.jpg'],
+                      current: 0
+                  },
+                  black: {
+                      imgs: ['MVA_black_1.jpg'],
+                      current: 0
+                  },
+                  yellow: {
+                      imgs: ['MVA_yellow_1.jpg'],
+                      current: 0
+                  }
+              },
+              icon: 'battery-full',
+              info: {
+                  text: 'Набор с максимальной комплектацией. Предназначен для оказания первой помощи на крупных промышленных предприятиях, производственных объектах',
+                  linkParts: 'https://drive.google.com/file/d/1EfBomftotaYrWPj9c4WWcAbirmtT1TH4/view',
+                  parts: [
+
+                  ]
+              },
+              descr: {
+                  linkDescr: 'https://drive.google.com/file/d/1nuqV2jofOrxrkbOI9lZj7YqLhvXq4IXA/view',
+                  descr: '',
+                  table: {
+                      height: '',
+                      width: '',
+                      depth: '',
+                      weight: '',
+                      description: 'Размеры наборов могут незначительно отличаться от указанных'
+                  }
+              }
           }
         ],
         currentIndex: 0,
