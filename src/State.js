@@ -288,15 +288,15 @@ const State = {
               price: 5999,
               gallery: {
                   darkgreen: {
-                      imgs: ['RWK_1.jpg', 'RWK_2.jpg', 'RWK_4.jpg', 'RWK_5.jpg'],
+                      imgs: ['RWK_1.jpg', 'RWK_2.jpg', 'RWK_3.jpg'],
                       current: 0
                   },
                   black: {
-                      imgs: ['RWK_black_1.jpg', 'RWK_black_2.jpg', 'RWK_black_4.jpg', 'RWK_black_5.jpg', 'RWK_black_6.jpg', 'RWK_black_7.jpg',  'RWK_black_8.jpg', 'RWK_black_9.jpg'],
+                      imgs: ['RWK_black_1.jpg', 'RWK_black_2.jpg', 'RWK_black_3.jpg'],
                       current: 0
                   },
                   yellow: {
-                      imgs: ['RWK_yellow_1.jpg', 'RWK_yellow_2.jpg', 'RWK_yellow_4.jpg', 'RWK_yellow_5.jpg', 'RWK_yellow_6.jpg', 'RWK_yellow_7.jpg', 'RWK_yellow_8.jpg'],
+                      imgs: ['RWK_yellow_1.jpg', 'RWK_yellow_2.jpg', 'RWK_yellow_3.jpg'],
                       current: 0
                   }
               },
