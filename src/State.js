@@ -267,7 +267,7 @@ const State = {
               ]
             },
             descr: {
-              linkDescr: 'https://drive.google.com/file/d/1RDtcOM01kU141MTLfiBLjf8kdc9ONbBJ/view',
+              linkDescr: '/pdf/MVA_description_list.pdf',
               descr: '4000 человек ежегодно гибнет в ДТП в Украине. Спасти их жизнь и снизить вред здоровью возможно, своевременно и верно оказав первую помощь. Набор MVA от Reskits включает в себя снаряжение, необходимое для спасения жизни пострадавшего водителя, пассажиров, сбитого пешехода.\n' +
               ' Этот набор  даст вам возможность оказать первую помощь при кровотечениях, переломах, вывихах, ушибах. Тут есть средства для проведения реанимации и для безопасности спасателя: треугольник оповестит водителей о препятствии, а светоотражающий жилет сделает спасателя заметным в темное время суток и плохую погоду.\n' +
               'MVA Kit доступен в черном, темно-зеленом и желтом цветах.\n',
@@ -284,32 +284,32 @@ const State = {
               name: 'Reskits Work kit',
               colors: ['yellow', 'black', 'darkgreen'],
               currColorIndex: 0,
-              linkPrice: 'https://drive.google.com/file/d/1A6cLQ_HW-TgC7qpIqlvPtiNLRQnOpFus/view',
+              linkPrice: '/pdf/RWK_price_list.pdf',
               price: 5999,
               gallery: {
                   darkgreen: {
-                      imgs: ['RWK_1.jpg', 'RWK_2.jpg', 'RWK_3.jpg', 'RWK_4.jpg', 'RWK_5.jpg'],
+                      imgs: ['RWK_1.jpg', 'RWK_2.jpg', 'RWK_4.jpg', 'RWK_5.jpg'],
                       current: 0
                   },
                   black: {
-                      imgs: ['RWK_black_1.jpg', 'RWK_black_2.jpg', 'RWK_black_3.jpg', 'RWK_black_4.jpg', 'RWK_black_5.jpg', 'RWK_black_6.jpg', 'RWK_black_7.jpg',  'RWK_black_8.jpg', 'RWK_black_9.jpg'],
+                      imgs: ['RWK_black_1.jpg', 'RWK_black_2.jpg', 'RWK_black_4.jpg', 'RWK_black_5.jpg', 'RWK_black_6.jpg', 'RWK_black_7.jpg',  'RWK_black_8.jpg', 'RWK_black_9.jpg'],
                       current: 0
                   },
                   yellow: {
-                      imgs: ['RWK_yellow_1.jpg', 'RWK_yellow_2.jpg', 'RWK_yellow_3.jpg', 'RWK_yellow_4.jpg', 'RWK_yellow_5.jpg', 'RWK_yellow_6.jpg', 'RWK_yellow_7.jpg', 'RWK_yellow_8.jpg'],
+                      imgs: ['RWK_yellow_1.jpg', 'RWK_yellow_2.jpg', 'RWK_yellow_4.jpg', 'RWK_yellow_5.jpg', 'RWK_yellow_6.jpg', 'RWK_yellow_7.jpg', 'RWK_yellow_8.jpg'],
                       current: 0
                   }
               },
               icon: 'battery-full',
               info: {
                   text: 'Набор первой помощи, предназначенный для оказания первой помощи в офисном помещении.',
-                  linkParts: 'https://drive.google.com/file/d/1SIQJRiGPD81P-hkS-ET3_jA4JNAyfKOL/view',
+                  linkParts: '/pdf/RWK_parts_list.pdf',
                   parts: [
 
                   ]
               },
               descr: {
-                  linkDescr: 'https://drive.google.com/file/d/11Lna27iglw36g_4OEVnR2NJ0knAyc9F8/view',
+                  linkDescr: '/pdf/RWK_description_list.pdf',
                   descr: '',
                   table: {
                       height: '',
@@ -324,7 +324,7 @@ const State = {
               name: 'Any Mission kit',
               colors: ['yellow', 'black', 'darkgreen'],
               currColorIndex: 0,
-              linkPrice: 'https://drive.google.com/file/d/1c2FT6D0UWlZl1ioMoYC5ARmHr88rLGpr/view',
+              linkPrice: '/pdf/AMK_price_list.pdf',
               price: 7999,
               gallery: {
                   darkgreen: {
@@ -343,13 +343,13 @@ const State = {
               icon: 'battery-full',
               info: {
                   text: 'Набор с максимальной комплектацией. Предназначен для оказания первой помощи на крупных промышленных предприятиях, производственных объектах',
-                  linkParts: 'https://drive.google.com/file/d/1EfBomftotaYrWPj9c4WWcAbirmtT1TH4/view',
+                  linkParts: '/pdf/AMK_parts_list.pdf',
                   parts: [
 
                   ]
               },
               descr: {
-                  linkDescr: 'https://drive.google.com/file/d/1nuqV2jofOrxrkbOI9lZj7YqLhvXq4IXA/view',
+                  linkDescr: '/pdf/AMK_description_list.pdf',
                   descr: '',
                   table: {
                       height: '',
