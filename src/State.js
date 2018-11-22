@@ -34,7 +34,7 @@ const State = {
             colors: ['transparent'],
             currColorIndex: 0,
             linkPrice: '',
-            price: 250,
+            price: 285,
             gallery: {
               transparent: {
                 imgs: ['UK1_1.jpg', 'UK1_2.jpg', 'UK1_3.jpg'],
@@ -72,7 +72,7 @@ const State = {
             colors: ['transparent'],
             currColorIndex: 0,
             linkPrice: '',
-            price: 499,
+            price: 599,
             gallery: {
               transparent: {
                 imgs: ['UK2_1.jpg', 'UK2_2.jpg', 'UK2_3.jpg'],
@@ -113,7 +113,7 @@ const State = {
             colors: ['yellow', 'black', 'darkgreen'],
             currColorIndex: 0,
             linkPrice: '',
-            price: 999,
+            price: 1099,
             gallery: {
               darkgreen: {
                 imgs: ['UK2plus_1.jpg', 'UK2plus_2.jpg', 'UK2plus_3.jpg', 'UK2plus_4.jpg', 'UK2plus_5.jpg'],
@@ -162,7 +162,7 @@ const State = {
             colors: ['yellow', 'black', 'darkgreen' ],
             currColorIndex: 0,
             linkPrice: '',
-            price: 2599,
+            price: 2999,
             gallery: {
               darkgreen: {
                 imgs: ['UKF_1.jpg', 'UKF_2.jpg', 'UKF_3.jpg', 'UKF_4.jpg', 'UKF_5.jpg', 'UKF_6.jpg', 'UKF_13.jpg', 'UKF_14.jpg', 'UKF_15.jpg', 'UKF_16.jpg'],
@@ -222,7 +222,7 @@ const State = {
             colors: ['yellow', 'black', 'darkgreen'],
             currColorIndex: 0,
             linkPrice: '',
-            price: 4499,
+            price: 5199,
             gallery: {
               darkgreen: {
                 imgs: ['MVA_1.jpg', 'MVA_2.jpg', 'MVA_3.jpg', 'MVA_4.jpg'],
