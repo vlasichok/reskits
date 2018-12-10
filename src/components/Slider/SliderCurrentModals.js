@@ -58,8 +58,8 @@ const InfoModal = props => {
                                 </Tr>
                                 </Thead>
                                 <Tbody>
-                                <Tr>
-                                    <Td>{props.current.descr.table.height}</Td>
+                                <Tr className="table-items">
+                                    <Td >{props.current.descr.table.height}</Td>
                                     <Td>{props.current.descr.table.width}</Td>
                                     <Td>{props.current.descr.table.depth}</Td>
                                     <Td>{props.current.descr.table.weight}</Td>

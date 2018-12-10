@@ -192,5 +192,11 @@
 	border: 1px solid black;
 	text-align: center;
 	padding: 10px;
-	margin: 10px;
+}
+
+@media screen and (max-width: 575px) {
+	.item-info .myTable .table-items Td{
+		display: block;
+		text-align: right !important;
+	}
 }
