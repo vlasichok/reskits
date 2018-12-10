@@ -68,7 +68,11 @@ const SliderCurrent = props => {
 								<div className="current-item--mobile row mt-2 mt-sm-4">
 									<div className="col-10 offset-1 text-center d-block d-sm-none">
 										<h3 className="name m-0">{item.name}</h3>
-										<p className="m-0">{item.price} ₴</p>
+										{ (!item.linkPrice) ? (
+											<p className="m-0">{item.price} ₴</p>
+										) : (
+											<span className="m-0 price"><a href={item.linkPrice} target="_blank">прайс-лист</a></span>
+										)}
 									</div>
 									<div className="col-8 offset-2 col-sm-5 offset-sm-0 mt-sm-2 text-center">
 										<Image current={item} currentIndex={i} goToNextImg={props.goToNextImg} toggleImageModal={props.toggleImageModal} />
@@ -77,7 +81,13 @@ const SliderCurrent = props => {
 								        <div className="text-center text-sm-left mt-2 mt-sm-4">
 								 			<div className="mb-3 mb-sm-2 d-none d-sm-block">
 												<h4 className="name m-0 float-left">{item.name}</h4>
-												<span className="price d-inline-block my-1 mx-2"> — {item.price}₴</span>
+												<span className="price d-inline-block my-1 mx-2">
+													{ (!item.linkPrice) ? (
+														<span> — {item.price} ₴</span>
+													) : (
+														<span><a href={item.linkPrice} target="_blank">прайс-лист</a></span>
+													)}
+												</span>
 											</div>
 											<div>
 												<Color current={item} chooseColor={props.chooseColor} />
@@ -86,8 +96,16 @@ const SliderCurrent = props => {
 									        	<p>{item.info.text}</p>
 									        </div>
 									        <div className="mt-2 mt-sm-0">
-									        	<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm mx-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
-									        	<button onClick={props.togglePartsModal} className="btn btn-light btn-sm mx-2"><Icon name="list"/></button>
+												{ (!item.descr.linkDescr) ? (
+													<button onClick={props.toggleInfoModal} className="btn btn-light btn-sm mx-2 ml-sm-0"><Icon name="info" className="mx-1" /></button>
+												) : (
+													<a href={item.descr.linkDescr} target="_blank" className="btn btn-light btn-sm mx-2 ml-sm-0"><Icon name="info" className="mx-1" /></a>
+												)}
+												{ (!item.info.linkParts) ? (
+													<button onClick={props.togglePartsModal} className="btn btn-light btn-sm mx-2"><Icon name="list"/></button>
+												) : (
+													<a href={item.info.linkParts} target="_blank" className="btn btn-light btn-sm mx-2"><Icon name="list"/></a>
+												)}
 									        	<button className="btn btn-light btn-sm mx-2" onClick={(e) => props.addItem(e, current)}>В корзину</button>
 								        	</div>
 								        </div>
